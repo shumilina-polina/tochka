@@ -18,6 +18,8 @@
   color: #000;
   background-color: transparent;
   transition: color 0.3s, background-color 0.3s;
+  border: 0.75px solid black;
+  border-radius: 100%;
   & path {
     transition: fill 0.3s;
   }
@@ -36,7 +38,8 @@
   font-size: 18px;
   line-height: 24px;
   @include laptop {
-    font-size: 1.11vw;
+    font-size: 1.35vw;
+    line-height: 1.8vw;
   }
   @include mobile {
     font-size: 16px;
@@ -52,6 +55,7 @@
 
   @include laptop {
     font-size: 2vw;
+    line-height: 2.2vw;
   }
   @include mobile {
     font-size: 20px;

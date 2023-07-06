@@ -1,464 +1,362 @@
 @import "styles/variables.scss";
 
 .wr {
-  padding-top: 64px;
-  @include mobile {
-    padding-top: 40px;
-  }
-  & h1 {
-    margin-bottom: 64px;
-    @include laptop {
-      padding-bottom: 1%;
-    }
-
-    & > img {
-      user-select: none;
-      object-fit: contain;
-    }
-  }
-  & .showreel {
-    height: 732px !important;
-    @include laptop {
-      height: auto !important;
-      aspect-ratio: 15.2/9;
-    }
-    & div {
-      height: 100%;
-    }
-    & label {
-      transform: translateY(0%);
-      @include mobile {
-        transform: translateY(-100%);
-      }
-    }
-    & video {
-      -o-object-fit: contain;
-      object-fit: contain;
-    }
-    margin-bottom: 108px;
-    @include laptop {
-      margin-bottom: 6vw;
-    }
-  }
-}
-
-.projects {
-  margin-bottom: 180px;
+  background: #f6f5f5;
+  height: 842px;
+  background-image: url("/assets/mainscreen.png");
+  background-position: center 108px;
+  background-repeat: no-repeat;
   @include laptop {
-    margin-bottom: 11vw;
-  }
-
-  & > header {
-    margin-bottom: 102px;
-    width: 33%;
-    @include laptop {
-      margin-bottom: 6vw;
-    }
-    @include mobile {
-      width: 70%;
-      margin-bottom: 54px;
-    }
-  }
-  & > main {
-    & video:first-child {
-      mask-image: url("/assets/masks/mask-more.svg");
-      -webkit-mask-image: url("/assets/masks/mask-more.svg");
-    }
-  }
-}
-.videos {
-  margin-bottom: 154px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 36px;
-  @include laptop {
-    column-gap: 3vw;
-    margin-bottom: 11vw;
+    background-size: contain;
+    background-position: center 8vw;
+    height: 63vw;
   }
   @include mobile {
-    grid-template-columns: 1fr;
-    margin-bottom: 68px;
-    row-gap: 96px;
+    background-size: 88% 66%;
+    background-image: url("/assets/mainscreen-mobile.png");
+    background-position: center 65%;
+    height: 691px;
   }
-  & > div > div > div > div {
-    height: 400px !important;
-    @include laptop {
-      height: auto !important;
-      aspect-ratio: 16/11;
-    }
-    @include mobile {
-      aspect-ratio: 16/10;
-    }
-  }
-
-  & video:first-child {
-    mask-image: url("/assets/masks/mask-more.svg");
-    -webkit-mask-image: url("/assets/masks/mask-more.svg");
-  }
-}
-
-.video_number {
-  display: grid;
-  grid-template-columns: 5fr 2fr;
-  @include mobile {
-    grid-template-columns: 1fr;
-  }
-  & figure > div {
-    width: 25%;
-    @include mobile {
-      width: 100%;
-    }
-  }
-  & > div:last-child {
-    justify-self: flex-end;
-    width: 70%;
+  .main {
+    padding: 20px 0 57px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    align-items: flex-end;
-    padding: 0 15%;
-    @include mobile {
-      order: -1;
-      width: 100%;
-      padding: 0;
-      gap: 55px;
-      align-items: center;
-      justify-content: flex-start;
-      flex-direction: row;
-      margin-bottom: 45px;
-    }
-    & > span {
-      text-align: right;
-      @include text;
-      @include mobile {
-        text-align: center;
-        display: block;
-        width: min-content;
-      }
-    }
-  }
-}
-
-.polemica {
-  & > div:last-child {
-    position: relative;
-    @include mobile {
-      padding-top: 12px;
-      padding-left: 14px;
-    }
-    & img {
-      @include mobile {
-        width: 20vw;
-        object-fit: contain;
-      }
-    }
-    &::before {
-      content: "";
-      display: block;
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      width: 50%;
-      height: 105%;
-      border: 1px solid $text1;
-      border-left: none;
-      @include mobile {
-        bottom: initial;
-        top: 0;
-        width: 100%;
-        height: 12px;
-        border: 1px solid $text1;
-        border-bottom: 0;
-      }
-    }
-    &::after {
-      @include mobile {
-        content: "";
-        display: block;
-        position: absolute;
-        left: 33%;
-        width: 1px;
-        height: 12px;
-        color: $text1;
-        background-color: $text1;
-        top: 0;
-      }
-    }
-  }
-  & video {
-    height: 535px !important;
+    justify-content: space-between;
+    height: 100%;
     @include laptop {
-      height: auto !important;
-      aspect-ratio: 16/11;
+      padding: 1.5vw 4.27vw;
     }
     @include mobile {
-      aspect-ratio: 16/10 !important;
-    }
-  }
-}
-
-.process {
-  margin-bottom: 180px;
-  @include laptop {
-    margin-bottom: 11vw;
-  }
-  @include mobile {
-    margin-bottom: 0;
-  }
-  &_mob {
-    @include mobile {
-      & p {
-        width: 90%;
-      }
-      & > div > div:last-child {
-        width: 115px;
-      }
-    }
-  }
-}
-
-.gayane {
-  margin-bottom: 180px;
-  border-left: 1px solid $text1;
-  grid-template-columns: 2fr 5fr;
-  @include laptop {
-    margin-bottom: 11vw;
-  }
-  @include mobile {
-    grid-template-columns: 1fr;
-    border-left: none;
-    margin-bottom: 96px;
-  }
-  & video:first-child {
-    mask-image: url("/assets/masks/mask-gayane.svg");
-    -webkit-mask-image: url("/assets/masks/mask-gayane.svg");
-    mask-position: left center;
-    height: 535px !important;
-    @include laptop {
-      height: auto !important;
-      aspect-ratio: 16/11;
-    }
-  }
-  & > div:first-child {
-    order: 1;
-    & figure {
+      padding: 25px 0 13px;
       justify-content: flex-start;
-      gap: 10%;
-      & > div {
-        display: flex;
-        justify-content: space-between;
-        width: 50%;
-        gap: 20%;
+      gap: 36px;
+      position: relative;
+      & svg {
+        width: 76px;
+      }
+      & > div:first-child > button {
+        width: 130px;
+        text-align: left;
       }
     }
-  }
-  & > div:last-child {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    justify-content: start;
-    justify-self: start;
-    position: relative;
-    padding-right: 0;
-    padding-left: 7%;
-    width: 100%;
-    @include mobile {
+    & nav > ul {
       display: flex;
-      flex-direction: row-reverse;
-      padding: 0;
-    }
-    &::after {
-      content: "";
-      position: absolute;
-      display: block;
-      background-color: $text1;
-      top: 50%;
-      left: 0;
-      height: 1px;
-      width: 60%;
-      @include mobile {
-        display: none;
-      }
-    }
-    & > li {
-      height: 100%;
-      & > button {
-        &:hover, &:active, &:focus {
-          background-color: rgba(255, 255, 255, 0.03);
-          cursor: auto;
-        }
-      }
-    }
-    & p {
-      width: 75%;
-      @include text;
-      @include mobile {
-        width: 60%;
-        padding-left: 14px;
-      }
-    }
-  }
-  & figure {
-    @include mobile {
-      gap: 5px !important;
-      & > div {
-        flex-direction: column;
-        width: 40% !important;
-      }
-      & > ul {
-        & > li:first-child {
-          word-break: break-all;
-        }
-      }
-    }
-  }
-}
-
-.dom {
-  margin-bottom: 186px;
-  grid-template-columns: 2fr 5fr;
-  @include laptop {
-    margin-bottom: 20vw;
-  }
-  @include mobile {
-    grid-template-columns: 1fr;
-    margin-bottom: 116px;
-  }
-  & video:first-child {
-    mask-image: url("/assets/masks/mask-gayane.svg");
-    -webkit-mask-image: url("/assets/masks/mask-gayane.svg");
-    mask-position: left center;
-    height: 535px !important;
-    @include laptop {
-      height: auto !important;
-      aspect-ratio: 16/11;
-    }
-    @include mobile {
-      margin-bottom: 21px;
-      aspect-ratio: 16/9;
-      mask-image: url("/assets/masks/mask-mobile-2.svg") !important;
-      -webkit-mask-image: url("/assets/masks/mask-mobile-2.svg") !important;
-    }
-  }
-
-  & > div:first-child {
-    order: 1;
-    & figure {
-      justify-content: flex-start;
-      gap: 5%;
-      & > div {
-        display: flex;
-        justify-content: space-between;
-        width: 55%;
-        gap: 5%;
-        & > p {
-          width: 45%;
-        }
-      }
-    }
-  }
-  & > div:last-child {
-    position: relative;
-    &::before {
-      content: "";
-      display: block;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 45%;
-      height: 105%;
-      border: 1px solid $text1;
-      border-right: none;
-      @include mobile {
-        display: none;
-      }
-    }
-    justify-self: flex-start;
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    align-items: flex-start;
-    padding: 0 10%;
-    @include mobile {
-      order: -1;
-      width: 100%;
-      padding: 0 13px;
-      gap: 0px;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
-      flex-direction: row;
-      margin-bottom: 45px;
-    }
-    & > span {
-      text-align: left;
-      @include text;
-      @include mobile {
-        display: block;
-        width: 60%;
+      font-size: 24px;
+      line-height: 27px;
+      letter-spacing: -0.48px;
+      @include laptop {
+        font-size: 1.8vw;
+        line-height: 2vw;
+        & svg {
+          height: 1em;
+        }
       }
-    }
-    & img {
       @include mobile {
-        height: 35px;
-        width: 66px;
-        object-fit: contain;
-      }
-    }
-  }
-  & figure {
-    @include mobile {
-      gap: 5px !important;
-      & > div {
-        width: 60vw !important;
-        display: block !important;
-        & p:first-child {
+        font-size: 16px;
+        line-height: 20px;
+        display: grid;
+        grid-template-columns: 1fr 130px;
+        grid-template-rows: auto auto;
+        gap: 9px 21px;
+        & svg {
           display: none;
         }
-        & p {
-          width: 80% !important;
+        & > li:first-child {
+          order: -1;
+        }
+        & > li:nth-child(3) {
+          order: 2;
+          transform: translateY(-17px);
+        }
+        & > li:last-child {
+          order: 0;
+        }
+        & > li:nth-child(2) {
+          order: 1;
         }
       }
 
-      & > ul {
-        & > li:first-child {
-          word-break: break-all;
+      & > li:last-child > a {
+        position: relative;
+        text-align: left;
+
+        & > span {
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+          @include button;
+          padding: 3px 10px 5px;
+          border-radius: 15px;
+          transform: translate(100%, -50%);
+          font-size: 13.5px;
+          @include m4;
+          line-height: 18px;
+          @include laptop {
+            padding: 2px 5px;
+            font-size: 1vw;
+            line-height: 0.7vw;
+          }
+          @include mobile {
+            font-size: 10px;
+            line-height: 14px;
+          }
+        }
+      }
+
+      & button {
+        text-align: left;
+        font-size: inherit;
+        line-height: inherit;
+        letter-spacing: inherit;
+        font-weight: 500;
+        min-width: 190px;
+        @include laptop {
+          min-width: auto;
+        }
+      }
+    }
+    & > div {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      & > a > button {
+        @include button;
+        background-color: #f6f5f5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 163px;
+        height: 163px;
+        flex-shrink: 0;
+        @include text-small;
+
+        @include laptop {
+          width: 12.2vw;
+          height: 12.2vw;
+          & svg {
+            height: 10%;
+          }
+        }
+        & > div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 9px;
+        }
+      }
+      & > a {
+        @include mobile {
+          position: absolute;
+          bottom: 13px;
+          width: 100%;
+          & > button {
+            height: 53px;
+            width: 100%;
+            border-radius: 27px;
+            background: #000;
+            color: #fff;
+            font-size: 16px;
+            line-height: 20px;
+            padding: 17px 0;
+          }
+          & svg {
+            display: none;
+          }
         }
       }
     }
   }
 }
 
-.videos_last {
-  & video {
-    height: 403px !important;
-    @include laptop {
-      height: auto !important;
-      aspect-ratio: 16/11 !important;
-    }
+.numbers {
+  width: 80%;
+
+  @include mobile {
+    width: 100%;
   }
-  & > div {
-    & > div {
-      @include mobile {
-        margin-bottom: 25px;
+  & > ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 75px;
+    padding: 78px 0;
+    @include laptop {
+      padding: 5.8vw 0;
+      gap: 5.8vw;
+    }
+    @include mobile {
+      grid-template-columns: 1fr;
+      padding: 51px 0 0;
+      gap: 35px;
+    }
+    & > li {
+      &:nth-child(2),
+      &:nth-child(3) {
+        & h2 {
+          letter-spacing: -3px;
+          @include laptop {
+            letter-spacing: normal;
+          }
+          @include mobile {
+            letter-spacing: -1.92px;
+          }
+        }
+      }
+      & > h2 {
+        color: #000;
+        @include m4;
+        font-size: 75px;
+        line-height: 75px;
+        letter-spacing: -7.5px;
+        margin-bottom: 18px;
+        @include laptop {
+          font-size: 5.6vw;
+          line-height: 5.6vw;
+          margin-bottom: 1.35vw;
+          letter-spacing: -0.1vw;
+        }
+        @include mobile {
+          font-size: 48px;
+          line-height: 48px;
+          letter-spacing: -1.92px;
+          margin-bottom: 12px;
+        }
+      }
+      & > p {
+        @include text-small;
       }
     }
-    &:first-child {
-      & figure {
-        & ul {
-          order: -1;
+  }
+}
+
+.about {
+  padding: 96px 0;
+  max-width: 80%;
+  @include laptop {
+    padding: 7.2vw 0;
+  }
+  @include mobile {
+    padding: 64px 0;
+    max-width: 100%;
+  }
+  & > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 51px;
+    @include laptop {
+      grid-template-columns: 1fr 6fr;
+      gap: 1.1vw;
+    }
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+    & > li {
+      display: grid;
+      grid-template-columns: 201px 1fr;
+      gap: 22px;
+      @include laptop {
+        grid-template-columns: 1fr 6fr;
+        gap: 1.1vw;
+      }
+      @include mobile {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      & > h2 {
+        padding-top: 1em;
+        @include text-small;
+        height: fit-content;
+        @include laptop {
+          padding-top: 0;
+        }
+      }
+      & > p {
+        @include text-medium;
+        @include laptop {
+          letter-spacing: normal;
         }
       }
     }
-    &:last-child {
-      @include mobile {
-        margin-bottom: 22px;
-      }
-      & figure {
-        & div {
-          width: 25%;
-          @include mobile {
-            width: 35%;
+  }
+}
+
+.cases {
+  margin-bottom: 164px;
+  padding-top: 56px;
+  @include laptop {
+    margin-bottom: 80px;
+  }
+  & > h1 {
+    font-size: 72px;
+    @include m6;
+    line-height: 75px;
+    letter-spacing: -2.88px;
+    margin-bottom: 94px;
+    @include laptop {
+      font-size: 5.4vw;
+      line-height: 5.5vw;
+      margin-bottom: 7.2vw;
+    }
+  }
+  &_item {
+    max-width: 80%;
+    display: flex;
+    gap: 21px;
+    @include mobile {
+      max-width: 100%;
+      gap: 48px;
+      flex-direction: column;
+    }
+
+    & img {
+      border-radius: 15px;
+    }
+    & > figure {
+      &:first-child {
+        & > div {
+          aspect-ratio: 16/10;
+          height: 470px;
+          @include laptop {
+            height: 35.26vw;
           }
+          @include mobile {
+            height: auto;
+          }
+        }
+      }
+      &:last-child {
+        & > div {
+          aspect-ratio: 10/16;
+          height: 349px;
+          @include laptop {
+            height: 26.18vw;
+          }
+          @include mobile {
+            aspect-ratio: 1/1;
+            height: auto;
+            width: 100%;
+          }
+        }
+      }
+      & > div {
+        margin-bottom: 24px;
+        @include laptop {
+          margin-bottom: 1.3vw;
+        }
+        @include mobile {
+          margin-bottom: 24px;
+        }
+      }
+      & > p {
+        @include text-small;
+
+        & svg {
+          height: 1.1em;
+          transform: translateY(20%);
+          margin-right: 0.1em;
         }
       }
     }

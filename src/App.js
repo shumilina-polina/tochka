@@ -5,9 +5,6 @@ import "aos/dist/aos.css";
 import Error from "./pages/404";
 import Footer from "./components/Footer/Footer";
 import Index from "./pages/Index/Index";
-import Header from "./components/Header/Header";
-import Portfolio from "pages/Portfolio/Portfolio";
-import About from "pages/About/About";
 import { useMediaQuery } from "@mui/material";
 import { breakpoints } from "styles/variables";
 
@@ -19,10 +16,8 @@ function App() {
   }, []);
   return (
     <>
-      <Header />
       <Routes>
         <Route path="/" element={<Index />} />
-
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />

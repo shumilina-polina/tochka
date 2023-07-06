@@ -45,7 +45,9 @@ export const mixins = {
   `,
   textSmall: css`
     color: #000;
-    ${mixins.m5};
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 500;
     line-height: 27px;
     letter-spacing: -0.48px;
     @media ${breakpoints.laptop} {

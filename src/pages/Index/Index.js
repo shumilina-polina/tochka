@@ -1,335 +1,169 @@
 import Wrapper from "components/Wrapper";
 import s from "./index.module.scss";
-import title from "assets/title.svg";
-import titleMobile from "assets/titleMobile.svg";
-import n72 from "assets/72.svg";
-import n84 from "assets/84.svg";
-import projects from "assets/projects.svg";
-import Video from "components/Video/Video";
-import Caption from "components/Video/Caption";
-import { CATEGORIES, TAGS } from "constants/filters";
-import Process from "components/Process";
-import cn from "classnames";
-import SocialLink from "components/SocialLink";
-import TypeIt from "typeit-react";
-import { HorizontalTabs } from "components/Tabs/Tabs";
+import { CopyEmail } from "components/CopyEmail";
+import SvgSelector from "components/SvgSelector";
 import { useMediaQuery } from "@mui/material";
 import { breakpoints } from "styles/variables";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 const Index = () => {
   const isMobile = useMediaQuery(breakpoints.mobile);
 
   return (
-    <section className={s.wr}>
-      <Wrapper>
-        <h1>
-          <img src={isMobile ? titleMobile : title} alt="творчество" />
-        </h1>
-        <div
-          className={s.showreel}
-          data-aos={`fade-up`}
-          data-aos-duration="1000"
-        >
-          <Video
-            videoSrc={"showreel"}
-            videoUrl={"https://player.vimeo.com/video/687465086?h=100169ac7e"}
-            label={"Шоурил 2023"}
-            poster={"showreel-poster.png"}
-          />
-        </div>
-        <HorizontalTabs />
-        <section className={s.projects}>
-          <header data-aos="fade-left">
-            <h2>
-              <img src={projects} alt="Проекты" />
-            </h2>
-          </header>
-          <main>
-            <div className={s.videos}>
+    <div>
+      <section className={s.wr}>
+        <Wrapper>
+          <div className={s.main}>
+            {isMobile && (
               <div>
-                <div
-                  data-aos={`fade-right`}
-                  data-aos-duration="1000"
-                  data-aos-offset={isMobile ? "100" : "500"}
-                >
-                  <Video
-                    videoSrc={"moretv"}
-                    videoUrl="https://player.vimeo.com/video/794151930?h=d6d0e713f5"
-                    label={"More.tv"}
-                    poster={"moretv-poster.png"}
-                  />
-                </div>
-                <Caption
-                  tags={["olv", TAGS.digital]}
-                  category={CATEGORIES.reclama}
-                  fade="right"
-                >
-                  Ролик для&nbsp;промо-компании к&nbsp;выходу сериала "Регби"
-                  на&nbsp;онлайн-платформе.
-                </Caption>
+                <SvgSelector svg={"tochka"} />
+                <CopyEmail />
               </div>
-              <div>
-                <div
-                  data-aos={`fade-left`}
-                  data-aos-duration="1000"
-                  data-aos-offset={isMobile ? "100" : "500"}
-                >
-                  <Video
-                    videoSrc={"ulibka"}
-                    videoUrl="https://player.vimeo.com/video/788918319?h=ce8a5dc86e"
-                    label={"Улыбка"}
-                    poster={"ulibka-poster.png"}
-                  />
-                </div>
-                <Caption>
-                  Серия из&nbsp;трёх роликов для&nbsp;проведения рекламной
-                  кампании.
-                </Caption>
-              </div>
-            </div>
-            <div className={cn(s.polemica, s.video_number)}>
-              <div>
-                <div
-                  data-aos={`fade-left`}
-                  data-aos-duration="1000"
-                  data-aos-offset={isMobile ? "100" : "500"}
-                >
-                  <Video
-                    videoSrc={"polemica"}
-                    videoUrl="https://player.vimeo.com/video/787493399?h=677c053041"
-                    label={"polemica"}
-                    poster={"polemica-poster.png"}
-                  />
-                </div>
-                <Caption
-                  tags={["olv", TAGS.digital]}
-                  category={CATEGORIES.reclama}
-                >
-                  Помогли запустить широкую промо-компанию с&nbsp;помощью видео.
-                </Caption>
-              </div>
-              <div data-aos="fade-up" data-aos-duration="1000">
-                <div>
-                  <img src={n72} alt="72" />
-                </div>
-                <span>Часа от&nbsp;брифа до&nbsp;результата</span>
-              </div>
-            </div>
-          </main>
-        </section>
-        <div className={s.process}>
-          <Process>
-            <span>(процесс)</span>
-            {isMobile ? (
-              <p>
-                Выстраиваем прозрачный и&nbsp;понятный процесс работы.
-                Придумываем креатив и&nbsp;защищаем идеи, обосновываем траты,
-                соблюдаем сметы и&nbsp;сроки
-                <TypeIt
-                  options={{
-                    speed: 60,
-                    waitUntilVisible: false,
-                  }}
-                >
-                  .
-                </TypeIt>
-              </p>
-            ) : (
-              <p>
-                Выстраиваем прозрачный и&nbsp;понятный процесс работы.
-                Придумываем креатив и&nbsp;защищаем идеи, обосновываем траты,
-                собл
-                <TypeIt
-                  options={{
-                    speed: 60,
-                    waitUntilVisible: true,
-                  }}
-                >
-                  юдаем сметы и&nbsp;сроки.
-                </TypeIt>
-              </p>
             )}
-            <figure>
-              <div>
-                <div>
-                  <img
-                    src={require(`assets/author-1.png`)}
-                    alt="Дмитрий Квашнин"
-                  />
-                </div>
-                <div>
-                  <img
-                    src={require(`assets/author-1.png`)}
-                    alt="Дмитрий Квашнин"
-                  />
-                </div>
-              </div>
-              <figcaption>
-                <span>Дмитрий Квашнин</span>
-                <span>Основатель студии</span>
-              </figcaption>
-            </figure>
-          </Process>
-        </div>
-        <div className={cn(s.gayane, s.video_number)}>
-          <div>
-            <div
-              data-aos={`fade-right`}
-              data-aos-duration="1000"
-              data-aos-offset={isMobile ? "100" : "500"}
-            >
-              <Video
-                videoSrc={"gayane"}
-                videoUrl="https://player.vimeo.com/video/787493279?h=8689c9f2e4"
-                label={"yandex/gayane"}
-                poster={"gayane-poster.png"}
-              />
-            </div>
-            <Caption
-              fade="right"
-              tags={["branded", "content"]}
-              category={CATEGORIES.docReclama}
-            >
-              <p>Съёмки проходили в&nbsp;2-х городах.</p>
-              <p>1&nbsp;месяц ушёл на&nbsp;производство.</p>
-            </Caption>
-          </div>
-          <div>
-            <SocialLink svg={"yandex"} />
-            <p>
-              Ролик для&nbsp;повышения уровня лояльности пользователей Яндекс.GO
-              и&nbsp;проведения HR-компании.
-            </p>
-          </div>
-        </div>
-        <div className={cn(s.process, s.process_mob)}>
-          <Process>
-            <span>(контроль)</span>
-            {isMobile ? (
-              <p>
-                гарантируем удобный сервис и&nbsp;постоянную коммуникацию,
-                утверждаем каждый этап проекта, ведём ежедневные отчёты
-                <TypeIt
-                  options={{
-                    speed: 60,
-                    waitUntilVisible: false,
-                  }}
-                >
-                  .
-                </TypeIt>
-              </p>
-            ) : (
-              <p>
-                гарантируем удобный сервис и&nbsp;постоянную коммуникацию,
-                утверждаем каждый этап проекта,{" "}
-                <TypeIt
-                  options={{
-                    speed: 60,
-                    waitUntilVisible: true,
-                  }}
-                >
-                  ведём ежедневные отчёты.
-                </TypeIt>
-              </p>
-            )}
-            <figure>
-              <div>
-                <div>
-                  <img
-                    src={require(`assets/author-2.png`)}
-                    alt="Сергей Клейн"
-                  />
-                </div>
-                <div>
-                  <img
-                    src={require(`assets/author-2.png`)}
-                    alt="Сергей Клейн"
-                  />
-                </div>
-              </div>
-              <figcaption>
-                <span>Сергей Клейн</span>
-                <span>Исполнительный продюсер</span>
-              </figcaption>
-            </figure>
-          </Process>
-        </div>
-        <div className={cn(s.dom, s.video_number)}>
-          <div>
-            <div
-              data-aos={`fade-right`}
-              data-aos-duration="1000"
-              data-aos-offset={isMobile ? "100" : "500"}
-            >
-              <Video
-                videoSrc={"dom"}
-                videoUrl="https://player.vimeo.com/video/759499744?h=55e5aefc8d"
-                label={"там, где наш дом"}
-                poster={"dom-poster.png"}
-              />
-            </div>
-            <Caption
-              fade="right"
-              tags={["альманах", "кино"]}
-              category={isMobile ? "Док. кино" : CATEGORIES.docKino}
-            >
-              <p>
-                Дебютный документальный проект, ставший победителем
-                международных фестивалей.
-              </p>
-              <p>Кинотеатральный прокат в&nbsp;54 городах СНГ.</p>
-            </Caption>
-          </div>
-          <div data-aos="fade-up">
+            <nav>
+              <ul>
+                <li>
+                  Делаем ивенты <br />
+                  под ключ{" "}
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <circle
+                      cx="7.12599"
+                      cy="6.71291"
+                      r="6.53517"
+                      fill="black"
+                    />
+                  </svg>
+                </li>
+                <li>
+                  Применяем
+                  <br /> современные <br />
+                  технологии
+                </li>
+                <li>
+                  Объединяем
+                  <br /> дерзкие идеи
+                  <br /> и лучших <br />
+                  специалистов
+                </li>
+                <li>
+                  <a
+                    href={require("assets/documents/ТОЧКА Ивент КП.pdf")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Портфолио
+                    <span>pdf</span>
+                  </a>
+                  <br />
+                  {!isMobile && <CopyEmail />}
+                </li>
+              </ul>
+            </nav>
             <div>
-              <img src={n84} alt="8.4" />
+              {!isMobile && <SvgSelector svg={"tochka"} />}
+              <a href="#project">
+                <button>
+                  <div>
+                    <SvgSelector svg={"arrow"} />
+                    <span>
+                      Обсудить {!isMobile && <br />}
+                      проект
+                    </span>
+                  </div>
+                </button>
+              </a>
             </div>
-            <span>Средняя оценка фильма на&nbsp;Кинопоиске.</span>
           </div>
-        </div>
-        <div className={cn(s.videos, s.videos_last)}>
-          <div>
-            <div
-              data-aos={`fade-right`}
-              data-aos-duration="1000"
-              data-aos-offset={isMobile ? "100" : "500"}
-            >
-              <Video
-                videoSrc={"ctrl"}
-                videoUrl="https://player.vimeo.com/video/788917724?h=8cb68bdf9b"
-                label={"Ctrl + A / add"}
-                poster={"ctrl-poster.png"}
-              />
-            </div>
-            <Caption
-              fade="right"
-              tags={[TAGS.tv, "OLV"]}
-              category={"Музыкальный клип"}
-            ></Caption>
+        </Wrapper>
+      </section>
+      <Wrapper>
+        <section className={s.numbers}>
+          <ul>
+            <li>
+              <h2>10 000+</h2>
+              <p>
+                гостей на мероприятиях: <br /> айтишников, менеджеров,
+                <br />
+                HR и не только
+              </p>
+            </li>
+
+            <li>
+              <h2>6 стран</h2>
+              <p>
+                в которых мы делаем события:
+                <br /> Россия, Турция, Казахстан, Грузия,
+                <br /> Армения, Индонезия, Португалия
+              </p>
+            </li>
+            <li>
+              <h2>12 лет</h2>
+              <p>
+                опыта работы
+                <br /> в ивент-индустрии
+              </p>
+            </li>
+          </ul>
+        </section>
+        <section className={s.about}>
+          <ul>
+            <li>
+              <h2>Эбаут</h2>
+              <ReactMarkdown>
+                Создаём офлайн и&nbsp;онлайн мероприятия: от&nbsp;масштабных
+                маркетинговых событий до&nbsp;локальных незабываемых
+                тимбилдингов. Подбираем проверенных подрядчиков под&nbsp;каждый
+                ивент, чтобы&nbsp;креативная концепция реализовалась
+                на&nbsp;100%.
+              </ReactMarkdown>
+            </li>
+
+            <li>
+              <h2>Форматы</h2>
+              <ReactMarkdown>
+                Конференции, маркетинговые события, корпоративные мероприятия,
+                онлайн.
+              </ReactMarkdown>
+            </li>
+            <li>
+              <h2>Клиенты</h2>
+              <ReactMarkdown>
+                Вконтакте, Газпром, Skysmart, Montblanc, Space307, Helix.
+              </ReactMarkdown>
+            </li>
+          </ul>
+        </section>
+        <section className={s.cases}>
+          <h1>Кейсы</h1>
+          <div className={s.cases_item}>
+            <figure>
+              <div>
+                <img src={require("assets/case1.jpg")} alt="TED" />
+              </div>
+              <p>
+                <SvgSelector svg={"case1"} />
+                Помогли Топ-менеджерам <br />
+                в Газпром подготовить <br />
+                выступления в стиле TED
+              </p>
+            </figure>
+            <figure>
+              <div>
+                <img src={require("assets/case2.jpg")} alt="Montblanc" />
+              </div>
+
+              <p>
+                <SvgSelector svg={"case2"} />
+                Оформили Montblanc <br />
+                к открытию за 2 дня, <br />
+                без приостановки <br />
+                работы бутика
+              </p>
+            </figure>
           </div>
-          <div>
-            <div
-              data-aos={`fade-left`}
-              data-aos-duration="1000"
-              data-aos-offset={isMobile ? "100" : "500"}
-            >
-              <Video
-                videoSrc={"cg"}
-                videoUrl="https://player.vimeo.com/video/788918951?h=7d993bb16e"
-                label={"шоурил cg"}
-                poster={"cg-poster.png"}
-              />
-            </div>
-            <Caption
-              tags={[TAGS.tv, "OLV"]}
-              category={isMobile ? "Графика" : "Графика_и_постпродакшн"}
-            >
-              5 лет развиваем направление
-            </Caption>
-          </div>
-        </div>
+        </section>
       </Wrapper>
-    </section>
+    </div>
   );
 };
 

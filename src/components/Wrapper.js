@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { breakpoints } from "styles/variables";
 
 const Styled = styled.div`
-  max-width: 1244px;
+  max-width: 1333px;
   height: 100%;
   margin: auto;
   padding: 0;
