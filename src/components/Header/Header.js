@@ -1,0 +1,62 @@
+import Wrapper from "components/Wrapper";
+import s from "./header.module.scss";
+import { Link } from "react-router-dom";
+import logo from "assets/logo.svg";
+import { CopyEmail } from "components/CopyEmail";
+import SvgSelector from "components/SvgSelector";
+import { useScroll } from "react-spring";
+import { useState } from "react";
+import { useMediaQuery } from "@mui/material";
+import { breakpoints } from "styles/variables";
+
+const Header = () => {
+  const isMobile = useMediaQuery(breakpoints.mobile);
+  const [scrollVal, setScrollVal] = useState(0);
+  const { scrollYProgress } = useScroll({
+    onChange: ({ value: { scrollYProgress } }) => {
+      isMobile && setScrollVal(scrollYProgress + 1);
+    },
+  });
+  return (
+    <header className={s.header}>
+      <Wrapper>
+        <div className={s.wrapper}>
+          <div className={s.links}>
+            <div data-aos="fade-right">
+              <CopyEmail />
+            </div>
+            <div data-aos="fade-down">
+              <Link to="/">
+                <img src={logo} alt="логотип" />
+              </Link>
+            </div>
+            <div
+              data-aos="fade-left"
+              style={{
+                opacity:
+                  scrollVal > 1.8
+                    ? // scrollVal > document.body.offsetHeight - 751
+                      "0"
+                    : "1",
+              }}
+            >
+              <a href="#project">
+                <span>
+                  <SvgSelector svg={"arrow"} />
+                </span>
+                Обсудить проект
+              </a>
+            </div>
+          </div>
+          <nav className={s.navigation}>
+            <Link to="/">Главная</Link>
+            <Link to="/portfolio">Портфолио</Link>
+            <Link to="/about">О нас</Link>
+          </nav>
+        </div>
+      </Wrapper>
+    </header>
+  );
+};
+
+export default Header;
