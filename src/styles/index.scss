@@ -2,16 +2,11 @@
 @import "./reset.min.scss";
 @import "~normalize.css";
 
-.active-link {
-  opacity: 1 !important;
-}
-
 html,
 body {
   min-height: 100vh;
-  background-color: $bg;
-  // background-color: rgb(88, 63, 88);
-  color: $text6;
+  background-color: #fff;
+  color: #000;
   overflow-x: hidden;
 }
 
@@ -22,25 +17,15 @@ html {
 }
 
 body {
-  @include jb4;
+  @include m5;
+  @include text-medium;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  letter-spacing: 0.015em;
-  padding: 0px 0 1000px;
-  padding-right: 0 !important;
-  @include laptop {
-    padding-bottom: 80vw;
-  }
-
-  @include mobile {
-    padding-bottom: 757px;
-    // border: 3px solid yellow;
-  }
 
   /* Скроллбар*/
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.1) none;
+  scrollbar-color: #000 none;
 
   &::-webkit-scrollbar {
     height: 6px;
@@ -52,29 +37,8 @@ body {
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #000;
     border-radius: 5px;
-  }
-}
-
-.button {
-  border: 1px solid $text1;
-  @include text;
-  color: $text6;
-  border-radius: 16px;
-  transition: color 0.3s, border-color 0.3s, background-color 0.3s;
-  background-color: transparent;
-  &:disabled {
-    cursor: auto;
-    color: $text1;
-    pointer-events: none;
-  }
-  &:hover {
-    border-color: $text2;
-  }
-  &:active,
-  &:focus {
-    background-color: $text1;
   }
 }
 
@@ -93,10 +57,10 @@ svg {
 
 *:not(body, html) {
   &::selection {
-    background-color: $text3;
-    color: $bg;
+    background-color: #000;
+    color: #fff;
   }
-  scrollbar-color: $bg transparent;
+  scrollbar-color: #fff transparent;
   scrollbar-width: thin;
   &::-webkit-scrollbar {
     background: transparent;
@@ -104,6 +68,6 @@ svg {
   }
   &::-webkit-scrollbar-thumb {
     border-radius: 30px;
-    background: $bg;
+    background: #000;
   }
 }

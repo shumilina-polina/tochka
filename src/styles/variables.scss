@@ -1,62 +1,82 @@
-$bg: #151515;
-$text6: rgba(255, 255, 255, 0.6);
-$text2: rgba(255, 255, 255, 0.2);
-$text3: rgba(255, 255, 255, 0.3);
-$text4: rgba(255, 255, 255, 0.4);
-$text5: rgba(255, 255, 255, 0.5);
-$text1: rgba(255, 255, 255, 0.1);
-$red: #e30613;
-
-@font-face {
-  font-family: "Polonium Bold";
-  src: local("Polonium Bold"), url("/assets/Polonium-Bold.otf");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@mixin polonium {
-  font-family: "Polonium Bold", monospace;
-  font-style: normal;
-  font-weight: 700;
-}
-@mixin jb4 {
-  font-family: "JetBrains Mono", monospace;
+@mixin m4 {
+  font-family: "Manrope", sans-serif;
   font-style: normal;
   font-weight: 400;
 }
-@mixin jb5 {
-  font-family: "JetBrains Mono", monospace;
+@mixin m5 {
+  font-family: "Manrope", sans-serif;
   font-style: normal;
   font-weight: 500;
 }
-@mixin link-hover {
-  color: $text6;
-  transition: color 0.3s;
-  &:hover {
-    color: $text4;
+@mixin m6 {
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+}
+
+@mixin button {
+  color: #000;
+  background-color: transparent;
+  transition: color 0.3s, background-color 0.3s;
+  & path {
+    transition: fill 0.3s;
   }
-  &:active {
-    color: $text2;
+  &:hover {
+    color: #fff;
+    background-color: #000;
+    & path {
+      fill: #fff;
+    }
   }
 }
 
-@mixin text {
-  @include jb4;
-  font-size: 16px;
-  line-height: 125%;
-  letter-spacing: 0.015em;
+@mixin text-small {
+  color: #000;
+  @include m5;
+  font-size: 18px;
+  line-height: 24px;
   @include laptop {
     font-size: 1.11vw;
   }
   @include mobile {
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: 0.18px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+@mixin text-medium {
+  color: #000;
+  font-size: 36px;
+  line-height: 45px;
+  letter-spacing: -1.08px;
+  @include m5;
+
+  @include laptop {
+    font-size: 2vw;
+  }
+  @include mobile {
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.4px;
+  }
+}
+@mixin text-large {
+  color: #000;
+  font-size: 93px;
+  line-height: 93px;
+  letter-spacing: -3.72px;
+  @include m5;
+  @include laptop {
+    font-size: 4vw;
+  }
+  @include mobile {
+    font-size: 36px;
+    line-height: 36px;
+    letter-spacing: -0.72px;
   }
 }
 // --- BREAKPOINTS ---
 
-$desktop-width: 1260px;
+$desktop-width: 1500px;
 $mobile-width: 450px;
 
 @mixin laptop {

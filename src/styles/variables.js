@@ -1,7 +1,7 @@
 import { css } from "styled-components";
 
 export const sizes = {
-  desktopWidth: "1260px",
+  desktopWidth: "1500px",
   laptopWidth: "770px",
   mobileWidth: "450px",
 };
@@ -12,52 +12,48 @@ export const breakpoints = {
   mobile: `(max-width: ${sizes.mobileWidth})`,
 };
 
-export const colors = {
-  bg: "#151515",
-  text6: "rgba(255, 255, 255, 0.6)",
-  text2: "rgba(255, 255, 255, 0.2)",
-  text3: "rgba(255, 255, 255, 0.3)",
-  text4: "rgba(255, 255, 255, 0.4)",
-  text5: "rgba(255, 255, 255, 0.5)",
-  text1: "rgba(255, 255, 255, 0.1)",
-  red: "#e30613",
-};
-
 export const mixins = {
-  jb4: css`
-    font-family: "JetBrains Mono", monospace;
+  m4: css`
+    font-family: "Manrope", sans-serif;
     font-style: normal;
     font-weight: 400;
   `,
-  jb5: css`
-    font-family: "JetBrains Mono", monospace;
+  m5: css`
+    font-family: "Manrope", sans-serif;
     font-style: normal;
     font-weight: 500;
   `,
-  linkHover: css`
-    color: ${colors.text6};
-    transition: color 0.3s;
-    &:hover {
-      color: ${colors.text4};
+  m6: css`
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+  `,
+  button: css`
+    color: #000;
+    background-color: transparent;
+    transition: color 0.3s, background-color 0.3s;
+    & path {
+      transition: fill 0.3s;
     }
-    &:active {
-      color: ${colors.text2};
+    &:hover {
+      color: #fff;
+      background-color: #000;
+      & path {
+        fill: #fff;
+      }
     }
   `,
-  text: css`
-    font-family: "JetBrains Mono", monospace;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 125%;
-    letter-spacing: 0.015em;
+  textSmall: css`
+    color: #000;
+    ${mixins.m5};
+    line-height: 27px;
+    letter-spacing: -0.48px;
     @media ${breakpoints.laptop} {
       font-size: 1.11vw;
     }
     @media ${breakpoints.mobile} {
-      font-size: 12px;
-      line-height: 16px;
-      letter-spacing: 0.18px;
+      font-size: 16px;
+      line-height: 20px;
     }
   `,
 };
