@@ -1,7 +1,10 @@
+import classNames from "classnames";
 import s from "./author.module.scss";
 
-const Author = ({ footer = false }) => {
-  return <div className={s.wr}></div>;
+const Author = ({ footer = false, children }) => {
+  return (
+    <div className={classNames(s.wr, footer && s.wr_footer)}>{children}</div>
+  );
 };
 
-export default Form;
+export default Author;

@@ -26,6 +26,9 @@ const Button = styled.button`
   font-size: 24px;
   line-height: 27px;
   letter-spacing: -0.48px;
+  & > span {
+    white-space: nowrap;
+  }
   &:hover {
     text-decoration-line: underline;
   }
@@ -36,5 +39,6 @@ const Button = styled.button`
     font-size: 16px;
     line-height: 20px;
     letter-spacing: -0.32px;
+    transform: translateX(-20%);
   }
 `;

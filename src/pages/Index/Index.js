@@ -10,6 +10,7 @@ import Aos from "aos";
 import { useEffect } from "react";
 
 import "aos/dist/aos.css";
+import Author from "components/Author/Author";
 
 const Index = () => {
   const isMobile = useMediaQuery(breakpoints.mobile);
@@ -144,6 +145,7 @@ const Index = () => {
         </section>
         <section className={s.cases}>
           <h1>Кейсы</h1>
+
           <div className={s.items}>
             <div className={s.item}>
               <figure>
@@ -206,6 +208,17 @@ const Index = () => {
             Делаем проекты под&nbsp;ключ: берём на&nbsp;себя идею, организацию,
             менеджмент команды, техническое оснащение и&nbsp;не&nbsp;только.
           </h2>
+          <div className={s.author_wrapper}>
+            <Author>
+              <div>
+                <img src={require("assets/author-olga.jpg")} alt="Author" />
+              </div>
+              <div>
+                <h3>Ольга Вольчек</h3>
+                <p>co-founder, аккаунт-директор</p>
+              </div>
+            </Author>
+          </div>
           <div className={s.items}>
             <div className={s.item}>
               <figure>
@@ -301,6 +314,17 @@ const Index = () => {
           <br />
           на&nbsp;каждом этапе.
         </h2>
+        <div className={s.author_wrapper_masha}>
+          <Author>
+            <div>
+              <img src={require("assets/author-masha.jpg")} alt="Author" />
+            </div>
+            <div>
+              <h3>Маша Фишер</h3>
+              <p>co-founder, режиссёр</p>
+            </div>
+          </Author>
+        </div>
       </Wrapper>
     </div>
   );

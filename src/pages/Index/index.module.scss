@@ -289,6 +289,15 @@
   @include laptop {
     margin-bottom: 80px;
   }
+  & .author_wrapper {
+    margin-bottom: 167px;
+    @include laptop {
+      margin-bottom: 12.53vw;
+    }
+    @include mobile {
+      margin-bottom: 76px;
+    }
+  }
   & .items {
     display: flex;
     flex-direction: column;
@@ -562,5 +571,18 @@
   @include mobile {
     margin-bottom: 24px;
     text-align: left;
+  }
+}
+
+.author_wrapper_masha {
+  margin-bottom: 29px;
+  @include mobile {
+    margin-bottom: 100px;
+  }
+  & > div {
+    justify-content: flex-end;
+    @include mobile {
+      justify-content: flex-start;
+    }
   }
 }
