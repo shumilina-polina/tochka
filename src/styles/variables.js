@@ -21,7 +21,8 @@ export const mixins = {
   m5: css`
     font-family: "Manrope", sans-serif;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
+    // font-weight: 500;
   `,
   m6: css`
     font-family: "Manrope", sans-serif;
