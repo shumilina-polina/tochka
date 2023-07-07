@@ -42,12 +42,7 @@ const SvgSelector = ({ svg }) => {
       );
     case "case1":
       return (
-        <svg
-          width="22"
-          height="22"
-          viewBox="0 0 22 22"
-          fill="none"
-        >
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
           <g filter="url(#filter0_f_200_4230)">
             <circle
               cx="11.4288"
@@ -135,6 +130,212 @@ const SvgSelector = ({ svg }) => {
             >
               <stop stop-color="#FFBA58" />
               <stop offset="1" stop-color="#FF4A5C" />
+            </linearGradient>
+          </defs>
+        </svg>
+      );
+    case "case3":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="22"
+          height="22"
+          viewBox="0 0 22 22"
+          fill="none"
+        >
+          <g filter="url(#filter0_f_200_4269)">
+            <circle
+              cx="10.6798"
+              cy="11.0714"
+              r="7.50105"
+              fill="url(#paint0_linear_200_4269)"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_f_200_4269"
+              x="0.178709"
+              y="0.570311"
+              width="21.002"
+              height="21.002"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="BackgroundImageFix"
+                result="shape"
+              />
+              <feGaussianBlur
+                stdDeviation="1.5"
+                result="effect1_foregroundBlur_200_4269"
+              />
+            </filter>
+            <linearGradient
+              id="paint0_linear_200_4269"
+              x1="4.93728"
+              y1="6.82025"
+              x2="14.7084"
+              y2="17.4599"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#FFBA58" />
+              <stop offset="1" stop-color="#4AFFFF" />
+            </linearGradient>
+          </defs>
+        </svg>
+      );
+    case "case4":
+      return (
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <g filter="url(#filter0_f_200_4345)">
+            <circle
+              cx="11.4288"
+              cy="11.4132"
+              r="7.50105"
+              fill="url(#paint0_linear_200_4345)"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_f_200_4345"
+              x="0.927732"
+              y="0.912107"
+              width="21.002"
+              height="21.002"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="BackgroundImageFix"
+                result="shape"
+              />
+              <feGaussianBlur
+                stdDeviation="1.5"
+                result="effect1_foregroundBlur_200_4345"
+              />
+            </filter>
+            <linearGradient
+              id="paint0_linear_200_4345"
+              x1="5.6863"
+              y1="7.16205"
+              x2="15.4574"
+              y2="17.8017"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#0E60FF" />
+              <stop offset="1" stop-color="#FFFDE9" />
+            </linearGradient>
+          </defs>
+        </svg>
+      );
+    case "bar":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="22"
+          height="22"
+          viewBox="0 0 22 22"
+          fill="none"
+        >
+          <g filter="url(#filter0_f_200_4305)">
+            <circle
+              cx="11.4317"
+              cy="11.0069"
+              r="7.50105"
+              fill="url(#paint0_linear_200_4305)"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_f_200_4305"
+              x="0.930662"
+              y="0.505857"
+              width="21.002"
+              height="21.002"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="BackgroundImageFix"
+                result="shape"
+              />
+              <feGaussianBlur
+                stdDeviation="1.5"
+                result="effect1_foregroundBlur_200_4305"
+              />
+            </filter>
+            <linearGradient
+              id="paint0_linear_200_4305"
+              x1="5.68923"
+              y1="6.7558"
+              x2="15.4604"
+              y2="17.3955"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#E858FF" />
+              <stop offset="1" stop-color="#FFED4A" />
+            </linearGradient>
+          </defs>
+        </svg>
+      );
+    case "parashut":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="22"
+          height="22"
+          viewBox="0 0 22 22"
+          fill="none"
+        >
+          <g filter="url(#filter0_f_200_4321)">
+            <circle
+              cx="10.6827"
+              cy="10.7589"
+              r="7.50105"
+              fill="url(#paint0_linear_200_4321)"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_f_200_4321"
+              x="0.181639"
+              y="0.257811"
+              width="21.002"
+              height="21.002"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="BackgroundImageFix"
+                result="shape"
+              />
+              <feGaussianBlur
+                stdDeviation="1.5"
+                result="effect1_foregroundBlur_200_4321"
+              />
+            </filter>
+            <linearGradient
+              id="paint0_linear_200_4321"
+              x1="4.94021"
+              y1="6.50775"
+              x2="14.7113"
+              y2="17.1474"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#E858FF" />
+              <stop offset="1" stop-color="#4AFFE9" />
             </linearGradient>
           </defs>
         </svg>

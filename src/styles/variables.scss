@@ -40,6 +40,7 @@
   @include laptop {
     font-size: 1.35vw;
     line-height: 1.8vw;
+    letter-spacing: normal;
   }
   @include mobile {
     font-size: 16px;
@@ -70,7 +71,10 @@
   letter-spacing: -3.72px;
   @include m5;
   @include laptop {
-    font-size: 4vw;
+    font-size: 6.98vw;
+    line-height: 6.98vw;
+    letter-spacing: normal;
+    letter-spacing: -3px;
   }
   @include mobile {
     font-size: 36px;

@@ -12,8 +12,11 @@ export const CopyEmail = () => {
 
   return (
     <Button>
-      <CopyToClipboard onCopy={() => setCopied(true)} text="v-tochky@mail.ru">
-        <span>{copied ? "скопировано" : "v-tochky@mail.ru"}</span>
+      <CopyToClipboard
+        onCopy={() => setCopied(true)}
+        text="Welcome@v-tochky.ru"
+      >
+        <span>{copied ? "скопировано" : "Welcome@v-tochky.ru"}</span>
       </CopyToClipboard>
     </Button>
   );

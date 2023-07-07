@@ -112,7 +112,7 @@
         line-height: inherit;
         letter-spacing: inherit;
         font-weight: 500;
-        min-width: 190px;
+        min-width: 250px;
         @include laptop {
           min-width: auto;
         }
@@ -289,6 +289,17 @@
   @include laptop {
     margin-bottom: 80px;
   }
+  & .items {
+    display: flex;
+    flex-direction: column;
+    gap: 155px;
+    @include laptop {
+      gap: 11.6vw;
+    }
+    @include mobile {
+      gap: 48px;
+    }
+  }
   & > h1 {
     font-size: 72px;
     @include m6;
@@ -301,7 +312,7 @@
       margin-bottom: 7.2vw;
     }
   }
-  &_item {
+  & .item {
     max-width: 80%;
     display: flex;
     gap: 21px;
@@ -360,5 +371,196 @@
         }
       }
     }
+
+    .num {
+      & > h2 {
+        white-space: nowrap;
+        color: #000;
+        @include m4;
+        font-size: 75px;
+        line-height: 75px;
+        letter-spacing: -4.5px;
+        margin-bottom: 18px;
+        @include laptop {
+          font-size: 5.6vw;
+          line-height: 5.6vw;
+          margin-bottom: 1.35vw;
+          letter-spacing: normal;
+        }
+        @include mobile {
+          font-size: 48px;
+          line-height: 48px;
+          letter-spacing: -1.92px;
+          margin-bottom: 12px;
+        }
+      }
+      & > p {
+        @include text-small;
+        padding-left: 10px;
+        @include mobile {
+          padding-left: 0;
+        }
+      }
+    }
+    &:nth-child(2),
+    &:nth-child(3) {
+      max-width: 100%;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      @include mobile {
+        flex-direction: column-reverse;
+      }
+
+      & > figure {
+        & > div:first-child {
+          height: 484px;
+          width: 957px;
+          & img {
+            object-fit: contain;
+          }
+          @include laptop {
+            height: 36.3vw;
+            width: 71.79vw;
+          }
+          @include mobile {
+            width: 100%;
+            height: 44.375vw;
+          }
+        }
+
+        & > div:last-child {
+          display: flex;
+          height: auto;
+          aspect-ratio: auto;
+          width: 100%;
+          gap: 60px;
+          @include mobile {
+            flex-direction: column;
+            gap: 20px;
+          }
+          & > p {
+            @include text-small;
+
+            & svg {
+              height: 1.1em;
+              transform: translateY(20%);
+              margin-right: 0.1em;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.cases_projects {
+  margin-bottom: 180px;
+  padding-top: 0px;
+  @include mobile {
+    margin-bottom: 80px;
+  }
+
+  & > h2 {
+    @include text-large;
+    margin-bottom: 60px;
+    @include laptop {
+      margin-bottom: 5.2vw;
+    }
+  }
+  & .item {
+    gap: 38px;
+    & > figure {
+      &:first-child {
+        & > div {
+          aspect-ratio: auto;
+          height: 472px;
+          width: 649px;
+          @include laptop {
+            height: 35.26vw;
+            width: 48.68vw;
+          }
+          @include mobile {
+            height: 63.75vw;
+            width: 100%;
+          }
+        }
+      }
+      &:last-child {
+        & > div {
+          aspect-ratio: none;
+          width: 311px;
+          height: 311px;
+          border: 100px;
+          overflow: hidden;
+          @include laptop {
+            width: 23.33vw;
+            height: 23.33vw;
+          }
+          @include mobile {
+            min-height: 87.5vw;
+            height: auto;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .num {
+      & > h2 {
+        margin-bottom: 9px;
+      }
+      & > p {
+        padding-left: 0px;
+        max-width: 50%;
+      }
+    }
+    &:first-child {
+      align-self: flex-end;
+    }
+    &:nth-child(2),
+    &:nth-child(3) {
+      max-width: 100%;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      @include mobile {
+        flex-direction: column-reverse;
+      }
+
+      & > figure {
+        & > div:first-child {
+          @include mobile {
+            min-height: auto;
+          }
+        }
+        & > div:last-child {
+          @include mobile {
+            gap: 12px;
+            min-height: auto;
+          }
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      flex-direction: row-reverse;
+      @include mobile {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+}
+
+.tech {
+  @include text-large;
+  margin-bottom: 60px;
+  text-align: right;
+  @include laptop {
+    margin-bottom: 5.2vw;
+  }
+  @include mobile {
+    margin-bottom: 24px;
+    text-align: left;
   }
 }
