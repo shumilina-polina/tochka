@@ -3,18 +3,26 @@
 .wr {
   background: #f6f5f5;
   height: 842px;
-  background-image: url("/assets/mainscreen.png");
-  background-position: center 108px;
-  background-repeat: no-repeat;
-  @include laptop {
+  & > div {
+    background-image: url("/assets/mainscreen.png");
+    background-position: center 108px;
     background-size: contain;
-    background-position: center 8vw;
+    background-repeat: no-repeat;
+    @include laptop {
+      background-size: contain;
+      background-position: center 8vw;
+      height: 63vw;
+    }
+    @include mobile {
+      background-size: 88% 66%;
+      background-image: url("/assets/mainscreen-mobile.png");
+      background-position: center 65%;
+    }
+  }
+  @include laptop {
     height: 63vw;
   }
   @include mobile {
-    background-size: 88% 66%;
-    background-image: url("/assets/mainscreen-mobile.png");
-    background-position: center 65%;
     height: 691px;
   }
   .main {
