@@ -6,7 +6,7 @@
   & > div {
     background-image: url("/assets/mainscreen.png");
     background-position: center 108px;
-    background-size: contain;
+    background-size: 90% contain;
     background-repeat: no-repeat;
     @include laptop {
       background-size: contain;
