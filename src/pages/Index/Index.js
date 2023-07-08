@@ -7,13 +7,20 @@ import { breakpoints } from "styles/variables";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import classNames from "classnames";
 import Aos from "aos";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import "aos/dist/aos.css";
 import Author from "components/Author/Author";
+import { useScroll } from "react-spring";
 
 const Index = () => {
   const isMobile = useMediaQuery(breakpoints.mobile);
+  const [scrollVal, setScrollVal] = useState(0);
+  const { scrollYProgress } = useScroll({
+    onChange: ({ value: { scrollYProgress } }) => {
+      isMobile && setScrollVal(scrollYProgress + 1);
+    },
+  });
 
   useEffect(() => {
     Aos.init({ once: isMobile });
@@ -71,7 +78,12 @@ const Index = () => {
             </nav>
             <div>
               {!isMobile && <SvgSelector svg={"tochka"} />}
-              <a href="#project">
+              <a
+                style={{
+                  opacity: scrollVal > 1.8 ? "0" : "1",
+                }}
+                href="#project"
+              >
                 <button>
                   <div>
                     <SvgSelector svg={"arrow"} />
@@ -102,8 +114,10 @@ const Index = () => {
               <h2>6 стран</h2>
               <p>
                 в которых мы делаем события:
-                <br /> Россия, Турция, Казахстан, Грузия,
-                <br /> Армения, Индонезия, Португалия
+                <br /> Россия, Турция, Казахстан, Грузия,{isMobile && (
+                  <br />
+                )}{" "}
+                Армения, Индонезия, Португалия
               </p>
             </li>
             <li className={s.num}>
@@ -227,9 +241,11 @@ const Index = () => {
                 </div>
                 <p>
                   <SvgSelector svg={"bar"} />
-                  Подавали «Слезы разработчика» в созданном нами <br />
-                  баре-стенде для презентации HR-бренда IT-компании <br />
-                  SPACE307 на конференции Highload 2022.
+                  Подавали «Слезы разработчика» в&nbsp;созданном нами{" "}
+                  {isMobile || <br />}
+                  баре-стенде для&nbsp;презентации HR-бренда IT-компании{" "}
+                  {isMobile || <br />}
+                  SPACE307 на&nbsp;конференции Highload 2022.
                 </p>
               </figure>
               <figure>

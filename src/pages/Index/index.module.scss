@@ -13,16 +13,17 @@
       background-position: center 8vw;
     }
     @include mobile {
-      background-size: 88% 66%;
+      // background-size: 88% 66%;
+      background-position: center;
       background-image: url("/assets/mainscreen-mobile.png");
-      background-position: center 65%;
+      background-position: center 196px;
     }
   }
   @include laptop {
     height: 63vw;
   }
   @include mobile {
-    height: 691px;
+    height: calc(691px + 10vw);
   }
   .main {
     padding: 20px 0 57px;
@@ -42,8 +43,11 @@
         width: 76px;
       }
       & > div:first-child > button {
-        width: 130px;
+        // width: 130px;
         text-align: left;
+      }
+      & > div:first-child {
+        flex-wrap: wrap;
       }
     }
     & nav > ul {
@@ -88,6 +92,15 @@
       & > li:last-child > a {
         position: relative;
         text-align: left;
+        &:hover {
+          & span {
+            color: #fff;
+            background-color: #000;
+            & path {
+              fill: #fff;
+            }
+          }
+        }
 
         & > span {
           display: block;
@@ -130,10 +143,11 @@
       justify-content: space-between;
       & > a > button {
         @include button;
-        background-color: #f6f5f5;
+        // background-color: #f6f5f5;
         display: flex;
         align-items: center;
         justify-content: center;
+        padding-bottom: 5%;
         width: 163px;
         height: 163px;
         flex-shrink: 0;
@@ -154,19 +168,25 @@
         }
       }
       & > a {
+        transition: opacity 0.3s;
         @include mobile {
           position: absolute;
           bottom: 13px;
           width: 100%;
           & > button {
             height: 53px;
-            width: 100%;
+            width: 90%;
             border-radius: 27px;
             background: #000;
             color: #fff;
             font-size: 16px;
             line-height: 20px;
             padding: 17px 0;
+            position: fixed;
+            bottom: 13px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
           }
           & svg {
             display: none;
@@ -178,17 +198,18 @@
 }
 
 .numbers {
-  width: 80%;
+  width: 85%;
 
   @include mobile {
     width: 100%;
   }
   & > ul {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 285px 315px 315px;
     gap: 75px;
     padding: 78px 0;
     @include laptop {
+      grid-template-columns: repeat(3, 1fr);
       padding: 5.8vw 0;
       gap: 5.8vw;
     }
@@ -198,18 +219,6 @@
       gap: 35px;
     }
     & > li {
-      &:nth-child(2),
-      &:nth-child(3) {
-        & h2 {
-          letter-spacing: -3px;
-          @include laptop {
-            letter-spacing: normal;
-          }
-          @include mobile {
-            letter-spacing: -1.92px;
-          }
-        }
-      }
       & > h2 {
         color: #000;
         @include m4;
@@ -221,13 +230,25 @@
           font-size: 5.6vw;
           line-height: 5.6vw;
           margin-bottom: 1.35vw;
-          letter-spacing: -0.1vw;
+          letter-spacing: -0.5vw;
         }
         @include mobile {
           font-size: 48px;
           line-height: 48px;
           letter-spacing: -1.92px;
           margin-bottom: 12px;
+        }
+      }
+      &:nth-child(2),
+      &:nth-child(3) {
+        & h2 {
+          letter-spacing: -3px;
+          @include laptop {
+            letter-spacing: normal;
+          }
+          @include mobile {
+            letter-spacing: -1.92px;
+          }
         }
       }
       & > p {
@@ -281,8 +302,12 @@
       }
       & > p {
         @include text-medium;
+        letter-spacing: -0.4px;
         @include laptop {
           letter-spacing: normal;
+        }
+        @include mobile {
+          // font-weight: 500;
         }
       }
     }
@@ -322,9 +347,15 @@
     letter-spacing: -2.88px;
     margin-bottom: 94px;
     @include laptop {
-      font-size: 5.4vw;
-      line-height: 5.5vw;
+      font-size: 5.62vw;
+      line-height: 5.7vw;
       margin-bottom: 7.2vw;
+    }
+    @include mobile {
+      font-size: 48px;
+      line-height: 48px;
+      letter-spacing: -1.92px;
+      margin-bottom: 48px;
     }
   }
   & .item {

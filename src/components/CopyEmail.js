@@ -39,6 +39,5 @@ const Button = styled.button`
     font-size: 16px;
     line-height: 20px;
     letter-spacing: -0.32px;
-    transform: translateX(-20%);
   }
 `;
