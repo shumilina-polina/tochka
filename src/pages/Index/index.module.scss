@@ -627,23 +627,56 @@
 .steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  align-items: end;
   gap: 10%;
+  margin-bottom: 226px;
+  @include laptop {
+    margin-bottom: 17.66vw;
+  }
+  @include mobile {
+    grid-template-columns: 1fr;
+    row-gap: 65px;
+    margin-bottom: 80px;
+  }
   .concept {
+    height: fit-content;
+    @for $i from 1 to 4 {
+      &:nth-child(#{$i}) > h3 {
+        &::before {
+          content: "Этап #{$i}";
+        }
+      }
+    }
     & > h3 {
+      @include m6;
       padding-left: 22px;
       margin-bottom: 36px;
-      @include m6;
       font-size: 42px;
       line-height: 45px;
       letter-spacing: -1.26px;
       position: relative;
+      @include laptop {
+        font-size: 3.28vw;
+        line-height: 3.4vw;
+        margin-bottom: 1.35vw;
+        padding-left: 1.7vw;
+      }
+      @include mobile {
+        padding-left: 20px;
+        margin-bottom: 15px;
+        font-size: 36px;
+        line-height: 36px;
+        letter-spacing: -1.08px;
+      }
       &::before {
-        content: "Этап 1";
         position: absolute;
-        top: 5px;
         transform: translateY(-100%);
+        letter-spacing: normal;
         left: 0;
         @include text-small;
+        @include mobile{
+          top: -5px;
+        }
       }
     }
     & > ul {
@@ -652,13 +685,43 @@
         font-size: 24px;
         line-height: 27px;
         letter-spacing: -0.48px;
+        margin-bottom: 18px;
+        position: relative;
+        &::before {
+          position: absolute;
+          left: 0;
+          top: 0;
+          font-size: 12px;
+          @include m6;
+          line-height: 15px;
+          @include laptop {
+            font-size: 0.94vw;
+            line-height: 1vw;
+          }
+          @include mobile {
+            font-size: 10px;
+            line-height: 10px;
+          }
+        }
+        @for $i from 1 to 6 {
+          &:nth-child(#{$i}) {
+            &::before {
+              content: "(#{$i})";
+            }
+          }
+        }
         @include laptop {
           font-size: 1.8vw;
           line-height: 2vw;
+          margin-bottom: 1.35vw;
+          padding-left: 1.7vw;
         }
         @include mobile {
           font-size: 16px;
           line-height: 20px;
+          margin-bottom: 10px;
+          letter-spacing: normal;
+          padding-left: 20px;
         }
       }
     }
