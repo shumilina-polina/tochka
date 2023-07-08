@@ -83,6 +83,7 @@
 // }
 .ip {
   justify-self: end;
+  align-self: end;
   grid-area: ip;
   @include text-small;
   @include laptop {
