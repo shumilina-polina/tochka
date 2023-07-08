@@ -10,29 +10,30 @@ import {
 } from "@mui/material";
 
 const Form = () => {
-  const sendEmail = (e) => {
-    e.preventDefault();
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_g5bbd95",
-        "template_b1izhed",
-        e.target,
-        "b9BCqPQmwMN7r8f4z"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.message);
-        }
-      );
-    e.target.reset();
-  };
+  //   emailjs
+  //     .sendForm(
+  //       "service_g5bbd95",
+  //       "template_b1izhed",
+  //       e.target,
+  //       "b9BCqPQmwMN7r8f4z"
+  //     )
+  //     .then(
+  //       (result) => {
+  //         console.log(result.text);
+  //       },
+  //       (error) => {
+  //         console.log(error.message);
+  //       }
+  //     );
+  //   e.target.reset();
+  // };
 
   return (
     <div className={s.wr}>
+      <h3>Обсудить проект</h3>
       <form
         className={s.form}
         id="contactForm"
@@ -51,7 +52,7 @@ const Form = () => {
           />
         </FormControl>
         <FormControl>
-          <InputLabel htmlFor="company-input">компания</InputLabel>
+          <InputLabel htmlFor="company-input">Компания</InputLabel>
           <Input
             inputProps={{
               maxLength: 60,

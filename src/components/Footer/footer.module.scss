@@ -1,8 +1,142 @@
 @import "styles/variables.scss";
 
 .footer {
+  width: 100%;
   z-index: 100;
+  background-color: #f6f5f5;
 }
 
-.wrapper {
+.wr {
+  padding: 44px 0 33px;
+  display: grid;
+  gap: 52px 0px;
+  grid-template-columns: 1.3fr 0.7fr 201px 1fr 1fr;
+  grid-template-areas: "policy inst . form form" "ip contacts . form form" "authors authors authors form form" "logo . designed . event";
+  justify-content: end;
+  align-items: end;
+  @include mobile {
+    gap: 0;
+    padding: 0;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "form form" "policy policy" "contacts contacts" "inst . " "authors authors" "ip ." "event logo" "designed designed";
+  }
+}
+
+.policy {
+  grid-area: policy;
+  margin-bottom: 111px;
+  max-width: 182px;
+  @include text-small;
+  & > a {
+    display: block;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  @include mobile {
+    text-align: center;
+    font-size: 12px;
+    line-height: 12px;
+  }
+}
+.inst {
+  align-self: start;
+
+  grid-area: inst;
+  @include text-medium;
+  color: #2a2929;
+  & > a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  @include laptop {
+  }
+  @include mobile {
+    letter-spacing: -0.4px;
+  }
+}
+.form {
+  grid-area: form;
+}
+.ip {
+  grid-area: ip;
+  @include text-small;
+  @include laptop {
+  }
+  @include mobile {
+  }
+}
+.contacts {
+  grid-area: contacts;
+  @include text-small;
+  @include laptop {
+  }
+  @include mobile {
+  }
+  & > a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+.authors {
+  grid-area: authors;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 119px;
+  padding-bottom: 46px;
+  padding-top: 125px;
+  @include mobile {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 30px;
+  }
+}
+.logo {
+  grid-area: logo;
+  width: 90px;
+  height: 19.5px;
+  & > svg {
+    object-fit: contain;
+    transform: translateY(-100%);
+  }
+  @include mobile {
+    width: 76px;
+    height: 16px;
+  }
+}
+.designed {
+  text-align: center;
+  grid-area: designed;
+  font-size: 12px;
+  line-height: 12px;
+  transition: color 0.3s;
+  color: rgba(42, 41, 41, 0.5);
+  &:hover {
+    color: rgba(42, 41, 41, 0.25);
+    text-decoration-line: underline;
+  }
+  @include mobile {
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 12px;
+    @include m6;
+    padding: 10px 0;
+    width: 100%;
+    background-color: #e9e9e9;
+  }
+}
+.event {
+  grid-area: event;
+  text-align: right;
+  @include text-small;
+  color: #2a2929;
+  @include laptop {
+  }
+  @include mobile {
+  }
 }
