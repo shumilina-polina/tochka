@@ -38,11 +38,11 @@ const Footer = () => {
 
               <div className={s.contacts}>
                 <a
-                  href="tel:+74959999999"
+                  href="tel:+79216344336"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  +7 (495) 999 99 99
+                  +7 (921) 634 43 36
                 </a>
                 <a
                   href="mailto:olga@v-tochky.ru"
