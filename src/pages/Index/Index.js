@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import "aos/dist/aos.css";
 import Author from "components/Author/Author";
 import { useScroll } from "react-spring";
+import Formats from "components/Formats/Formats";
 
 const Index = () => {
   const isMobile = useMediaQuery(breakpoints.mobile);
@@ -396,11 +397,14 @@ const Index = () => {
               <li>
                 Управляем монтажом <br />и оснащением площадки
               </li>
-              <li>Работаем как команда <br />во время самого мероприятия</li>
-             
+              <li>
+                Работаем как команда <br />
+                во время самого мероприятия
+              </li>
             </ul>
           </div>
         </section>
+        <Formats />
       </Wrapper>
     </div>
   );
