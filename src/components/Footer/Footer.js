@@ -59,8 +59,9 @@ const Footer = () => {
             </div>
 
             <span className={s.ip}>
-              ИП Вольчек <br />
-              Ольга Владимировна
+              ИП Рыбина <br />
+              Екатерина
+              <br /> Александровна
             </span>
             {/* <div className={s.form}>
             <Form />
@@ -133,19 +134,32 @@ const Footer = () => {
             <div className={s.logo}>
               <SvgSelector svg="tochka" />
             </div>
-            <div className={s.designed}>
-              <a
-                href="https://www.behance.net/pavlushin"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Задизайнили в Артели
-              </a>
-            </div>
+            {isMobile || (
+              <div className={s.designed}>
+                <a
+                  href="https://www.behance.net/pavlushin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Задизайнили в Артели
+                </a>
+              </div>
+            )}
             <span className={s.event}>Точка Ивент © 2023</span>
           </div>
         </div>
       </Wrapper>
+      {isMobile && (
+        <div className={s.designed}>
+          <a
+            href="https://www.behance.net/pavlushin"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Задизайнили в Артели
+          </a>
+        </div>
+      )}
     </footer>
   );
 };

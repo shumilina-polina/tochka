@@ -6,6 +6,7 @@ const Styled = styled.div`
   height: 100%;
   margin: auto;
   padding: 0;
+  overflow: hidden;
   @media ${breakpoints.laptop} {
     max-width: 95%;
   }
