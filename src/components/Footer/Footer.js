@@ -2,8 +2,12 @@ import Wrapper from "components/Wrapper";
 import s from "./footer.module.scss";
 import Author from "components/Author/Author";
 import SvgSelector from "components/SvgSelector";
+import { breakpoints } from "styles/variables";
+import { useMediaQuery } from "@mui/material";
 
 const Footer = () => {
+  const isMobile = useMediaQuery(breakpoints.mobile);
+
   return (
     <footer className={s.footer} id="project">
       <Wrapper>
@@ -91,7 +95,7 @@ const Footer = () => {
                   <img src={require("assets/author-andrey.jpg")} alt="Author" />
                 </div>
                 <div>
-                  <h3>Андрей Павлушин</h3>
+                  <h3>Андрей{isMobile && <br />} Павлушин</h3>
                   <p>
                     арт-директор, <br />
                     lead-дизайнер
@@ -106,7 +110,7 @@ const Footer = () => {
                   />
                 </div>
                 <div>
-                  <h3>Евгений Клочко</h3>
+                  <h3>Евгений{isMobile && <br />} Клочко</h3>
                   <p>
                     технический <br />
                     директор
@@ -118,7 +122,7 @@ const Footer = () => {
                   <img src={require("assets/author-sergey.jpg")} alt="Author" />
                 </div>
                 <div>
-                  <h3>Сергей Колесников</h3>
+                  <h3>Сергей{isMobile && <br />} Колесников</h3>
                   <p>
                     автор цифрового <br />
                     контента
