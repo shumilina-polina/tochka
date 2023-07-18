@@ -1,10 +1,7 @@
-import { useRef } from "react";
 import s from "./numbers.module.scss";
 import CountUp from "react-countup";
 
 const Numbers = () => {
-  const countUpRef = useRef(null);
-
   return (
     <section className={s.numbers}>
       <ul>
@@ -17,11 +14,7 @@ const Numbers = () => {
               start={9990}
               end={10000}
             >
-              {({ countUpRef }) => (
-                <>
-                  <span ref={countUpRef} />
-                </>
-              )}
+              {({ countUpRef }) => <span ref={countUpRef} />}
             </CountUp>
             +
           </h2>
@@ -33,7 +26,18 @@ const Numbers = () => {
         </li>
 
         <li className={s.num}>
-          <h2>6 стран</h2>
+          <h2>
+            <CountUp
+              separator="&nbsp;"
+              enableScrollSpy
+              scrollSpyOnce
+              start={2}
+              end={6}
+            >
+              {({ countUpRef }) => <span ref={countUpRef} />}
+            </CountUp>{" "}
+            стран
+          </h2>
           <p>
             в которых мы делаем события:
             <br /> Россия, Турция, Казахстан, Грузия,
@@ -41,7 +45,18 @@ const Numbers = () => {
           </p>
         </li>
         <li className={s.num}>
-          <h2>12 лет</h2>
+          <h2>
+            <CountUp
+              separator="&nbsp;"
+              enableScrollSpy
+              scrollSpyOnce
+              start={8}
+              end={12}
+            >
+              {({ countUpRef }) => <span ref={countUpRef} />}
+            </CountUp>{" "}
+            лет
+          </h2>
           <p>
             опыта работы
             <br /> в ивент-индустрии

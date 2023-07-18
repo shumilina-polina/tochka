@@ -1,0 +1,57 @@
+@import "styles/variables.scss";
+
+.about {
+  padding: 96px 0;
+  max-width: 80%;
+  @include laptop {
+    padding: 7.2vw 0;
+  }
+  @include mobile {
+    padding: 64px 0;
+    max-width: 100%;
+  }
+  & > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 51px;
+    @include laptop {
+      grid-template-columns: 1fr 6fr;
+      gap: 1.1vw;
+    }
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+    & > li {
+      display: grid;
+      grid-template-columns: 201px 1fr;
+      gap: 22px;
+      @include laptop {
+        grid-template-columns: 1fr 6fr;
+        gap: 1.1vw;
+      }
+      @include mobile {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      & > h2 {
+        padding-top: 1em;
+        @include text-small;
+        height: fit-content;
+        @include laptop {
+          padding-top: 0;
+        }
+      }
+      & > p {
+        @include text-medium;
+        letter-spacing: -0.4px;
+        @include laptop {
+          letter-spacing: normal;
+        }
+        @include mobile {
+          // font-weight: 500;
+        }
+      }
+    }
+  }
+}
