@@ -340,6 +340,218 @@ const SvgSelector = ({ svg }) => {
           </defs>
         </svg>
       );
+    case "format-1":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="78"
+          height="79"
+          viewBox="0 0 78 79"
+          fill="none"
+        >
+          <g filter="url(#filter0_f_200_4455)">
+            <circle
+              cx="39.0004"
+              cy="39.7211"
+              r="21.0004"
+              fill="url(#paint0_linear_200_4455)"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_f_200_4455"
+              x="-1.33514e-05"
+              y="0.72069"
+              width="78.001"
+              height="78"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="BackgroundImageFix"
+                result="shape"
+              />
+              <feGaussianBlur
+                stdDeviation="9.00001"
+                result="effect1_foregroundBlur_200_4455"
+              />
+            </filter>
+            <linearGradient
+              id="paint0_linear_200_4455"
+              x1="22.9234"
+              y1="27.8194"
+              x2="50.2792"
+              y2="57.6069"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#E858FF" />
+              <stop offset="1" stop-color="#4AFFE9" />
+            </linearGradient>
+          </defs>
+        </svg>
+      );
+    case "format-2":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="78"
+          height="79"
+          viewBox="0 0 78 79"
+          fill="none"
+        >
+          <g filter="url(#filter0_f_200_4460)">
+            <circle
+              cx="39.0004"
+              cy="39.2211"
+              r="21.0004"
+              fill="url(#paint0_linear_200_4460)"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_f_200_4460"
+              x="-1.33514e-05"
+              y="0.22069"
+              width="78.001"
+              height="78"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="BackgroundImageFix"
+                result="shape"
+              />
+              <feGaussianBlur
+                stdDeviation="9.00001"
+                result="effect1_foregroundBlur_200_4460"
+              />
+            </filter>
+            <linearGradient
+              id="paint0_linear_200_4460"
+              x1="22.9234"
+              y1="27.3194"
+              x2="50.2792"
+              y2="57.1069"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#66EA83" />
+              <stop offset="0.640625" stop-color="#F3E13E" />
+            </linearGradient>
+          </defs>
+        </svg>
+      );
+    case "format-3":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="78"
+          height="79"
+          viewBox="0 0 78 79"
+          fill="none"
+        >
+          <g filter="url(#filter0_f_200_4465)">
+            <circle
+              cx="39.0004"
+              cy="39.723"
+              r="21.0004"
+              fill="url(#paint0_linear_200_4465)"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_f_200_4465"
+              x="-1.33514e-05"
+              y="0.722643"
+              width="78.001"
+              height="78"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="BackgroundImageFix"
+                result="shape"
+              />
+              <feGaussianBlur
+                stdDeviation="9.00001"
+                result="effect1_foregroundBlur_200_4465"
+              />
+            </filter>
+            <linearGradient
+              id="paint0_linear_200_4465"
+              x1="22.9234"
+              y1="27.8214"
+              x2="50.2792"
+              y2="57.6089"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#E858FF" />
+              <stop offset="1" stop-color="#FFED4A" />
+            </linearGradient>
+          </defs>
+        </svg>
+      );
+    case "format-4":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="78"
+          height="79"
+          viewBox="0 0 78 79"
+          fill="none"
+        >
+          <g filter="url(#filter0_f_200_4470)">
+            <circle
+              cx="39.0004"
+              cy="39.223"
+              r="21.0004"
+              fill="url(#paint0_linear_200_4470)"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_f_200_4470"
+              x="-1.33514e-05"
+              y="0.222643"
+              width="78.001"
+              height="78"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="BackgroundImageFix"
+                result="shape"
+              />
+              <feGaussianBlur
+                stdDeviation="9.00001"
+                result="effect1_foregroundBlur_200_4470"
+              />
+            </filter>
+            <linearGradient
+              id="paint0_linear_200_4470"
+              x1="22.9234"
+              y1="27.3214"
+              x2="50.2792"
+              y2="57.1089"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#FFBA58" />
+              <stop offset="1" stop-color="#4AFFFF" />
+            </linearGradient>
+          </defs>
+        </svg>
+      );
 
     default:
       return <></>;

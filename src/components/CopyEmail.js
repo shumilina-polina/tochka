@@ -12,11 +12,8 @@ export const CopyEmail = () => {
 
   return (
     <Button>
-      <CopyToClipboard
-        onCopy={() => setCopied(true)}
-        text="Welcome@v-tochky.ru"
-      >
-        <span>{copied ? "скопировано" : "Welcome@v-tochky.ru"}</span>
+      <CopyToClipboard onCopy={() => setCopied(true)} text="olga@v-tochky.ru">
+        <span>{copied ? "скопировано" : "olga@v-tochky.ru"}</span>
       </CopyToClipboard>
     </Button>
   );
@@ -39,6 +36,5 @@ const Button = styled.button`
     font-size: 16px;
     line-height: 20px;
     letter-spacing: -0.32px;
-    transform: translateX(-20%);
   }
 `;

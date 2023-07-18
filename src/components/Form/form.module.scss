@@ -4,135 +4,137 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 85%;
+  padding: 45px 30px 36px;
+  background-color: #fff;
+  border-radius: 63px;
+  & > h3 {
+    margin: 0 auto 6px;
+    text-align: center;
+    @include text-medium;
+    color: #2a2929;
+    letter-spacing: -1.08px;
+  }
 }
 
-// .form {
-//   width: 100%;
-//   padding: 59px 24px 32px;
-//   margin-bottom: 32px;
-//   border-radius: 16px;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: flex-start;
-//   @include laptop {
-//     padding: 1.5vw;
-//   }
-//   @include mobile {
-//     padding: 17px;
-//     margin-bottom: 20px;
-//   }
-//   & > div {
-//     margin-bottom: 24px;
-//     width: 100%;
-//     @include laptop {
-//       margin-bottom: 2vw;
-//     }
-//     & > label {
-//       left: -14px;
-//       @include text;
-//       text-transform: uppercase;
-//       color: $text1 !important;
-//     }
-//     & > div {
-//       margin-top: 0;
-//       padding-bottom: 16px;
-//       padding-top: 16px;
-//       @include laptop {
-//         padding-bottom: 1vw;
-//         padding-top: 2vw;
-//       }
-//       @include mobile {
-//         padding-bottom: 8px;
-//         padding-top: 26px;
-//       }
-//       &::before,
-//       &::after {
-//         border-color: rgba(255, 255, 255, 0.03);
-//       }
-//       &:hover {
-//         &::before,
-//         &::after {
-//           border-color: rgba(255, 255, 255, 0.1) !important;
-//         }
-//       }
-//       & > input {
-//         @include text;
-//         text-overflow: ellipsis;
-//         color: $text6;
-//         padding: 0;
-//       }
-//     }
-//     &:last-of-type {
-//       margin-bottom: 0;
-//       & > label {
-//         margin-bottom: 18px;
-//         @include laptop {
-//           margin-bottom: 2vw;
-//         }
-//         @include mobile {
-//           margin-bottom: 9px;
-//         }
-//       }
-//       & > div {
-//         padding: 0;
-//         display: flex;
-//         flex-direction: row;
-//         justify-content: space-between;
-//         align-items: center;
-//         flex-wrap: nowrap;
-//         @include laptop {
-//           gap: 1vw;
-//         }
-//         @include mobile {
-//           gap: 3px;
-//           justify-content: flex-start;
-//           flex-wrap: wrap;
-//         }
+.form {
+  width: 100%;
+  margin-bottom: 54px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  @include laptop {
+  }
+  @include mobile {
+  }
+  & > div {
+    width: 100%;
+    @include laptop {
+    }
+    & > label {
+      color: #000;
+      font-size: 24px;
+      line-height: 27px;
+      letter-spacing: -0.48px;
+      left: -14px;
+      top: 20px;
+      @include laptop {
+        font-size: 1.8vw;
+        line-height: 2vw;
+      }
+    }
+    & > div {
+      margin-top: 0;
+      padding-top: 38px;
+      padding-bottom: 12px;
+      @include laptop {
+        padding-top: 2vw;
+        padding-bottom: 3vw;
+      }
 
-//         & > label {
-//           margin: 0;
-//           display: block;
-//           @include laptop {
-//             min-width: 20%;
-//           }
-//           & > span {
-//             display: flex;
-//             justify-content: center;
-//             padding: 6px 9px;
-//             @include text;
-//             border: 1px solid $text2;
-//             border-radius: 51px;
-//             color: $text2;
-//             white-space: nowrap;
-//             transition: color 0.3s, background-color 0.3s, border-color 0.3s;
-//             @include laptop {
-//               padding: 2px;
-//               width: 100%;
-//             }
-//             @include mobile {
-//               padding: 4px 8px;
-//               width: 100%;
-//             }
-//             &:hover {
-//               color: #1c1c1c;
-//               background-color: $text4;
-//               border-color: transparent;
-//             }
-//             &:first-child {
-//               display: none;
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
+      @include mobile {
+      }
+      &::before,
+      &::after {
+        border-bottom: 0.75px solid #eeecec;
+      }
+
+      & > input {
+        text-overflow: ellipsis;
+        padding: 0;
+      }
+    }
+    &:last-of-type {
+      margin-bottom: 0;
+      padding-top: 38px;
+
+      & > label {
+        @include text-small;
+        margin-bottom: 13px;
+        @include laptop {
+          margin-bottom: 2vw;
+        }
+        @include mobile {
+          margin-bottom: 9px;
+        }
+      }
+      & > div {
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 4px;
+        @include laptop {
+        }
+        @include mobile {
+          flex-wrap: wrap;
+        }
+
+        & > label {
+          margin: 0;
+          display: block;
+          color: #000;
+          @include laptop {
+            min-width: 20%;
+          }
+          & > span {
+            &:hover {
+              color: #fff;
+            }
+            @include button;
+            display: flex;
+            justify-content: center;
+            padding: 6.6px 13px;
+            border-radius: 56px;
+            white-space: nowrap;
+            transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+            @include laptop {
+              padding: 2px;
+              width: 100%;
+            }
+            @include mobile {
+              padding: 4px 8px;
+              width: 100%;
+            }
+
+            &:first-child {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 button[type="submit"] {
-  padding: 26px 0;
-  text-transform: uppercase;
+  padding: 27px 0;
   width: 100%;
+  @include button;
+  @include text-small;
+  border-radius: 85px;
+  border: 0.75px solid #000;
   @include laptop {
     padding: 5% 0;
   }

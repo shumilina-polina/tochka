@@ -39,9 +39,8 @@
   font-size: 18px;
   line-height: 24px;
   @include laptop {
-    font-size: 1.35vw;
-    line-height: 1.8vw;
-    letter-spacing: normal;
+    font-size: 1.4vw;
+    line-height: 1.875vw;
   }
   @include mobile {
     font-size: 16px;
@@ -55,8 +54,8 @@
   @include m5;
 
   @include laptop {
-    font-size: 2vw;
-    line-height: 2.2vw;
+    font-size: 2.81vw;
+    line-height: 3.5vw;
   }
   @include mobile {
     font-size: 20px;
@@ -72,18 +71,16 @@
   @include laptop {
     font-size: 6.98vw;
     line-height: 6.98vw;
-    letter-spacing: normal;
-    letter-spacing: -3px;
+    letter-spacing: -0.234vw;
   }
   @include mobile {
     font-size: 36px;
     line-height: 36px;
-    letter-spacing: -0.72px;
   }
 }
 // --- BREAKPOINTS ---
 
-$desktop-width: 1500px;
+$desktop-width: 1320px;
 $mobile-width: 450px;
 
 @mixin laptop {

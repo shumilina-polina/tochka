@@ -7,13 +7,21 @@ import { breakpoints } from "styles/variables";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import classNames from "classnames";
 import Aos from "aos";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "aos/dist/aos.css";
 import Author from "components/Author/Author";
 import Numbers from "components/Numbers/Numbers";
+import { useScroll } from "react-spring";
+import Formats from "components/Formats/Formats";
 
 const Index = () => {
   const isMobile = useMediaQuery(breakpoints.mobile);
+  const [scrollVal, setScrollVal] = useState(0);
+  const { scrollYProgress } = useScroll({
+    onChange: ({ value: { scrollYProgress } }) => {
+      isMobile && setScrollVal(scrollYProgress + 1);
+    },
+  });
 
   useEffect(() => {
     Aos.init({ once: isMobile });
@@ -71,7 +79,12 @@ const Index = () => {
             </nav>
             <div>
               {!isMobile && <SvgSelector svg={"tochka"} />}
-              <a href="#project">
+              <a
+                style={{
+                  opacity: scrollVal > 1.8 ? "0" : "1",
+                }}
+                href="#project"
+              >
                 <button>
                   <div>
                     <SvgSelector svg={"arrow"} />
@@ -87,7 +100,7 @@ const Index = () => {
         </Wrapper>
       </section>
       <Wrapper>
-        <Numbers />
+        <Numbers/>
         <section className={s.about}>
           <ul>
             <li>
@@ -200,9 +213,11 @@ const Index = () => {
                 </div>
                 <p>
                   <SvgSelector svg={"bar"} />
-                  Подавали «Слезы разработчика» в созданном нами <br />
-                  баре-стенде для презентации HR-бренда IT-компании <br />
-                  SPACE307 на конференции Highload 2022.
+                  Подавали «Слезы разработчика» в&nbsp;созданном нами{" "}
+                  {isMobile || <br />}
+                  баре-стенде для&nbsp;презентации HR-бренда IT-компании{" "}
+                  {isMobile || <br />}
+                  SPACE307 на&nbsp;конференции Highload 2022.
                 </p>
               </figure>
               <figure>
@@ -322,7 +337,45 @@ const Index = () => {
               </li>
             </ul>
           </div>
+          <div className={s.concept}>
+            <h3>Подготовка</h3>
+            <ul>
+              <li>
+                Продумываем дизайн <br />и визуальное оформление <br />
+                проекта
+              </li>
+              <li>
+                Готовим спикеров
+                <br />
+                ик выступлениям
+              </li>
+              <li>
+                Ставим шоу-программу <br />с режиссером события
+              </li>
+              <li>
+                Берем на себя <br />
+                все технические вопросы
+              </li>
+            </ul>
+          </div>
+          <div className={s.concept}>
+            <h3>Реализация</h3>
+            <ul>
+              <li>
+                Снимаем и монтируем <br />
+                видеоконтент
+              </li>
+              <li>
+                Управляем монтажом <br />и оснащением площадки
+              </li>
+              <li>
+                Работаем как команда <br />
+                во время самого мероприятия
+              </li>
+            </ul>
+          </div>
         </section>
+        <Formats />
       </Wrapper>
     </div>
   );
