@@ -8,9 +8,9 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import classNames from "classnames";
 import Aos from "aos";
 import { useEffect } from "react";
-
 import "aos/dist/aos.css";
 import Author from "components/Author/Author";
+import Numbers from "components/Numbers/Numbers";
 
 const Index = () => {
   const isMobile = useMediaQuery(breakpoints.mobile);
@@ -87,34 +87,7 @@ const Index = () => {
         </Wrapper>
       </section>
       <Wrapper>
-        <section className={s.numbers}>
-          <ul>
-            <li className={s.num}>
-              <h2>10 000+</h2>
-              <p>
-                гостей на мероприятиях: <br /> айтишников, менеджеров,
-                <br />
-                HR и не только
-              </p>
-            </li>
-
-            <li className={s.num}>
-              <h2>6 стран</h2>
-              <p>
-                в которых мы делаем события:
-                <br /> Россия, Турция, Казахстан, Грузия,
-                <br /> Армения, Индонезия, Португалия
-              </p>
-            </li>
-            <li className={s.num}>
-              <h2>12 лет</h2>
-              <p>
-                опыта работы
-                <br /> в ивент-индустрии
-              </p>
-            </li>
-          </ul>
-        </section>
+        <Numbers />
         <section className={s.about}>
           <ul>
             <li>

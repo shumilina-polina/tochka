@@ -1,0 +1,61 @@
+@import "styles/variables.scss";
+
+.numbers {
+  width: 80%;
+
+  @include mobile {
+    width: 100%;
+  }
+  & > ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 75px;
+    padding: 78px 0;
+    @include laptop {
+      padding: 5.8vw 0;
+      gap: 5.8vw;
+    }
+    @include mobile {
+      grid-template-columns: 1fr;
+      padding: 51px 0 0;
+      gap: 35px;
+    }
+    & > li {
+      &:nth-child(2),
+      &:nth-child(3) {
+        & h2 {
+          letter-spacing: -3px;
+          @include laptop {
+            letter-spacing: normal;
+          }
+          @include mobile {
+            letter-spacing: -1.92px;
+          }
+        }
+      }
+      & > h2 {
+        color: #000;
+        @include m4;
+        font-size: 75px;
+        line-height: 75px;
+        letter-spacing: -7.5px;
+        margin-bottom: 18px;
+        @include laptop {
+          font-size: 5.6vw;
+          line-height: 5.6vw;
+          margin-bottom: 1.35vw;
+          letter-spacing: -0.1vw;
+        }
+        @include mobile {
+          font-size: 48px;
+          line-height: 48px;
+          letter-spacing: -1.92px;
+          margin-bottom: 12px;
+        }
+      }
+      & > p {
+        @include text-small;
+      }
+    }
+  }
+}
