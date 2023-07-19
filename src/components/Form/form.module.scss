@@ -7,12 +7,26 @@
   padding: 45px 30px 36px;
   background-color: #fff;
   border-radius: 63px;
+  @include laptop {
+    padding: 3.5vw 2.34vw 2.81vw;
+    border-radius: 4.9vw;
+  }
+  @include mobile {
+    padding: 21.5px 14px 15px;
+    border-radius: 4.9vw;
+  }
   & > h3 {
     margin: 0 auto 6px;
     text-align: center;
     @include text-medium;
     color: #2a2929;
     letter-spacing: -1.08px;
+    @include laptop {
+      margin-bottom: 0.47vw;
+    }
+    @include mobile {
+      margin-bottom: 6px;
+    }
   }
 }
 
@@ -23,35 +37,41 @@
   flex-direction: column;
   align-items: flex-start;
   @include laptop {
+    margin-bottom: 4.22vw;
   }
   @include mobile {
+    margin-bottom: 29.5px;
   }
   & > div {
     width: 100%;
-    @include laptop {
-    }
+
     & > label {
       color: #222;
+      font-family: Manrope;
       font-size: 24px;
       line-height: 27px;
       letter-spacing: -0.48px;
       left: -14px;
       top: 20px;
       @include laptop {
+        top: 1.56vw;
         font-size: 1.8vw;
         line-height: 2vw;
+      }
+      @include mobile {
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: normal;
       }
     }
     & > div {
       margin-top: 0;
-      padding-top: 38px;
-      padding-bottom: 12px;
+      padding: 38px 0 12px;
       @include laptop {
-        padding-top: 2vw;
-        padding-bottom: 3vw;
+        padding: 2.97vw 0 0.94vw;
       }
-
       @include mobile {
+        padding: 20px 0 10px;
       }
       &::before,
       &::after {
@@ -66,15 +86,22 @@
     &:last-of-type {
       margin-bottom: 0;
       padding-top: 38px;
-
+      @include laptop {
+        padding-top: 2.97vw;
+      }
+      @include mobile {
+        padding-top: 20px;
+      }
       & > label {
         @include text-small;
         margin-bottom: 13px;
         @include laptop {
-          margin-bottom: 2vw;
+          margin-bottom: 1vw;
         }
         @include mobile {
-          margin-bottom: 9px;
+          margin-bottom: 8px;
+          font-size: 12px;
+          line-height: 12px;
         }
       }
       & > div {
@@ -86,6 +113,7 @@
         flex-wrap: nowrap;
         gap: 4px;
         @include laptop {
+          gap: 0.31vw;
         }
         @include mobile {
           flex-wrap: wrap;
@@ -99,9 +127,8 @@
             min-width: 20%;
           }
           & > span {
-            &:hover {
-              color: #fff;
-            }
+            @include text-small;
+
             @include button;
             display: flex;
             justify-content: center;
@@ -110,14 +137,17 @@
             white-space: nowrap;
             transition: color 0.3s, background-color 0.3s, border-color 0.3s;
             @include laptop {
-              padding: 2px;
+              border-radius: 4.37vw;
+              padding: 0.5vw 0.25vw;
               width: 100%;
             }
             @include mobile {
               padding: 4px 8px;
               width: 100%;
             }
-
+            &:hover {
+              color: #fff;
+            }
             &:first-child {
               display: none;
             }
@@ -139,7 +169,6 @@ button[type="submit"] {
     padding: 5% 0;
   }
   @include mobile {
-    padding: 25px 0;
-    margin-bottom: 59px;
+    padding: 14.5px 0;
   }
 }

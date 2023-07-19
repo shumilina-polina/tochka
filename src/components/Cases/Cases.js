@@ -6,6 +6,7 @@ import { useMediaQuery } from "@mui/material";
 import Author from "components/Author/Author";
 import CountUp from "react-countup";
 import Arrow from "components/Arrow";
+import Parashut from "./Parashut";
 
 const Cases = () => {
   const isMobile = useMediaQuery(breakpoints.mobile);
@@ -122,9 +123,7 @@ const Cases = () => {
               {/* <Arrow href={"https://example.com/"} /> */}
             </figure>
             <figure className={s.right}>
-              <div>
-                <img src={require("assets/parashut.jpg")} alt="parashut" />
-              </div>
+              <Parashut />
               <p>
                 <SvgSelector svg={"parashut"} />
                 Прыжки с&nbsp;парашютом <br />

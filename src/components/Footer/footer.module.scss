@@ -6,78 +6,39 @@
   background-color: #f6f5f5;
 }
 
-.wr_main {
-  padding: 132px 0 33px;
-  @include laptop {
-    padding: 10.3vw 0 2.58vw;
-  }
-  @include mobile {
-    padding: 58.5px 0 0;
-  }
-  & > a {
-    display: block;
-    color: #2a2929;
-    text-align: center;
-    font-size: 92.7px;
-    line-height: 116px;
-    letter-spacing: -2.8px;
-    margin: 0 auto 141px;
-    &:hover {
-      text-decoration-line: underline;
-    }
-    @include laptop {
-      margin-bottom: 11vw;
-      font-size: 7.265vw;
-      line-height: 9vw;
-      letter-spacing: -0.21vw;
-    }
-    @include mobile {
-      font-size: 30px;
-      line-height: 24px;
-      letter-spacing: -0.6px;
-      text-decoration-line: underline;
-      margin-bottom: 33.5px;
-    }
-  }
-}
-
 .wr {
   display: grid;
-  // padding: 44px 0 33px;
-  // gap: 52px 0px;
-  // grid-template-columns: 1.3fr 0.7fr 201px 1fr 1fr;
-  // grid-template-areas: "policy inst . form form" "ip contacts . form form" "authors authors authors form form" "logo . designed . event";
-  // justify-content: end;
-  // align-items: end;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 72px auto auto;
-  grid-template-areas: "contacts . policy" "authors authors ip" "logo  designed event";
-  row-gap: 98px;
+  padding: 44px 0 33px;
+  gap: 52px 0px;
+  grid-template-columns: 1.3fr 0.7fr 201px 1fr 1fr;
+  grid-template-areas: "policy inst . form form" "ip contacts . form form" "authors authors authors form form" "logo . designed . event";
+  justify-content: end;
+  align-items: end;
+
   @include laptop {
-    grid-template-rows: 5.6vw auto auto;
-    row-gap: 7.66vw;
+    padding: 3.44vw 0 2.58vw;
+    grid-template-columns: 1.3fr 0.7fr 15.7vw 1fr 1fr;
+    gap: 4vw 0;
   }
   @include mobile {
     gap: 0;
     grid-template-columns: 2fr 1fr;
-    grid-template-areas: "policy policy" "contacts contacts" "authors  authors" "ip ." "event logo" "designed designed";
-    grid-template-rows: 62px;
-    // padding: 0;
+    grid-template-areas: "form form" "policy policy" "contacts contacts" "inst ." "authors  authors" "ip ." "event logo" "designed designed";
+    grid-template-rows: auto 62px;
+    padding: 40px 0 0;
   }
 }
 
 .policy {
-  justify-self: end;
-
   grid-area: policy;
   margin-bottom: 111px;
   max-width: 182px;
   @include text-small;
-  & > a {
-    display: block;
-    &:hover {
-      text-decoration: underline;
-    }
+  align-self: start;
+
+  @include laptop {
+    margin-bottom: 8.67vw;
+    max-width: 14.2vw;
   }
   @include mobile {
     justify-self: center;
@@ -86,10 +47,16 @@
     font-size: 12px;
     line-height: 12px;
   }
+  & > a {
+    display: block;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 .inst {
   align-self: start;
-  // grid-area: inst;
+  grid-area: inst;
   @include text-medium;
   color: #2a2929;
   & > a {
@@ -103,35 +70,38 @@
     letter-spacing: -0.4px;
   }
 }
-// .form {
-//   grid-area: form;
-// }
+.form {
+  grid-area: form;
+  @include mobile {
+    margin-bottom: 9.7px;
+  }
+}
 .ip {
-  justify-self: end;
-  align-self: end;
   grid-area: ip;
   @include text-small;
   @include laptop {
   }
   @include mobile {
     margin-bottom: 16px;
-    justify-self: start;
   }
 }
 .contacts {
-  // grid-area: contacts;
+  grid-area: contacts;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   @include text-small;
-  @include laptop {
-  }
+
   @include mobile {
-    margin-bottom: 0px;
+    margin-bottom: 20px;
   }
   & > a {
     &:hover {
       text-decoration: underline;
     }
+  }
+  & > button {
+    @include text-small;
+    text-align: left;
   }
 }
 .authors {
@@ -139,10 +109,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-right: 25%;
-  // padding-right: 119px;
-  // padding-bottom: 46px;
-  // padding-top: 125px;
+  padding: 125px 119px 46px 0;
+  @include laptop {
+    padding: 9.77vw 9.3vw 3.6vw 0;
+  }
   @include mobile {
     padding: 0;
     display: flex;
@@ -221,7 +191,7 @@
       line-height: 0.94vw;
     }
     @include mobile {
-      padding: 10px 0 18px;
+      padding: 10px 0 10px;
       width: 100%;
       font-size: 10px;
       font-weight: 600;
@@ -242,21 +212,5 @@
     margin-bottom: 25px;
     align-self: start;
     text-align: left;
-  }
-}
-
-.cont_wrapper {
-  margin-bottom: 10px;
-  align-self: start;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
-  grid-area: contacts;
-  @include mobile {
-    margin-bottom: 0;
-    gap: 20px;
-    flex-direction: column-reverse;
-    align-items: flex-start;
   }
 }

@@ -18,7 +18,7 @@ const Index = () => {
 
   useEffect(() => {
     Aos.init({ once: isMobile });
-  }, []);
+  }, [isMobile]);
 
   return (
     <div>

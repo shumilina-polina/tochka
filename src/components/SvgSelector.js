@@ -40,6 +40,164 @@ const SvgSelector = ({ svg }) => {
           />
         </svg>
       );
+    case "video-play":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="72"
+          height="80"
+          viewBox="0 0 72 80"
+          fill="none"
+        >
+          <g filter="url(#filter0_bd_314_369)">
+            <path
+              d="M57 34.8039C61 37.1133 61 42.8868 57 45.1962L15 69.4449C11 71.7543 6 68.8675 6 64.2487L6 15.7513C6 11.1325 11 8.24573 15 10.5551L57 34.8039Z"
+              fill="white"
+              fillOpacity="0.6"
+              shapeRendering="crispEdges"
+            />
+            <path
+              d="M56.625 44.5466L14.625 68.7954C11.125 70.8161 6.75 68.2902 6.75 64.2487L6.75 15.7513C6.75 11.7098 11.125 9.18393 14.625 11.2047L56.625 35.4534C60.125 37.4741 60.125 42.5259 56.625 44.5466Z"
+              stroke="url(#paint0_linear_314_369)"
+              strokeWidth="1.5"
+              shapeRendering="crispEdges"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_bd_314_369"
+              x="-3.00001"
+              y="0.742181"
+              width="75"
+              height="78.5156"
+              filterUnits="userSpaceOnUse"
+              colorInterpolationFilters="sRGB"
+            >
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
+              <feGaussianBlur in="BackgroundImageFix" stdDeviation="4.5" />
+              <feComposite
+                in2="SourceAlpha"
+                operator="in"
+                result="effect1_backgroundBlur_314_369"
+              />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dx="3" />
+              <feGaussianBlur stdDeviation="4.5" />
+              <feComposite in2="hardAlpha" operator="out" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="effect1_backgroundBlur_314_369"
+                result="effect2_dropShadow_314_369"
+              />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="effect2_dropShadow_314_369"
+                result="shape"
+              />
+            </filter>
+            <linearGradient
+              id="paint0_linear_314_369"
+              x1="66"
+              y1="40"
+              x2="-14"
+              y2="40"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stopColor="#F7F7F7" />
+              <stop offset="1" stopColor="white" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+        </svg>
+      );
+    case "video-pause":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="72"
+          height="80"
+          viewBox="0 0 72 80"
+          fill="none"
+        >
+          <g filter="url(#filter0_bd_314_369)">
+            <path
+              d="M57 34.8039C61 37.1133 61 42.8868 57 45.1962L15 69.4449C11 71.7543 6 68.8675 6 64.2487L6 15.7513C6 11.1325 11 8.24573 15 10.5551L57 34.8039Z"
+              fill="red"
+              fillOpacity="0.6"
+              shapeRendering="crispEdges"
+            />
+            <path
+              d="M56.625 44.5466L14.625 68.7954C11.125 70.8161 6.75 68.2902 6.75 64.2487L6.75 15.7513C6.75 11.7098 11.125 9.18393 14.625 11.2047L56.625 35.4534C60.125 37.4741 60.125 42.5259 56.625 44.5466Z"
+              stroke="url(#paint0_linear_314_369)"
+              strokeWidth="1.5"
+              shapeRendering="crispEdges"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_bd_314_369"
+              x="-3.00001"
+              y="0.742181"
+              width="75"
+              height="78.5156"
+              filterUnits="userSpaceOnUse"
+              colorInterpolationFilters="sRGB"
+            >
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
+              <feGaussianBlur in="BackgroundImageFix" stdDeviation="4.5" />
+              <feComposite
+                in2="SourceAlpha"
+                operator="in"
+                result="effect1_backgroundBlur_314_369"
+              />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dx="3" />
+              <feGaussianBlur stdDeviation="4.5" />
+              <feComposite in2="hardAlpha" operator="out" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="effect1_backgroundBlur_314_369"
+                result="effect2_dropShadow_314_369"
+              />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="effect2_dropShadow_314_369"
+                result="shape"
+              />
+            </filter>
+            <linearGradient
+              id="paint0_linear_314_369"
+              x1="66"
+              y1="40"
+              x2="-14"
+              y2="40"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stopColor="#F7F7F7" />
+              <stop offset="1" stopColor="white" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+        </svg>
+      );
     case "case1":
       return (
         <svg width="22" height="22" viewBox="0 0 22 22" fill="none">

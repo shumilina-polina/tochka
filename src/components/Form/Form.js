@@ -8,37 +8,42 @@ import {
   Radio,
   RadioGroup,
 } from "@mui/material";
+import { useRef } from "react";
 
 const Form = () => {
-  // const sendEmail = (e) => {
-  //   e.preventDefault();
+  const radio = useRef(null);
+  const budget = useRef(null);
+  const sendEmail = (e) => {
 
-  //   emailjs
-  //     .sendForm(
-  //       "service_g5bbd95",
-  //       "template_b1izhed",
-  //       e.target,
-  //       "b9BCqPQmwMN7r8f4z"
-  //     )
-  //     .then(
-  //       (result) => {
-  //         console.log(result.text);
-  //       },
-  //       (error) => {
-  //         console.log(error.message);
-  //       }
-  //     );
-  //   e.target.reset();
-  // };
+    e.preventDefault();
+    
+    Array.from(radio.current.children).map((elem) => {
+      if (elem.children[0].classList.contains("Mui-checked"))
+        budget.current.value = elem.children[1].innerText;
+    });
+
+    emailjs
+      .sendForm(
+        "service_ahvtike",
+        "template_378i28t",
+        e.target,
+        "9HeTZAH8WW_l6M9xo"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.message);
+        }
+      );
+    e.target.reset();
+  };
 
   return (
     <div className={s.wr}>
       <h3>Обсудить проект</h3>
-      <form
-        className={s.form}
-        id="contactForm"
-        // onSubmit={sendEmail}
-      >
+      <form className={s.form} id="contactForm" onSubmit={sendEmail}>
         <FormControl className={s.form_control}>
           <InputLabel htmlFor="fio-input">Ваше имя</InputLabel>
           <Input
@@ -70,7 +75,7 @@ const Form = () => {
           <Input
             inputProps={{
               maxLength: 20,
-              name: "phone",
+              name: "contacts",
               required: true,
               type: "tel",
             }}
@@ -84,7 +89,7 @@ const Form = () => {
           <Input
             inputProps={{
               maxLength: 100,
-              name: "issue",
+              name: "description",
               required: true,
               type: "text",
             }}
@@ -94,7 +99,7 @@ const Form = () => {
 
         <FormControl>
           <label>Бюджет</label>
-          <RadioGroup defaultValue={0}>
+          <RadioGroup defaultValue={0} ref={radio}>
             {["<1 млн", "1-3 млн", "3-5 млн", ">5 млн"].map((elem, index) => (
               <FormControlLabel
                 key={index}
@@ -104,6 +109,12 @@ const Form = () => {
             ))}
           </RadioGroup>
         </FormControl>
+        <input
+          style={{ display: "none" }}
+          ref={budget}
+          type="text"
+          name="budget"
+        />
       </form>
       <button className="button" form="contactForm" type="submit">
         Отправить
