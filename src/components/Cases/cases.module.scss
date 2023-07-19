@@ -78,7 +78,7 @@
     .num {
       & > h2 {
         white-space: nowrap;
-        color: #000;
+        color: #222;
         @include m4;
         font-size: 75px;
         line-height: 75px;
@@ -153,7 +153,7 @@
       & > h2 {
         margin-bottom: 9px;
         white-space: nowrap;
-        color: #000;
+        color: #222;
         @include m4;
         font-size: 75px;
         line-height: 75px;
@@ -207,6 +207,9 @@
   margin-bottom: 60px;
   @include laptop {
     margin-bottom: 5.2vw;
+  }
+  & > span {
+    display: block;
   }
 }
 

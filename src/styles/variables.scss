@@ -16,17 +16,17 @@
 }
 
 @mixin button {
-  color: #000;
+  color: #222;
   background-color: transparent;
   transition: color 0.3s, background-color 0.3s;
-  border: 0.75px solid black;
+  border: 0.75px solid #222;
   border-radius: 100%;
   & path {
     transition: fill 0.3s;
   }
   &:hover {
     color: #fff;
-    background-color: #000;
+    background-color: #222;
     & path {
       fill: #fff;
     }
@@ -34,7 +34,7 @@
 }
 
 @mixin text-small {
-  color: #000;
+  color: #222;
   @include m5;
   font-size: 18px;
   line-height: 24px;
@@ -48,7 +48,7 @@
   }
 }
 @mixin text-medium {
-  color: #000;
+  color: #222;
   font-size: 36px;
   line-height: 45px;
   @include m5;
@@ -63,7 +63,7 @@
   }
 }
 @mixin text-large {
-  color: #000;
+  color: #222;
   font-size: 93px;
   line-height: 93px;
   letter-spacing: -3.72px;

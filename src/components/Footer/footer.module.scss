@@ -171,10 +171,16 @@
 }
 .logo {
   align-self: end;
-
   grid-area: logo;
   width: 90px;
   height: 19.5px;
+  transition: transform 0.3s;
+  &:hover {
+    transform: scale(0.9);
+  }
+  &:active {
+    transform: scale(0.8);
+  }
   & > svg {
     object-fit: contain;
     transform: translateY(-100%);

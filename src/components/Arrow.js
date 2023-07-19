@@ -18,7 +18,7 @@ const Button = styled.button`
   border-radius: 100px;
   bottom: 0;
   right: 0;
-  border: 0.784px solid #000;
+  border: 0.784px solid #222;
   transition: transform 0.3s;
   transform: rotate(-125deg);
   & svg {

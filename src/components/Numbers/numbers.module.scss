@@ -1,7 +1,6 @@
 @import "styles/variables.scss";
 
 .numbers {
-  
   width: 85%;
 
   @include mobile {
@@ -35,7 +34,7 @@
         }
       }
       & > h2 {
-        color: #000;
+        color: #222;
         @include m4;
         font-size: 75px;
         line-height: 75px;

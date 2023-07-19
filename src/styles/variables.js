@@ -30,7 +30,7 @@ export const mixins = {
     font-weight: 600;
   `,
   button: css`
-    color: #000;
+    color: #222;
     background-color: transparent;
     transition: color 0.3s, background-color 0.3s;
     & path {
@@ -38,14 +38,14 @@ export const mixins = {
     }
     &:hover {
       color: #fff;
-      background-color: #000;
+      background-color: #222;
       & path {
         fill: #fff;
       }
     }
   `,
   textSmall: css`
-    color: #000;
+    color: #222;
     font-family: "Manrope", sans-serif;
     font-style: normal;
     font-weight: 500;

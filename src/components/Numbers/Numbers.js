@@ -11,8 +11,9 @@ const Numbers = () => {
               separator="&nbsp;"
               enableScrollSpy
               scrollSpyOnce
-              start={9990}
+              start={9995}
               end={10000}
+              duration={1.2}
             >
               {({ countUpRef }) => <span ref={countUpRef} />}
             </CountUp>
@@ -31,8 +32,9 @@ const Numbers = () => {
               separator="&nbsp;"
               enableScrollSpy
               scrollSpyOnce
-              start={2}
+              start={1}
               end={6}
+              duration={1.2}
             >
               {({ countUpRef }) => <span ref={countUpRef} />}
             </CountUp>{" "}
@@ -50,8 +52,9 @@ const Numbers = () => {
               separator="&nbsp;"
               enableScrollSpy
               scrollSpyOnce
-              start={8}
+              start={7}
               end={12}
+              duration={1.2}
             >
               {({ countUpRef }) => <span ref={countUpRef} />}
             </CountUp>{" "}

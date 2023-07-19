@@ -3,7 +3,7 @@ import s from "./steps.module.scss";
 const Steps = () => {
   return (
     <section className={s.steps}>
-      <div className={s.concept}>
+      <div className={s.concept} data-aos="fade-up" data-aos-delay="10">
         <h3>Концепция</h3>
         <ul>
           <li>
@@ -26,7 +26,7 @@ const Steps = () => {
           </li>
         </ul>
       </div>
-      <div className={s.concept}>
+      <div className={s.concept} data-aos="fade-up" data-aos-delay="70">
         <h3>Подготовка</h3>
         <ul>
           <li>
@@ -47,7 +47,7 @@ const Steps = () => {
           </li>
         </ul>
       </div>
-      <div className={s.concept}>
+      <div className={s.concept} data-aos="fade-up" data-aos-delay="14подбираем0">
         <h3>Реализация</h3>
         <ul>
           <li>

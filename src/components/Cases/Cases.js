@@ -26,7 +26,7 @@ const Cases = () => {
                 в Газпром подготовить <br />
                 выступления в стиле TED
               </p>
-              <Arrow href={"https://example.com/"} />
+              {/* <Arrow href={"https://example.com/"} /> */}
             </figure>
             <figure className={s.right}>
               <div>
@@ -40,7 +40,7 @@ const Cases = () => {
                 без приостановки <br />
                 работы бутика
               </p>
-              <Arrow href="https://example.com/" />
+              {/* <Arrow href="https://example.com/" /> */}
             </figure>
           </div>
           <div className={cn(s.item, s.item_skysmart)}>
@@ -52,6 +52,7 @@ const Cases = () => {
                   scrollSpyOnce
                   start={14990}
                   end={15000}
+                  duration={1.2}
                 >
                   {({ countUpRef }) => <span ref={countUpRef} />}
                 </CountUp>
@@ -80,15 +81,18 @@ const Cases = () => {
                   <br /> Понарошку, Саша Зверева и другие
                 </p>
               </div>
-              <Arrow href={"https://example.com/"} />
+              {/* <Arrow href={"https://example.com/"} /> */}
             </figure>
           </div>
         </div>
       </section>
       <section className={s.projects}>
         <h2 className={s.title_projects}>
-          Делаем проекты под&nbsp;ключ: берём на&nbsp;себя идею, организацию,
-          менеджмент команды, техническое оснащение и&nbsp;не&nbsp;только.
+          <span data-aos="fade-right">Делаем проекты под&nbsp;ключ:</span>{" "}
+          <span data-aos="fade-right">берём на&nbsp;себя идею,</span>{" "}
+          <span data-aos="fade-right">организацию, менеджмент</span>{" "}
+          <span data-aos="fade-right">команды, техническое </span>
+          <span data-aos="fade-right">оснащение и&nbsp;не&nbsp;только.</span>
         </h2>
         <div className={s.author_wrapper}>
           <Author>
@@ -115,7 +119,7 @@ const Cases = () => {
                 {isMobile || <br />}
                 SPACE307 на&nbsp;конференции Highload 2022.
               </p>
-              <Arrow href={"https://example.com/"} />
+              {/* <Arrow href={"https://example.com/"} /> */}
             </figure>
             <figure className={s.right}>
               <div>
@@ -127,7 +131,7 @@ const Cases = () => {
                 для&nbsp;топ-менеджеров Helix на&nbsp;выездном <br />
                 лидерском тренинге
               </p>
-              <Arrow href={"https://example.com/"} />
+              {/* <Arrow href={"https://example.com/"} /> */}
             </figure>
           </div>
           <div className={cn(s.item, s.item_vk)}>
@@ -139,6 +143,7 @@ const Cases = () => {
                   scrollSpyOnce
                   start={45}
                   end={50}
+                  duration={1.2}
                 >
                   {({ countUpRef }) => <span ref={countUpRef} />}
                 </CountUp>
@@ -167,7 +172,7 @@ const Cases = () => {
                   ролевой игры
                 </p>
               </div>
-              <Arrow href={"https://example.com/"} />
+              {/* <Arrow href={"https://example.com/"} /> */}
             </figure>
           </div>
           <div className={cn(s.item, s.item_smartfest)}>
@@ -179,6 +184,7 @@ const Cases = () => {
                   scrollSpyOnce
                   start={34990}
                   end={35000}
+                  duration={1.2}
                 >
                   {({ countUpRef }) => <span ref={countUpRef} />}
                 </CountUp>
@@ -208,7 +214,7 @@ const Cases = () => {
                   Алёна Владимирская, Антон Камолов
                 </p>
               </div>
-              <Arrow href={"https://example.com/"} />
+              {/* <Arrow href={"https://example.com/"} /> */}
             </figure>
           </div>
         </div>

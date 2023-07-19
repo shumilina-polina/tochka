@@ -4,6 +4,8 @@ import Author from "components/Author/Author";
 import SvgSelector from "components/SvgSelector";
 import { breakpoints } from "styles/variables";
 import { useMediaQuery } from "@mui/material";
+import { Link } from "react-router-dom";
+import { email } from "constants/contacts";
 
 const Footer = () => {
   const isMobile = useMediaQuery(breakpoints.mobile);
@@ -49,11 +51,11 @@ const Footer = () => {
                   +7 (921) 634 43 36
                 </a>
                 <a
-                  href="mailto:olga@v-tochky.ru"
+                  href={`mailto:${email}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  olga@v-tochky.ru
+                  {email}
                 </a>
               </div>
             </div>
@@ -131,9 +133,13 @@ const Footer = () => {
                 </div>
               </Author>
             </div>
-            <div className={s.logo}>
-              <SvgSelector svg="tochka" />
-            </div>
+            <Link
+              to={"/"}
+              className={s.logo}
+              onClick={() => window.scrollTo(0, 0)}
+            >
+              <SvgSelector svg={"tochka"} />
+            </Link>
             {isMobile || (
               <div className={s.designed}>
                 <a

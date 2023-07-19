@@ -5,15 +5,15 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 100px #fff inset !important;
-  -webkit-text-fill-color: #000 !important;
+  -webkit-text-fill-color: #222 !important;
 }
 
 #contactForm {
   & .Mui-checked ~ span {
     color: #fff;
-    background-color: #000;
+    background-color: #222;
   }
   & .Mui-focused {
-    color: #000;
+    color: #222;
   }
 }

@@ -6,8 +6,8 @@ html,
 body {
   min-height: 100vh;
   background-color: #fff;
-  color: #000;
-  // overflow-x: hidden;
+  color: #222;
+  overflow-x: hidden;
 }
 
 html {
@@ -23,10 +23,9 @@ body {
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 
-
   /* Скроллбар*/
   scrollbar-width: thin;
-  scrollbar-color: #000 none;
+  scrollbar-color: #222 none;
 
   &::-webkit-scrollbar {
     height: 6px;
@@ -38,7 +37,7 @@ body {
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #000;
+    background-color: #222;
     border-radius: 5px;
   }
 }
@@ -58,7 +57,7 @@ svg {
 
 *:not(body, html) {
   &::selection {
-    background-color: #000;
+    background-color: #222;
     color: #fff;
   }
   scrollbar-color: #fff transparent;
@@ -69,6 +68,6 @@ svg {
   }
   &::-webkit-scrollbar-thumb {
     border-radius: 30px;
-    background: #000;
+    background: #222;
   }
 }
