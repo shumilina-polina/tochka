@@ -393,7 +393,7 @@
     width: fit-content;
     &:hover {
       cursor: pointer;
-      & svg {
+      & span {
         transform: translate(-50%, -50%) scale(1.2);
       }
     }
@@ -416,17 +416,23 @@
       }
     }
 
-    & > svg {
+    & > span {
       pointer-events: none;
-      transition: transform 0.2s;
+      transition: transform 0.2s, opacity 0.3s;
+      max-height: 80px;
+      display: block;
       position: absolute;
       top: 50%;
-      left: 52%;
+      left: 50%;
       transform: translate(-50%, -50%);
       z-index: 1;
       @include laptop {
         width: 25%;
         height: 25%;
+      }
+      @include mobile {
+        width: auto;
+        height: auto;
       }
     }
   }

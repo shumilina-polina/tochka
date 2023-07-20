@@ -51,9 +51,7 @@ const Footer = () => {
             Екатерина
             <br /> Александровна
           </span>
-          <div className={s.form}>
-            <Form />
-          </div>
+          <Form />
           <div className={s.authors}>
             <Author footer>
               <div>

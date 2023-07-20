@@ -70,12 +70,7 @@
     letter-spacing: -0.4px;
   }
 }
-.form {
-  grid-area: form;
-  @include mobile {
-    margin-bottom: 9.7px;
-  }
-}
+
 .ip {
   grid-area: ip;
   @include text-small;

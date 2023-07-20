@@ -44,32 +44,32 @@ const SvgSelector = ({ svg }) => {
       return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="72"
-          height="80"
-          viewBox="0 0 72 80"
+          width="69"
+          height="64"
+          viewBox="0 0 69 64"
           fill="none"
         >
-          <g filter="url(#filter0_bd_314_369)">
-            <path
-              d="M57 34.8039C61 37.1133 61 42.8868 57 45.1962L15 69.4449C11 71.7543 6 68.8675 6 64.2487L6 15.7513C6 11.1325 11 8.24573 15 10.5551L57 34.8039Z"
-              fill="white"
-              fillOpacity="0.6"
-              shapeRendering="crispEdges"
-            />
-            <path
-              d="M56.625 44.5466L14.625 68.7954C11.125 70.8161 6.75 68.2902 6.75 64.2487L6.75 15.7513C6.75 11.7098 11.125 9.18393 14.625 11.2047L56.625 35.4534C60.125 37.4741 60.125 42.5259 56.625 44.5466Z"
-              stroke="url(#paint0_linear_314_369)"
-              strokeWidth="1.5"
-              shapeRendering="crispEdges"
-            />
+          <g clipPath="url(#clip0_501_2176)">
+            <g filter="url(#filter0_b_501_2176)">
+              <path
+                d="M66.3018 27.5418C69.8018 29.5625 69.8018 34.6143 66.3018 36.635L20.4192 63.1254C16.9192 65.1461 12.5442 62.6202 12.5442 58.5787L12.5442 5.59807C12.5442 1.55661 16.9192 -0.96929 20.4192 1.05144L66.3018 27.5418Z"
+                fill="white"
+                fillOpacity="0.6"
+              />
+              <path
+                d="M65.9268 35.9855L20.0442 62.4758C17.0442 64.2079 13.2942 62.0428 13.2942 58.5787L13.2942 5.59807C13.2942 2.13396 17.0442 -0.0310961 20.0442 1.70096L65.9268 28.1913C68.9268 29.9233 68.9268 34.2535 65.9268 35.9855Z"
+                stroke="url(#paint0_linear_501_2176)"
+                strokeWidth="1.5"
+              />
+            </g>
           </g>
           <defs>
             <filter
-              id="filter0_bd_314_369"
-              x="-3.00001"
-              y="0.742181"
-              width="75"
-              height="78.5156"
+              id="filter0_b_501_2176"
+              x="3.54394"
+              y="-8.66016"
+              width="74.3828"
+              height="81.4961"
               filterUnits="userSpaceOnUse"
               colorInterpolationFilters="sRGB"
             >
@@ -78,77 +78,72 @@ const SvgSelector = ({ svg }) => {
               <feComposite
                 in2="SourceAlpha"
                 operator="in"
-                result="effect1_backgroundBlur_314_369"
-              />
-              <feColorMatrix
-                in="SourceAlpha"
-                type="matrix"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                result="hardAlpha"
-              />
-              <feOffset dx="3" />
-              <feGaussianBlur stdDeviation="4.5" />
-              <feComposite in2="hardAlpha" operator="out" />
-              <feColorMatrix
-                type="matrix"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-              />
-              <feBlend
-                mode="normal"
-                in2="effect1_backgroundBlur_314_369"
-                result="effect2_dropShadow_314_369"
+                result="effect1_backgroundBlur_501_2176"
               />
               <feBlend
                 mode="normal"
                 in="SourceGraphic"
-                in2="effect2_dropShadow_314_369"
+                in2="effect1_backgroundBlur_501_2176"
                 result="shape"
               />
             </filter>
             <linearGradient
-              id="paint0_linear_314_369"
-              x1="66"
-              y1="40"
-              x2="-14"
-              y2="40"
+              id="paint0_linear_501_2176"
+              x1="74.1768"
+              y1="32.0884"
+              x2="-8.00002"
+              y2="32.0884"
               gradientUnits="userSpaceOnUse"
             >
               <stop stopColor="#F7F7F7" />
               <stop offset="1" stopColor="white" stopOpacity="0" />
             </linearGradient>
+            <clipPath id="clip0_501_2176">
+              <rect width="69" height="64" fill="white" />
+            </clipPath>
           </defs>
         </svg>
       );
     case "video-pause":
       return (
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="72"
-          height="80"
-          viewBox="0 0 72 80"
+          width="48"
+          height="58"
+          viewBox="0 0 48 58"
           fill="none"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <g filter="url(#filter0_bd_314_369)">
-            <path
-              d="M57 34.8039C61 37.1133 61 42.8868 57 45.1962L15 69.4449C11 71.7543 6 68.8675 6 64.2487L6 15.7513C6 11.1325 11 8.24573 15 10.5551L57 34.8039Z"
-              fill="red"
+          <g filter="url(#filter0_b_466_2248)">
+            <rect
+              x="0.75"
+              y="0.75"
+              width="18.5"
+              height="56.2351"
+              rx="3.25"
+              fill="white"
               fillOpacity="0.6"
-              shapeRendering="crispEdges"
-            />
-            <path
-              d="M56.625 44.5466L14.625 68.7954C11.125 70.8161 6.75 68.2902 6.75 64.2487L6.75 15.7513C6.75 11.7098 11.125 9.18393 14.625 11.2047L56.625 35.4534C60.125 37.4741 60.125 42.5259 56.625 44.5466Z"
-              stroke="url(#paint0_linear_314_369)"
+              stroke="url(#paint0_linear_466_2248)"
               strokeWidth="1.5"
-              shapeRendering="crispEdges"
+            />
+            <rect
+              x="28.75"
+              y="0.75"
+              width="18.5"
+              height="56.2351"
+              rx="3.25"
+              fill="white"
+              fillOpacity="0.6"
+              stroke="url(#paint1_linear_466_2248)"
+              strokeWidth="1.5"
             />
           </g>
           <defs>
             <filter
-              id="filter0_bd_314_369"
-              x="-3.00001"
-              y="0.742181"
-              width="75"
-              height="78.5156"
+              id="filter0_b_466_2248"
+              x="-9"
+              y="-9"
+              width="66"
+              height="75.7344"
               filterUnits="userSpaceOnUse"
               colorInterpolationFilters="sRGB"
             >
@@ -157,42 +152,35 @@ const SvgSelector = ({ svg }) => {
               <feComposite
                 in2="SourceAlpha"
                 operator="in"
-                result="effect1_backgroundBlur_314_369"
-              />
-              <feColorMatrix
-                in="SourceAlpha"
-                type="matrix"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                result="hardAlpha"
-              />
-              <feOffset dx="3" />
-              <feGaussianBlur stdDeviation="4.5" />
-              <feComposite in2="hardAlpha" operator="out" />
-              <feColorMatrix
-                type="matrix"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-              />
-              <feBlend
-                mode="normal"
-                in2="effect1_backgroundBlur_314_369"
-                result="effect2_dropShadow_314_369"
+                result="effect1_backgroundBlur_466_2248"
               />
               <feBlend
                 mode="normal"
                 in="SourceGraphic"
-                in2="effect2_dropShadow_314_369"
+                in2="effect1_backgroundBlur_466_2248"
                 result="shape"
               />
             </filter>
             <linearGradient
-              id="paint0_linear_314_369"
-              x1="66"
-              y1="40"
-              x2="-14"
-              y2="40"
+              id="paint0_linear_466_2248"
+              x1="20"
+              y1="28.8676"
+              x2="5.84013e-07"
+              y2="28.8676"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#F7F7F7" />
+              <stop stopColor="white" />
+              <stop offset="1" stopColor="white" stopOpacity="0" />
+            </linearGradient>
+            <linearGradient
+              id="paint1_linear_466_2248"
+              x1="48"
+              y1="28.8676"
+              x2="28"
+              y2="28.8676"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stopColor="white" />
               <stop offset="1" stopColor="white" stopOpacity="0" />
             </linearGradient>
           </defs>

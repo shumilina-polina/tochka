@@ -7,6 +7,7 @@ import Author from "components/Author/Author";
 import CountUp from "react-countup";
 import Arrow from "components/Arrow";
 import Parashut from "./Parashut";
+import ImageHover from "components/ImageHover/ImageHover";
 
 const Cases = () => {
   const isMobile = useMediaQuery(breakpoints.mobile);
@@ -18,9 +19,7 @@ const Cases = () => {
         <div className={s.cases_wrapper}>
           <div className={cn(s.item, s.item_ted)}>
             <figure className={s.left}>
-              <div>
-                <img src={require("assets/case1.jpg")} alt="TED" />
-              </div>
+              <ImageHover folder={"ted"} />
               <p>
                 <SvgSelector svg={"case1"} />
                 Помогли Топ-менеджерам <br />
@@ -30,9 +29,7 @@ const Cases = () => {
               {/* <Arrow href={"https://example.com/"} /> */}
             </figure>
             <figure className={s.right}>
-              <div>
-                <img src={require("assets/case2.jpg")} alt="Montblanc" />
-              </div>
+              <ImageHover folder={"montblanc"} />
 
               <p>
                 <SvgSelector svg={"case2"} />
@@ -153,9 +150,8 @@ const Cases = () => {
               </p>
             </div>
             <figure className={s.right}>
-              <div>
-                <img src={require("assets/usadba.jpg")} alt="Usadba" />
-              </div>
+              <ImageHover folder={"usadba"} />
+
               <div>
                 <p>
                   <SvgSelector svg={"case4"} />

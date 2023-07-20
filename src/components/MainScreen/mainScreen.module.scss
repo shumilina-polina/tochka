@@ -97,6 +97,9 @@
           min-width: 250px;
           margin-bottom: 1.75px;
           @include laptop {
+            min-width: 19.5vw;
+          }
+          @include mobile {
             min-width: auto;
           }
         }

@@ -1,7 +1,15 @@
 @import "styles/variables.scss";
+.form {
+  grid-area: form;
+  animation: showSended 0.4s forwards;
 
+  @include mobile {
+    margin-bottom: 9.7px;
+  }
+}
 .wr {
   display: flex;
+
   flex-direction: column;
   align-items: center;
   padding: 45px 30px 36px;
@@ -66,7 +74,7 @@
     }
     & > div {
       margin-top: 0;
-      padding: 38px 0 12px;
+      padding: 38px 0 8px;
       @include laptop {
         padding: 2.97vw 0 0.94vw;
       }
@@ -81,6 +89,18 @@
       & > input {
         text-overflow: ellipsis;
         padding: 0;
+        font-size: 24px;
+        letter-spacing: -0.48px;
+        line-height: 27px;
+        @include laptop {
+          font-size: 1.8vw;
+          line-height: 2vw;
+        }
+        @include mobile {
+          font-size: 16px;
+          line-height: 20px;
+          letter-spacing: normal;
+        }
       }
     }
     &:last-of-type {
@@ -116,6 +136,8 @@
           gap: 0.31vw;
         }
         @include mobile {
+          gap: 8px;
+          padding-bottom: 1px;
           flex-wrap: wrap;
         }
 
@@ -170,5 +192,53 @@ button[type="submit"] {
   }
   @include mobile {
     padding: 14.5px 0;
+  }
+}
+
+.form_sended {
+  height: 698.4px;
+  @include laptop {
+    height: auto;
+  }
+  & > .wr {
+    height: 100%;
+    text-align: center;
+    padding-top: 252px !important;
+    padding-bottom: 52px !important;
+    justify-content: space-between;
+    gap: 243px;
+    @include laptop {
+      padding-top: 19.7vw !important;
+      padding-bottom: 4vw !important;
+      gap: 22vw;
+    }
+    @include mobile {
+      padding-top: 41vw !important;
+      padding-bottom: 8vw !important;
+      gap: 40vw;
+    }
+    & > h2 {
+      @include m6;
+      font-size: 72px;
+      line-height: 75px;
+      letter-spacing: -2.88px;
+      @include laptop {
+        font-size: 5.62vw;
+        line-height: 5.7vw;
+        letter-spacing: -0.2vw;
+      }
+    }
+    & > p {
+      @include text-small;
+    }
+  }
+}
+
+@keyframes showSended {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

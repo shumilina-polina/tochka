@@ -2,22 +2,37 @@ import SvgSelector from "components/SvgSelector";
 import s from "./cases.module.scss";
 import { useState } from "react";
 import { useRef } from "react";
-import { useEffect } from "react";
+import { breakpoints } from "styles/variables";
+import { useMediaQuery } from "@mui/material";
 
 const Parashut = () => {
   const video = useRef(null);
+  const [played, setPlayed] = useState(false);
+  const [iconVisible, setIconVisible] = useState(false);
+  const isMobile = useMediaQuery(breakpoints.mobile);
 
   const handlePlay = (e) => {
     e.target.paused ? e.target.play() : e.target.pause();
   };
 
   return (
-    <div className={s.parashut_wrapper} onClick={handlePlay}>
-      <SvgSelector svg={"video-play"} />
+    <div
+      className={s.parashut_wrapper}
+      onClick={handlePlay}
+      onMouseOver={() => setIconVisible(true)}
+      onMouseOut={() => setIconVisible(false)}
+    >
+      <span
+        style={{ opacity: !played ? 1 : isMobile ? 0 : iconVisible ? 1 : 0 }}
+      >
+        <SvgSelector svg={`video-${played ? "pause" : "play"}`} />
+      </span>
       <video
         className={s.parashut}
         ref={video}
-        // loop
+        onPlay={() => setPlayed(true)}
+        onPause={() => setPlayed(false)}
+        loop
         muted="muted"
         preload="metadata"
         controls={false}

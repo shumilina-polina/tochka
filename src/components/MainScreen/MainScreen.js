@@ -58,7 +58,7 @@ const MainScreen = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Летнее <br />
+                  Новогоднее <br />
                   предложение
                   <span>pdf</span>
                 </a>
