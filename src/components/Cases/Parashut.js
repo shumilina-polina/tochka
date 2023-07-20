@@ -6,7 +6,6 @@ import { breakpoints } from "styles/variables";
 import { useMediaQuery } from "@mui/material";
 
 const Parashut = () => {
-  const video = useRef(null);
   const [played, setPlayed] = useState(false);
   const [iconVisible, setIconVisible] = useState(false);
   const isMobile = useMediaQuery(breakpoints.mobile);
@@ -29,7 +28,6 @@ const Parashut = () => {
       </span>
       <video
         className={s.parashut}
-        ref={video}
         onPlay={() => setPlayed(true)}
         onPause={() => setPlayed(false)}
         loop
@@ -39,8 +37,8 @@ const Parashut = () => {
         playsInline
         poster={require("assets/parashut.jpg")}
       >
-        <source src={require(`assets/video-parashut.webm`)} type="video/webm" />
         <source src={require(`assets/video-parashut.mp4`)} type="video/mp4" />
+        {/* <source src={require(`assets/video-parashut.webm`)} type="video/webm" /> */}
         Тег video не поддерживается вашим браузером.
       </video>
     </div>
