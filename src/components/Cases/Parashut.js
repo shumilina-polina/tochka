@@ -37,8 +37,8 @@ const Parashut = () => {
         playsInline
         poster={require("assets/parashut.jpg")}
       >
+        <source src={require(`assets/video-parashut.webm`)} type="video/webm" />
         <source src={require(`assets/video-parashut.mp4`)} type="video/mp4" />
-        {/* <source src={require(`assets/video-parashut.webm`)} type="video/webm" /> */}
         Тег video не поддерживается вашим браузером.
       </video>
     </div>
