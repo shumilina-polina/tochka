@@ -29,7 +29,11 @@ const Cases = () => {
               {/* <Arrow href={"https://example.com/"} /> */}
             </figure>
             <figure className={s.right}>
-              <ImageHover folder={"montblanc"} />
+              {isMobile ? (
+                <ImageHover folder={"montblanc-mobile"} />
+              ) : (
+                <ImageHover folder={"montblanc"} />
+              )}
 
               <p>
                 <SvgSelector svg={"case2"} />
