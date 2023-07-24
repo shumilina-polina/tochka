@@ -94,11 +94,28 @@ const Cases = () => {
       </section>
       <section className={s.projects}>
         <h2 className={s.title_projects}>
-          <span data-aos="fade-right">Делаем проекты под&nbsp;ключ:</span>{" "}
-          <span data-aos="fade-right">берём на&nbsp;себя идею,</span>{" "}
-          <span data-aos="fade-right">организацию, менеджмент</span>{" "}
-          <span data-aos="fade-right">команды, техническое </span>
-          <span data-aos="fade-right">оснащение и&nbsp;не&nbsp;только.</span>
+          {isMobile ? (
+            <>
+              <span data-aos="fade-right">Делаем проекты</span>{" "}
+              <span data-aos="fade-right">под&nbsp;ключ:</span>{" "}
+              <span data-aos="fade-right">берём на&nbsp;себя идею,</span>{" "}
+              <span data-aos="fade-right">организацию,</span>{" "}
+              <span data-aos="fade-right">менеджмент</span>{" "}
+              <span data-aos="fade-right">команды, техническое </span>
+              <span data-aos="fade-right">оснащение</span>
+              <span data-aos="fade-right">и&nbsp;не&nbsp;только.</span>
+            </>
+          ) : (
+            <>
+              <span data-aos="fade-right">Делаем проекты под&nbsp;ключ:</span>{" "}
+              <span data-aos="fade-right">берём на&nbsp;себя идею,</span>{" "}
+              <span data-aos="fade-right">организацию, менеджмент</span>{" "}
+              <span data-aos="fade-right">команды, техническое </span>
+              <span data-aos="fade-right">
+                оснащение и&nbsp;не&nbsp;только.
+              </span>
+            </>
+          )}
         </h2>
         <div className={s.author_wrapper}>
           <Author>

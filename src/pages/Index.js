@@ -14,11 +14,11 @@ import About from "components/About/About";
 import MainScreen from "components/MainScreen/MainScreen";
 
 const Index = () => {
-  const isMobile = useMediaQuery(breakpoints.mobile);
-
   useEffect(() => {
-    Aos.init({ once: isMobile });
-  }, [isMobile]);
+    Aos.init();
+  }, []);
+
+  const isMobile = useMediaQuery(breakpoints.mobile);
 
   return (
     <div>
@@ -28,11 +28,26 @@ const Index = () => {
         <About />
         <Cases />
         <h2 className={s.tech}>
-          <span data-aos="fade-left">Подбираем проверенных</span>
-          <span data-aos="fade-left">подрядчиков, используем</span>
-          <span data-aos="fade-left">современные технологии —</span>
-          <span data-aos="fade-left">внимание к&nbsp;деталям</span>
-          <span data-aos="fade-left">на&nbsp;каждом этапе.</span>
+          {isMobile ? (
+            <>
+              <span data-aos="fade-left">Подбираем </span>
+              <span data-aos="fade-left">проверенных </span>
+              <span data-aos="fade-left">подрядчиков, </span>
+              <span data-aos="fade-left">используем </span>
+              <span data-aos="fade-left">современные </span>
+              <span data-aos="fade-left">технологии —</span>
+              <span data-aos="fade-left">внимание к&nbsp;деталям </span>
+              <span data-aos="fade-left">на&nbsp;каждом этапе.</span>
+            </>
+          ) : (
+            <>
+              <span data-aos="fade-left">Подбираем проверенных</span>
+              <span data-aos="fade-left">подрядчиков, используем</span>
+              <span data-aos="fade-left">современные технологии —</span>
+              <span data-aos="fade-left">внимание к&nbsp;деталям</span>
+              <span data-aos="fade-left">на&nbsp;каждом этапе.</span>
+            </>
+          )}
         </h2>
         <div className={s.author_wrapper_masha}>
           <Author>

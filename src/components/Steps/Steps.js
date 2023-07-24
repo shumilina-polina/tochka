@@ -47,7 +47,7 @@ const Steps = () => {
           </li>
         </ul>
       </div>
-      <div className={s.concept} data-aos="fade-up" data-aos-delay="14подбираем0">
+      <div className={s.concept} data-aos="fade-up" data-aos-delay="140">
         <h3>Реализация</h3>
         <ul>
           <li>

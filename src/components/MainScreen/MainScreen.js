@@ -1,6 +1,5 @@
 import SvgSelector from "components/SvgSelector";
 import s from "./mainScreen.module.scss";
-import { CopyEmail } from "components/CopyEmail";
 import Wrapper from "components/Wrapper";
 import { breakpoints } from "styles/variables";
 import { useState } from "react";
