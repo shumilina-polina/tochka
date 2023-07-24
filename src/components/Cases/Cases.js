@@ -19,11 +19,15 @@ const Cases = () => {
         <div className={s.cases_wrapper}>
           <div className={cn(s.item, s.item_ted)}>
             <figure className={s.left}>
-              <ImageHover folder={"ted"} />
+              {isMobile ? (
+                <ImageHover folder={"ted-mobile"} />
+              ) : (
+                <ImageHover folder={"ted"} />
+              )}
               <p>
                 <SvgSelector svg={"case1"} />
                 Помогли Топ-менеджерам <br />
-                в Газпром подготовить <br />
+                в Газпромнефть подготовить <br />
                 выступления в стиле TED
               </p>
               {/* <Arrow href={"https://example.com/"} /> */}
@@ -154,8 +158,11 @@ const Cases = () => {
               </p>
             </div>
             <figure className={s.right}>
-              <ImageHover folder={"usadba"} />
-
+              {isMobile ? (
+                <ImageHover folder={"usadba-mobile"} />
+              ) : (
+                <ImageHover folder={"usadba"} />
+              )}
               <div>
                 <p>
                   <SvgSelector svg={"case4"} />

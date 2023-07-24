@@ -72,6 +72,7 @@
     margin-bottom: 39px;
     letter-spacing: -1.08px;
     @include laptop {
+      letter-spacing: -0.08vw;
       margin-bottom: 3.05vw;
     }
     @include mobile {

@@ -21,11 +21,10 @@ const Parashut = () => {
       onMouseOver={() => setIconVisible(true)}
       onMouseOut={() => setIconVisible(false)}
     >
-      <span
+      <SvgSelector
         style={{ opacity: !played ? 1 : isMobile ? 0 : iconVisible ? 1 : 0 }}
-      >
-        <SvgSelector svg={`video-${played ? "pause" : "play"}`} />
-      </span>
+        svg={`video-${played ? "pause" : "play"}`}
+      />
       <video
         className={s.parashut}
         onPlay={() => setPlayed(true)}

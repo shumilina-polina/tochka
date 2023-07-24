@@ -5,15 +5,26 @@ import { Fragment } from "react";
 const ImageHover = ({ folder }) => {
   const [BoxNumber, setBoxNumber] = useState(0);
   return (
-    <div onMouseOut={() => setBoxNumber(0)} className={s.wr}>
-      <img
-        src={require(`assets/${folder}/0.jpg`)}
-        alt="Event"
-        style={{ opacity: BoxNumber === 0 ? 1 : 0 }}
-      />
-      {[1, 2, 3, 4].map((i) => (
+    <div
+      className={s.wr}
+      onTouchMove={(e) => {
+        const parentWidth = e.target.offsetParent.clientWidth;
+        if (e.touches[0].clientX < parentWidth / 5) {
+          setBoxNumber(0);
+        } else if (e.touches[0].clientX < (2 * parentWidth) / 5) {
+          setBoxNumber(1);
+        } else if (e.touches[0].clientX < (3 * parentWidth) / 5) {
+          setBoxNumber(2);
+        } else if (e.touches[0].clientX < (4 * parentWidth) / 5) {
+          setBoxNumber(3);
+        } else {
+          setBoxNumber(4);
+        }
+      }}
+    >
+      {[0, 1, 2, 3, 4].map((i) => (
         <Fragment key={i}>
-          <div onMouseOver={() => setBoxNumber(i)}></div>
+          <div data-id={i} onMouseOver={() => setBoxNumber(i)}></div>
           <img
             src={require(`assets/${folder}/${i}.jpg`)}
             alt="Event"

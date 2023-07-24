@@ -6,17 +6,16 @@
   & > div {
     background-image: url("/assets/mainscreen.png");
     background-position: center 108px;
-    background-size: 90% contain;
+    background-size: 97%;
     background-repeat: no-repeat;
     @include laptop {
-      background-size: contain;
       background-position: center 8vw;
     }
     @include mobile {
       // background-size: 88% 66%;
       background-position: center;
       background-image: url("/assets/mainscreen-mobile.png");
-      background-position: center 196px;
+      background-position: center 210px;
     }
   }
   @include laptop {
@@ -46,6 +45,10 @@
         text-align: left;
       }
       & > div:first-child {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+        gap: 20px;
         flex-wrap: wrap;
       }
     }
@@ -67,9 +70,9 @@
         font-size: 16px;
         line-height: 20px;
         display: grid;
-        grid-template-columns: 1fr 130px;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto;
-        gap: 9px 21px;
+        gap: 19px 20px;
         & svg {
           display: none;
         }
@@ -82,60 +85,88 @@
         }
         & > li:last-child {
           order: 0;
+          grid-row: span 2;
         }
         & > li:nth-child(2) {
           order: 1;
         }
       }
-
-      & > .welcome {
-        & button {
-          text-align: left;
-          font-size: inherit;
-          line-height: inherit;
-          letter-spacing: inherit;
-          min-width: 250px;
-          margin-bottom: 1.75px;
-          @include laptop {
-            min-width: 19.5vw;
-          }
-          @include mobile {
-            min-width: auto;
+    }
+    & .welcome {
+      min-width: 256px;
+      // & button {
+      //   text-align: left;
+      //   font-size: inherit;
+      //   line-height: inherit;
+      //   letter-spacing: inherit;
+      //   min-width: 250px;
+      //   margin-bottom: 1.75px;
+      //   @include laptop {
+      //     min-width: 20vw;
+      //   }
+      //   @include mobile {
+      //     min-width: auto;
+      //   }
+      // }
+      @include laptop {
+        min-width: 20vw;
+      }
+      @include mobile {
+        font-size: 16px;
+        line-height: 20px;
+      }
+      & > a {
+        position: relative;
+        text-align: left;
+        &:hover {
+          & span {
+            color: #fff;
+            background-color: #222;
+            & path {
+              fill: #fff;
+            }
           }
         }
-        & > a {
-          position: relative;
-          text-align: left;
-          &:hover {
-            & span {
-              color: #fff;
-              background-color: #222;
-              & path {
-                fill: #fff;
-              }
-            }
-          }
 
-          & > span {
-            display: block;
-            position: absolute;
-            bottom: 2px;
-            right: -5px;
-            @include button;
-            padding: 3px 10px 5px;
-            border-radius: 15px;
-            transform: translateX(100%);
-            font-size: 13.5px;
-            @include m4;
-            line-height: 18px;
+        & > span {
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
+          position: absolute;
+          gap: 4px;
+          top: 0;
+          right: -5px;
+          @include button;
+          padding: 3px 10.5px 5.25px 9px;
+          border-radius: 15px;
+          font-size: 13.5px;
+          @include m4;
+          line-height: 18px;
+          @include laptop {
+            padding: 0.23vw 0.82vw 0.41vw;
+            font-size: 1.05vw;
+            line-height: 1.4vw;
+            gap: 0.31vw;
+            right: -0.39vw;
+          }
+          @include mobile {
+            padding: 1.6px 8.25px 3.3px 6.5px;
+            font-size: 10px;
+            line-height: 14px;
+            right: -8px;
+          }
+          & > img {
+            object-fit: contain;
+            object-position: bottom;
+            width: 20px;
+            height: 18px;
             @include laptop {
-              padding: 2px 5px;
-              font-size: 1vw;
-              line-height: 0.7vw;
+              width: 1.56vw;
+              height: 1.41vw;
             }
             @include mobile {
-              font-size: 10px;
-              line-height: 14px;
+              width: 16px;
+              height: 14px;
             }
           }
         }
@@ -145,6 +176,13 @@
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
+      padding-right: 20px;
+      @include laptop {
+        padding-right: 1.56vw;
+      }
+      @include mobile {
+        padding-right: 0;
+      }
       .tochka_wrapper {
         display: flex;
         align-items: center;
@@ -213,6 +251,7 @@
     gap: 9px;
 
     @include laptop {
+      gap: 0.7vw;
       width: 12.2vw;
       height: 12.2vw;
       & svg {

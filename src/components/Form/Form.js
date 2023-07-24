@@ -56,7 +56,7 @@ const Form = () => {
     <div
       onSubmit={() => {
         setSended(true);
-        setTimeout(() => setSended(false), 4000);
+        setTimeout(() => setSended(false), 7000);
       }}
       className={s.form}
     >

@@ -38,13 +38,13 @@
         @include m4;
         font-size: 75px;
         line-height: 75px;
-        letter-spacing: -7.5px;
+        letter-spacing: -4.5px;
         margin-bottom: 18px;
         @include laptop {
           font-size: 5.6vw;
           line-height: 5.6vw;
           margin-bottom: 1.35vw;
-          letter-spacing: -0.59vw;
+          letter-spacing: -0.35vw;
         }
         @include mobile {
           font-size: 48px;

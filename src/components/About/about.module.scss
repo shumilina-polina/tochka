@@ -15,20 +15,18 @@
     flex-direction: column;
     gap: 51px;
     @include laptop {
-      grid-template-columns: 1fr 6fr;
-      gap: 1.1vw;
+      gap: 3.98vw;
     }
     @include mobile {
-      grid-template-columns: 1fr;
       gap: 48px;
     }
     & > li {
       display: grid;
-      grid-template-columns: 201px 1fr;
+      grid-template-columns: 201px 760px;
       gap: 22px;
       @include laptop {
-        grid-template-columns: 1fr 6fr;
-        gap: 1.1vw;
+        grid-template-columns: 15.7vw 59.4vw;
+        gap: 1.72vw;
       }
       @include mobile {
         grid-template-columns: 1fr;
@@ -38,17 +36,15 @@
         padding-top: 1em;
         @include text-small;
         height: fit-content;
-        @include laptop {
-          padding-top: 0;
-        }
       }
       & > p {
         @include text-medium;
-        letter-spacing: -0.4px;
+        letter-spacing: -1.08px;
         @include laptop {
-          letter-spacing: normal;
+          letter-spacing: -0.084vw;
         }
         @include mobile {
+          letter-spacing: -0.4px;
           // font-weight: 500;
         }
       }

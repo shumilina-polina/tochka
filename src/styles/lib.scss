@@ -17,3 +17,16 @@ input:-webkit-autofill:active {
     color: #222;
   }
 }
+
+.MuiFormLabel-root {
+  transform: translate(0, 16px) scale(1) !important;
+  @include laptop{
+    transform: translate(0, 1vw) scale(1) !important;
+  }
+  @include mobile{
+    transform: translate(0, 16px) scale(1) !important;
+  }
+}
+.MuiInputLabel-shrink{
+  transform: translate(0, -9px) scale(0.7) !important;
+}

@@ -1,4 +1,4 @@
-const SvgSelector = ({ svg }) => {
+const SvgSelector = ({ style = {}, svg }) => {
   switch (svg) {
     case "arrow":
       return (
@@ -43,6 +43,7 @@ const SvgSelector = ({ svg }) => {
     case "video-play":
       return (
         <svg
+          style={style}
           xmlns="http://www.w3.org/2000/svg"
           width="69"
           height="64"
@@ -107,6 +108,7 @@ const SvgSelector = ({ svg }) => {
     case "video-pause":
       return (
         <svg
+          style={style}
           width="48"
           height="58"
           viewBox="0 0 48 58"

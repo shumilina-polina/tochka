@@ -21,7 +21,7 @@
   }
   @include mobile {
     padding: 21.5px 14px 15px;
-    border-radius: 4.9vw;
+    border-radius: 32px;
   }
   & > h3 {
     margin: 0 auto 6px;
@@ -31,9 +31,14 @@
     letter-spacing: -1.08px;
     @include laptop {
       margin-bottom: 0.47vw;
+      letter-spacing: -0.08vw;
+      font-size: 2.5vw;
     }
     @include mobile {
+      font-size: 20px;
+      line-height: 24px;
       margin-bottom: 6px;
+      letter-spacing: -0.4px;
     }
   }
 }
@@ -59,12 +64,12 @@
       font-size: 24px;
       line-height: 27px;
       letter-spacing: -0.48px;
-      left: -14px;
       top: 20px;
       @include laptop {
-        top: 1.56vw;
-        font-size: 1.8vw;
-        line-height: 2vw;
+        top: 1.2vw;
+        font-size: 1.55vw;
+        line-height: 1.8vw;
+        letter-spacing: -0.038vw;
       }
       @include mobile {
         font-size: 16px;
@@ -76,7 +81,7 @@
       margin-top: 0;
       padding: 38px 0 8px;
       @include laptop {
-        padding: 2.97vw 0 0.94vw;
+        padding: 1.64vw 0 0.66vw;
       }
       @include mobile {
         padding: 20px 0 10px;
@@ -93,8 +98,9 @@
         letter-spacing: -0.48px;
         line-height: 27px;
         @include laptop {
-          font-size: 1.8vw;
+          font-size: 1.4vw;
           line-height: 2vw;
+          letter-spacing: -0.038vw;
         }
         @include mobile {
           font-size: 16px;
@@ -160,12 +166,13 @@
             transition: color 0.3s, background-color 0.3s, border-color 0.3s;
             @include laptop {
               border-radius: 4.37vw;
-              padding: 0.5vw 0.25vw;
+              padding: 0.3vw 0.1vw;
               width: 100%;
             }
             @include mobile {
               padding: 4px 8px;
               width: 100%;
+              border-radius: 29px;
             }
             &:hover {
               color: #fff;
@@ -188,10 +195,12 @@ button[type="submit"] {
   border-radius: 85px;
   border: 0.75px solid #222;
   @include laptop {
-    padding: 5% 0;
+    padding: 2.1vw 0;
+    border-radius: 6.64vw;
   }
   @include mobile {
     padding: 14.5px 0;
+    border-radius: 44px;
   }
 }
 

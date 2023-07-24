@@ -25,7 +25,20 @@ const MainScreen = () => {
           {isMobile && (
             <div>
               <SvgSelector svg={"tochka"} />
-              <CopyEmail />
+              <li className={s.welcome}>
+                <a
+                  href={require("assets/documents/ТОЧКА Ивент КП.pdf")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Летнее <br />
+                  предложение
+                  <span>
+                    <img src={require("assets/sun.png")} alt="Sun" />
+                    pdf
+                  </span>
+                </a>
+              </li>
             </div>
           )}
           <nav>
@@ -45,24 +58,30 @@ const MainScreen = () => {
                 <br /> и лучших <br />
                 специалистов
               </li>
-              <li className={s.welcome}>
-                {!isMobile && (
+              {!isMobile && (
+                <li className={s.welcome}>
+                  {/* {!isMobile && (
                   <>
                     <CopyEmail />
                     <br />
                   </>
-                )}
+                )} */}
 
-                <a
-                  href={require("assets/documents/ТОЧКА Ивент КП.pdf")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Новогоднее <br />
-                  предложение
-                  <span>pdf</span>
-                </a>
-              </li>
+                  <a
+                    href={require("assets/documents/ТОЧКА Ивент КП.pdf")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Летнее <br />
+                    предложение
+                    <span>
+                      {/* <SvgSelector svg={"sun"}/> */}
+                      <img src={require("assets/sun.png")} alt="Sun" />
+                      pdf
+                    </span>
+                  </a>
+                </li>
+              )}
             </ul>
           </nav>
           <div>

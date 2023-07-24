@@ -2,8 +2,7 @@
 
 .wr {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   animation: showImage 0.4s forwards;
   position: relative;
   // cursor: pointer;
