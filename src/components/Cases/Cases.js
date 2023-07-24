@@ -70,8 +70,13 @@ const Cases = () => {
               </p>
             </div>
             <figure className={s.right}>
-              <div>
-                <img src={require("assets/smartfest.jpg")} alt="Smartfest" />
+              <div className={s.iframe_fest}>
+                <iframe
+                  src="https://player.vimeo.com/video/847576525?h=b62d624b97"
+                  frameborder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
               </div>
               <div>
                 <p>
@@ -220,8 +225,13 @@ const Cases = () => {
               </p>
             </div>
             <figure className={s.right}>
-              <div>
-                <img src={require("assets/smartfest-2.jpg")} alt="smartfest" />
+              <div className={s.iframe_fest}>
+                <iframe
+                  src="https://player.vimeo.com/video/847575962?h=9ae564daca"
+                  frameborder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
               </div>
               <div>
                 <p>
