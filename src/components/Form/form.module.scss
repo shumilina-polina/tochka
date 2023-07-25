@@ -205,7 +205,7 @@ button[type="submit"] {
 }
 
 .form_sended {
-  height: 698.4px;
+  height: 700px;
   @include laptop {
     height: auto;
   }
@@ -217,9 +217,9 @@ button[type="submit"] {
     justify-content: space-between;
     gap: 243px;
     @include laptop {
-      padding-top: 19.7vw !important;
+      padding-top: 15vw !important;
       padding-bottom: 4vw !important;
-      gap: 22vw;
+      gap: 17.8vw;
     }
     @include mobile {
       padding-top: 41vw !important;
