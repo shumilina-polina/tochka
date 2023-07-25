@@ -5,6 +5,7 @@ import { breakpoints } from "styles/variables";
 import { useState } from "react";
 import { useScroll } from "react-spring";
 import { useMediaQuery } from "@mui/material";
+import classNames from "classnames";
 
 const MainScreen = () => {
   const isMobile = useMediaQuery(breakpoints.mobile);
@@ -20,6 +21,43 @@ const MainScreen = () => {
   return (
     <section className={s.wr}>
       <Wrapper>
+        <div className={s.collaj}>
+          <div className={s.image_wrapper}>
+            <img src={require("assets/mainscreen.png")} alt="Tochka" />
+          </div>
+          <div className={classNames(s.iframe_wrapper, s.iframe_smartfest)}>
+            <iframe
+              src="https://player.vimeo.com/video/847575962?h=9ae564daca&title=0&byline=0&portrait=0"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <div className={classNames(s.iframe_wrapper, s.iframe_camp)}>
+            <iframe
+              src="https://player.vimeo.com/video/847576525?h=b62d624b97&loop=1&title=0&byline=0&portrait=0"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <div className={classNames(s.iframe_wrapper, s.iframe_helix)}>
+            <iframe
+              src="https://player.vimeo.com/video/847584255?h=dfb0bf7df3&title=0&byline=0&portrait=0"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <div className={classNames(s.iframe_wrapper, s.iframe_helix2)}>
+            <iframe
+              src="https://player.vimeo.com/video/847589403?h=1a6ebd1755&title=0&byline=0&portrait=0"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
         <div className={s.main}>
           {isMobile && (
             <div>
@@ -59,13 +97,6 @@ const MainScreen = () => {
               </li>
               {!isMobile && (
                 <li className={s.welcome}>
-                  {/* {!isMobile && (
-                  <>
-                    <CopyEmail />
-                    <br />
-                  </>
-                )} */}
-
                   <a
                     href={require("assets/documents/ТОЧКА Ивент КП.pdf")}
                     target="_blank"

@@ -4,22 +4,113 @@
   background: #f6f5f5;
   height: 842px;
   & > div {
-    background-image: url("/assets/mainscreen.png");
-    background-position: center 108px;
-    background-size: 97%;
-    background-repeat: no-repeat;
-    @include laptop {
-      background-position: center 8vw;
-    }
-    @include mobile {
-      // background-size: 88% 66%;
-      background-position: center;
-      background-image: url("/assets/mainscreen-mobile.png");
-      background-position: center 210px;
+    position: relative;
+    & > .collaj {
+      height: 681px;
+      width: 1078px;
+      // padding: 0 123px 0 43px;
+      position: absolute;
+      top: 102px;
+      left: 43px;
+      @include laptop {
+        height: 45.6vw;
+        width: 72.2vw;
+        top: 6.8vw;
+        left: 2.88vw;
+      }
+      &::before {
+        position: absolute;
+        content: "";
+        display: block;
+        bottom: 0;
+        top: 35px;
+        left: 54%;
+        transform: translateX(-50%);
+        width: 653px;
+        height: 653px;
+        border-radius: 100%;
+        background-color: #000;
+        @include laptop {
+          top: 2.34vw;
+          width: 43.75vw;
+          height: 43.75vw;
+        }
+      }
+
+      & > .iframe_wrapper {
+        z-index: 1;
+        // padding: 56.25% 0 0 0;
+        // position: relative;
+        position: absolute;
+
+        & iframe {
+          cursor: pointer;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      & .iframe_smartfest {
+        width: 682px;
+        height: 366px;
+        top: 126.5px;
+        left: 15%;
+        z-index: 10;
+        @include laptop {
+          top: 8.48vw;
+          width: 45.7vw;
+          height: 24.5vw;
+        }
+      }
+      & .iframe_camp {
+        width: 431px;
+        height: 231px;
+        top: 25%;
+        right: -123px;
+        z-index: 9;
+        @include laptop {
+          right: -8.24vw;
+          width: 28.9vw;
+          height: 15.48vw;
+        }
+      }
+      & .iframe_helix {
+        width: 215px;
+        height: 385px;
+        bottom: 44px;
+        right: 60px;
+        z-index: 8;
+        @include laptop {
+          bottom: 2.94vw;
+          width: 14.4vw;
+          height: 25.8vw;
+          right: 4vw;
+        }
+      }
+      & .iframe_helix2 {
+        width: 263px;
+        height: 353px;
+        top: 30px;
+        left: -30px;
+        z-index: 7;
+        @include laptop {
+          top: 2vw;
+          left: -2vw;
+          width: 17.62vw;
+          height: 23.65vw;
+        }
+      }
+      & > .image_wrapper {
+        pointer-events: none;
+        position: relative;
+        z-index: 20;
+      }
     }
   }
   @include laptop {
-    height: 63vw;
+    height: 56.3vw;
   }
   @include mobile {
     height: calc(691px + 10vw);
@@ -31,7 +122,7 @@
     justify-content: space-between;
     height: 100%;
     @include laptop {
-      padding: 1.5vw 0 4.27vw;
+      padding: 1.34vw 0 3.82vw;
     }
     @include mobile {
       padding: 25px 0 13px;
@@ -59,9 +150,12 @@
       font-size: 24px;
       line-height: 27px;
       letter-spacing: -0.48px;
+      & > li:nth-child(3) {
+        transform: translateX(20%);
+      }
       @include laptop {
-        font-size: 1.8vw;
-        line-height: 2vw;
+        font-size: 1.61vw;
+        line-height: 1.81vw;
         & svg {
           height: 1em;
         }
@@ -94,20 +188,7 @@
     }
     & .welcome {
       min-width: 256px;
-      // & button {
-      //   text-align: left;
-      //   font-size: inherit;
-      //   line-height: inherit;
-      //   letter-spacing: inherit;
-      //   min-width: 250px;
-      //   margin-bottom: 1.75px;
-      //   @include laptop {
-      //     min-width: 20vw;
-      //   }
-      //   @include mobile {
-      //     min-width: auto;
-      //   }
-      // }
+
       @include laptop {
         min-width: 20vw;
       }
@@ -119,6 +200,7 @@
         position: relative;
         text-align: left;
         &:hover {
+          text-decoration: underline;
           & span {
             color: #fff;
             background-color: #222;
@@ -147,7 +229,7 @@
             font-size: 1.05vw;
             line-height: 1.4vw;
             gap: 0.31vw;
-            right: -0.39vw;
+            right: -0.9vw;
           }
           @include mobile {
             padding: 1.6px 8.25px 3.3px 6.5px;
