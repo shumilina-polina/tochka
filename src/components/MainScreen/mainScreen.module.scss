@@ -14,9 +14,17 @@
       left: 43px;
       @include laptop {
         height: 45.6vw;
-        width: 72.2vw;
+        width: 74.2vw;
         top: 6.8vw;
-        left: 2.88vw;
+        left: 45%;
+        transform: translateX(-50%);
+      }
+      @include mobile {
+        height: auto;
+        width: 100%;
+        top: 194.5px;
+        left: 50%;
+        transform: translateX(-50%);
       }
       &::before {
         position: absolute;
@@ -34,6 +42,13 @@
           top: 2.34vw;
           width: 43.75vw;
           height: 43.75vw;
+          left: 50%;
+        }
+        @include mobile {
+          top: 18%;
+          width: 100%;
+          height: auto;
+          aspect-ratio: 1/1;
         }
       }
 
@@ -63,6 +78,11 @@
           width: 45.7vw;
           height: 24.5vw;
         }
+        @include mobile {
+          top: 18%;
+          width: 80%;
+          height: 35%;
+        }
       }
       & .iframe_camp {
         width: 431px;
@@ -74,6 +94,11 @@
           right: -8.24vw;
           width: 28.9vw;
           height: 15.48vw;
+        }
+        @include mobile {
+          right: 0;
+          width: 80%;
+          height: 35%;
         }
       }
       & .iframe_helix {
@@ -152,6 +177,9 @@
       letter-spacing: -0.48px;
       & > li:nth-child(3) {
         transform: translateX(20%);
+        @include mobile {
+          transform: none;
+        }
       }
       @include laptop {
         font-size: 1.61vw;

@@ -23,7 +23,10 @@ const MainScreen = () => {
       <Wrapper>
         <div className={s.collaj}>
           <div className={s.image_wrapper}>
-            <img src={require("assets/mainscreen.png")} alt="Tochka" />
+            <img
+              src={require(`assets/mainscreen${isMobile ? "-mobile" : ""}.png`)}
+              alt="Tochka"
+            />
           </div>
           <div className={classNames(s.iframe_wrapper, s.iframe_smartfest)}>
             <iframe
