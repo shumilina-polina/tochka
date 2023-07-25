@@ -32,36 +32,38 @@
         transform: translateX(-50%);
         z-index: 100;
       }
-      &::before {
-        position: absolute;
-        content: "";
-        display: block;
-        bottom: 0;
-        top: 35px;
-        left: 54%;
-        transform: translateX(-50%);
-        width: 653px;
-        height: 653px;
-        border-radius: 100%;
-        background-color: #000;
-        @include laptop {
-          top: 2.34vw;
-          width: 43.75vw;
-          height: 43.75vw;
-          left: 50%;
-        }
-        @include mobile {
-          top: 18%;
-          width: 100%;
-          height: auto;
-          aspect-ratio: 1/1;
-        }
-      }
+      // &::before {
+      //   position: absolute;
+      //   content: "";
+      //   display: block;
+      //   bottom: 0;
+      //   top: 35px;
+      //   left: 54%;
+      //   transform: translateX(-50%);
+      //   width: 653px;
+      //   height: 653px;
+      //   border-radius: 100%;
+      //   background-color: #000;
+      //   @include laptop {
+      //     top: 2.34vw;
+      //     width: 43.75vw;
+      //     height: 43.75vw;
+      //     left: 50%;
+      //   }
+      //   @include mobile {
+      //     top: 18%;
+      //     width: 100%;
+      //     height: auto;
+      //     aspect-ratio: 1/1;
+      //   }
+      // }
 
       & > .iframe_wrapper {
         z-index: 1;
         // padding: 56.25% 0 0 0;
         // position: relative;
+        border-radius: 15px;
+        overflow: hidden;
         position: absolute;
 
         & iframe {
@@ -74,31 +76,31 @@
         }
       }
       & .iframe_smartfest {
-        width: 682px;
+        width: 660px;
         height: 366px;
         top: 126.5px;
         left: 15%;
         z-index: 10;
         @include laptop {
           top: 8.48vw;
-          width: 45.7vw;
+          width: 44vw;
           height: 24.5vw;
         }
         @include mobile {
           top: 18%;
           width: 80%;
-          height: 35%;
+          height: 33%;
         }
       }
       & .iframe_camp {
-        width: 431px;
+        width: 411px;
         height: 231px;
         top: 25%;
         right: -123px;
         z-index: 9;
         @include laptop {
-          right: -8.24vw;
-          width: 28.9vw;
+          right: -7.24vw;
+          width: 27vw;
           height: 15.48vw;
         }
         @include mobile {
