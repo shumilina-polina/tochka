@@ -25,6 +25,7 @@
         top: 194.5px;
         left: 50%;
         transform: translateX(-50%);
+        z-index: 100;
       }
       &::before {
         position: absolute;
@@ -96,9 +97,11 @@
           height: 15.48vw;
         }
         @include mobile {
-          right: 0;
-          width: 80%;
-          height: 35%;
+          right: initial;
+          left: 5%;
+          top: 43%;
+          width: 75%;
+          height: 30%;
         }
       }
       & .iframe_helix {
@@ -113,6 +116,12 @@
           height: 25.8vw;
           right: 4vw;
         }
+        @include mobile {
+          bottom: 0px;
+          width: 93px;
+          height: 30%;
+          right: 43%;
+        }
       }
       & .iframe_helix2 {
         width: 263px;
@@ -126,6 +135,14 @@
           width: 17.62vw;
           height: 23.65vw;
         }
+        @include mobile {
+          top: initial;
+          left: initial;
+          bottom: 16%;
+          right: -5px;
+          width: 31%;
+          height: 29%;
+        }
       }
       & > .image_wrapper {
         pointer-events: none;
@@ -138,7 +155,7 @@
     height: 56.3vw;
   }
   @include mobile {
-    height: calc(691px + 10vw);
+    height: 195vw;
   }
   .main {
     padding: 20px 0 57px;
