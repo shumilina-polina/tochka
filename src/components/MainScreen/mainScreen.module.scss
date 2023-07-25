@@ -3,6 +3,11 @@
 .wr {
   background: #f6f5f5;
   height: 842px;
+  & video {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+  }
   & > div {
     position: relative;
     & > .collaj {

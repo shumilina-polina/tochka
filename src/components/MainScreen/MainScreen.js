@@ -28,35 +28,45 @@ const MainScreen = () => {
               alt="Tochka"
             />
           </div>
+          <div id="video-1"></div>
           <div className={classNames(s.iframe_wrapper, s.iframe_smartfest)}>
             <iframe
-              src="https://player.vimeo.com/video/847575962?h=9ae564daca&title=0&byline=0&portrait=0"
+              src="https://player.vimeo.com/video/847575962?h=9ae564daca&loop=1&autoplay=1&autopause=0&muted=1&title=0&byline=0&portrait=0"
               frameBorder="0"
               allow="autoplay; fullscreen; picture-in-picture"
+              webkitAllowFullScreen
+              mozAllowFullScreen
               allowFullScreen
             ></iframe>
           </div>
+
           <div className={classNames(s.iframe_wrapper, s.iframe_camp)}>
             <iframe
-              src="https://player.vimeo.com/video/847576525?h=b62d624b97&loop=1&title=0&byline=0&portrait=0"
+              src="https://player.vimeo.com/video/847576525?h=b62d624b97&loop=1&autoplay=1&autopause=0&muted=1&title=0&byline=0&portrait=0"
               frameBorder="0"
               allow="autoplay; fullscreen; picture-in-picture"
+              webkitAllowFullScreen
+              mozAllowFullScreen
               allowFullScreen
             ></iframe>
           </div>
           <div className={classNames(s.iframe_wrapper, s.iframe_helix)}>
             <iframe
-              src="https://player.vimeo.com/video/847584255?h=dfb0bf7df3&title=0&byline=0&portrait=0"
+              src="https://player.vimeo.com/video/847584255?h=dfb0bf7df3&loop=1&autoplay=1&autopause=0&muted=1&title=0&byline=0&portrait=0"
               frameBorder="0"
               allow="autoplay; fullscreen; picture-in-picture"
+              webkitAllowFullScreen
+              mozAllowFullScreen
               allowFullScreen
             ></iframe>
           </div>
           <div className={classNames(s.iframe_wrapper, s.iframe_helix2)}>
             <iframe
-              src="https://player.vimeo.com/video/847589403?h=1a6ebd1755&title=0&byline=0&portrait=0"
+              src="https://player.vimeo.com/video/847589403?h=1a6ebd1755&loop=1&autoplay=1&autopause=0&muted=1&title=0&byline=0&portrait=0"
               frameBorder="0"
               allow="autoplay; fullscreen; picture-in-picture"
+              webkitAllowFullScreen
+              mozAllowFullScreen
               allowFullScreen
             ></iframe>
           </div>
