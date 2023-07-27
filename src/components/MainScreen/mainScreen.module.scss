@@ -27,7 +27,7 @@
       @include mobile {
         height: auto;
         width: 100%;
-        top: 194.5px;
+        top: 214px;
         left: 50%;
         transform: translateX(-50%);
         z-index: 100;
@@ -87,9 +87,10 @@
           height: 24.5vw;
         }
         @include mobile {
-          top: 18%;
+          top: 17%;
           width: 80%;
-          height: 33%;
+          height: 35%;
+          left: 0;
         }
       }
       & .iframe_camp {
@@ -104,11 +105,10 @@
           height: 15.48vw;
         }
         @include mobile {
-          right: initial;
-          left: 5%;
-          top: 43%;
+          right: 0%;
+          top: 44%;
           width: 75%;
-          height: 30%;
+          height: 33%;
         }
       }
       & .iframe_helix {
@@ -124,10 +124,11 @@
           right: 6vw;
         }
         @include mobile {
-          bottom: 0px;
-          width: 93px;
-          height: 30%;
-          right: 43%;
+          bottom: 10%;
+          width: 84px;
+          height: 43%;
+          right: initial;
+          left: 4%;
         }
       }
       & .iframe_helix2 {
@@ -143,12 +144,11 @@
           height: 23.65vw;
         }
         @include mobile {
-          top: initial;
+          top: -10px;
           left: initial;
-          bottom: 16%;
-          right: -5px;
+          right: 3%;
           width: 31%;
-          height: 29%;
+          height: 31%;
         }
       }
       & > .image_wrapper {
@@ -162,7 +162,7 @@
     height: 56.3vw;
   }
   @include mobile {
-    height: 195vw;
+    height: 180vw;
   }
   .main {
     padding: 20px 0 57px;
