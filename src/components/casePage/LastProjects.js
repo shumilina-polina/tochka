@@ -159,6 +159,26 @@ const ProjectBox = styled.div`
   @media ${breakpoints.laptop} {
   }
 `;
+export const ProjectGazpromneft = () => (
+  <Link to={"/gazpromneft"}>
+    <div>
+      <img
+        src={require("assets/cases/projects/gazpromneft.jpg")}
+        alt="Gazpromneft"
+      />
+    </div>
+    <div>
+      <div>
+        <SvgSelector svg={"case1"} />
+        <span>Газпромнефть</span>
+      </div>
+      <p>
+        Подготовили топ-менеджерам в&nbsp;Газпромнефть выступления
+        в&nbsp;стиле&nbsp;TED
+      </p>
+    </div>
+  </Link>
+);
 
 export const ProjectHelix = () => (
   <Link to={"/helix"}>

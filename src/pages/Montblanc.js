@@ -4,6 +4,7 @@ import CaseHeader from "components/casePage/CaseHeader";
 import {
   LastProjects,
   Project,
+  ProjectGazpromneft,
   ProjectHelix,
   ProjectHighload,
   ProjectMontblanc,
@@ -26,9 +27,9 @@ import { breakpoints } from "styles/variables";
 
 const projects = [
   <ProjectHelix />,
-  <ProjectSkysmartCamp />,
+  <ProjectGazpromneft />,
   <ProjectHighload />,
-  <ProjectMontblanc />,
+  <ProjectSkysmartCamp />,
   <ProjectVk />,
   <ProjectSkysmartBigday />,
 ];
