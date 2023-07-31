@@ -1,7 +1,7 @@
 import { css } from "styled-components";
 
 export const sizes = {
-  desktopWidth: "1500px",
+  desktopWidth: "1400px",
   laptopWidth: "770px",
   mobileWidth: "450px",
 };
@@ -46,13 +46,11 @@ export const mixins = {
   `,
   textSmall: css`
     color: #222;
-    font-family: "Manrope", sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 27px;
-    letter-spacing: -0.48px;
+    font-size: 18px;
+    line-height: 24px;
     @media ${breakpoints.laptop} {
-      font-size: 1.11vw;
+      font-size: 1.4vw;
+      line-height: 1.875vw;
     }
     @media ${breakpoints.mobile} {
       font-size: 16px;

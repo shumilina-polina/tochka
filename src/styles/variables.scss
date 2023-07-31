@@ -14,6 +14,16 @@
   font-style: normal;
   font-weight: 600;
 }
+@mixin m7 {
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+@mixin m8 {
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+}
 
 @mixin button {
   color: #222;
@@ -80,7 +90,7 @@
 }
 // --- BREAKPOINTS ---
 
-$desktop-width: 1500px;
+$desktop-width: 1400px;
 $mobile-width: 450px;
 
 @mixin laptop {

@@ -5,7 +5,6 @@ import SvgSelector from "components/SvgSelector";
 import { breakpoints } from "styles/variables";
 import { useMediaQuery } from "@mui/material";
 import { Link } from "react-router-dom";
-import { email } from "constants/contacts";
 import Form from "components/Form/Form";
 import { CopyEmail } from "components/CopyEmail";
 

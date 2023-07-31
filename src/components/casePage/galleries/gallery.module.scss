@@ -1,0 +1,53 @@
+@import "styles/variables.scss";
+
+.gallery {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 400px 253px;
+  @include laptop {
+    grid-template-rows: 29vw 19vw;
+  }
+
+  @for $i from 1 to 6 {
+    & > img:nth-child(#{$i}) {
+      grid-area: i#{$i};
+      border-radius: 20px;
+      @include mobile {
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+.type {
+  &_1 {
+    grid-template-areas: "i1 i1 i1 i2 i2 i2" "i3 i3 i4 i4 . .";
+    @include mobile {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: "i1 i1" "i2 i2" "i3 i4";
+      grid-template-rows: auto;
+    }
+  }
+  &_2 {
+    grid-template-areas: "i1 i1 i1 i1 . ." ". . i2 i2 i3 i3";
+    @include mobile {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: "i1 i1" "i2 i3";
+      grid-template-rows: auto;
+    }
+  }
+  &_3 {
+    grid-template-areas: "i1 i2 i2";
+    grid-template-rows: 400px;
+    grid-template-columns: repeat(3, 1fr);
+    @include laptop {
+      grid-template-rows: 29vw;
+    }
+    @include mobile {
+      grid-template-columns: 1fr;
+      grid-template-areas: "i1" "i2";
+      grid-template-rows: 54.7vw 93.75vw;
+    }
+  }
+}

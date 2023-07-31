@@ -700,6 +700,111 @@ const SvgSelector = ({ style = {}, svg }) => {
           </defs>
         </svg>
       );
+    case "chat-black":
+      return (
+        <svg
+          width="77"
+          height="77"
+          viewBox="0 0 77 77"
+          fill="none"
+        >
+          <g filter="url(#filter0_f_554_3383)">
+            <circle
+              cx="38.5314"
+              cy="38.3532"
+              r="27.9059"
+              fill="url(#paint0_linear_554_3383)"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_f_554_3383"
+              x="0.625488"
+              y="0.447266"
+              width="75.812"
+              height="75.8125"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="BackgroundImageFix"
+                result="shape"
+              />
+              <feGaussianBlur
+                stdDeviation="5"
+                result="effect1_foregroundBlur_554_3383"
+              />
+            </filter>
+            <linearGradient
+              id="paint0_linear_554_3383"
+              x1="17.1678"
+              y1="22.5379"
+              x2="53.5191"
+              y2="62.1204"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop />
+              <stop offset="1" stop-color="#C8CFD0" />
+            </linearGradient>
+          </defs>
+        </svg>
+      );
+    case "gazprom-case":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="77"
+          height="76"
+          viewBox="0 0 77 76"
+          fill="none"
+        >
+          <g filter="url(#filter0_f_554_2537)">
+            <circle
+              cx="38.3434"
+              cy="38.0934"
+              r="27.9059"
+              fill="url(#paint0_linear_554_2537)"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_f_554_2537"
+              x="0.4375"
+              y="0.1875"
+              width="75.812"
+              height="75.8125"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="BackgroundImageFix"
+                result="shape"
+              />
+              <feGaussianBlur
+                stdDeviation="5"
+                result="effect1_foregroundBlur_554_2537"
+              />
+            </filter>
+            <linearGradient
+              id="paint0_linear_554_2537"
+              x1="16.9798"
+              y1="22.2782"
+              x2="53.3311"
+              y2="61.8606"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#2F2EFF" />
+              <stop offset="1" stop-color="#C373FA" />
+            </linearGradient>
+          </defs>
+        </svg>
+      );
 
     default:
       return <></>;

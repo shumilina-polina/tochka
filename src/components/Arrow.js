@@ -1,13 +1,12 @@
 import styled from "styled-components";
 import { breakpoints } from "styles/variables";
 import SvgSelector from "./SvgSelector";
-import { Link } from "react-router-dom";
 
-const Arrow = ({ href }) => (
+const Arrow = () => (
   <Button>
-    <Link target="blank" to={href}>
+    <span>
       <SvgSelector svg={"arrow"} />
-    </Link>
+    </span>
   </Button>
 );
 
@@ -23,17 +22,12 @@ const Button = styled.button`
   transform: rotate(-125deg);
   & svg {
     transition: transform 0.3s;
-  }
-  &:hover {
-    transform: rotate(-90deg);
-  }
-  &:active,
-  &:focus {
-    & svg {
-      transform: translateY(20%);
+    @media ${breakpoints.laptop} {
+      height: 60%;
     }
   }
-  & > a {
+
+  & > span {
     display: block;
     width: 36px;
     height: 36px;
@@ -42,8 +36,12 @@ const Button = styled.button`
     align-items: center;
     justify-content: center;
     @media ${breakpoints.laptop} {
+      width: 2.4vw;
+      height: 2.4vw;
     }
     @media ${breakpoints.mobile} {
+      width: 36px;
+      height: 36px;
     }
   }
 `;
