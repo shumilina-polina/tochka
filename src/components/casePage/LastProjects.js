@@ -77,6 +77,9 @@ const ProjectBox = styled.div`
       & > div {
         & img {
           transform: scale(1.1);
+          @media ${breakpoints.mobile} {
+            transform: none;
+          }
         }
       }
       & p {
@@ -264,8 +267,8 @@ export const ProjectSkysmartBigday = () => {
           <span>Skysmart</span>
         </div>
         <p>
-          Организовали {isMobile || <br />} онлайн фестиваль «BIG&nbsp;DAY открытых
-          дверей Skysmart»
+          Организовали {isMobile || <br />} онлайн фестиваль «BIG&nbsp;DAY
+          открытых дверей Skysmart»
         </p>
       </div>
     </Link>
