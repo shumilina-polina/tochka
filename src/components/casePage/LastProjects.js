@@ -95,7 +95,9 @@ const ProjectBox = styled.div`
     max-width: 100%;
     border-radius: 100%;
     @media ${breakpoints.mobile} {
-      max-width: 108px;
+      width: 108px;
+      height: 108px;
+      flex-shrink: 0;
     }
     & > img {
       transition: transform 0.3s;
