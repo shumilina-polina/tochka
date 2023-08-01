@@ -7,7 +7,6 @@ import {
   ProjectGazpromneft,
   ProjectHelix,
   ProjectHighload,
-  ProjectMontblanc,
   ProjectSkysmartBigday,
   ProjectSkysmartCamp,
   ProjectVk,
@@ -34,7 +33,7 @@ const projects = [
   <ProjectSkysmartBigday />,
 ];
 
-const Gazpromneft = () => {
+const Montblanc = () => {
   const isMobile = useMediaQuery(breakpoints.mobile);
 
   return (
@@ -42,31 +41,30 @@ const Gazpromneft = () => {
       <Wrapper>
         <CaseHeader />
         <MainImage
-          src={"gazpromneft/main.jpg"}
-          srcMobile={"gazpromneft/main-mobile.jpg"}
+          src={"montblanc/main.jpg"}
+          srcMobile={"montblanc/main-mobile.jpg"}
         />
         <ClientBlockWrapper>
           <LabelClient>
-            Подготовили <br /> топ-менеджерам
-            <br /> в&nbsp;Газпромнефть
-            <br /> выступления в&nbsp;стиле&nbsp;TED
+            Оформили Montblanc к&nbsp;открытию за&nbsp;2&nbsp;дня,
+            без&nbsp;приостановки работы бутика
           </LabelClient>
           <ChatWrapper>
-            <ChatClient time={"8:01"} svgType={"gazprom-case"}>
-              Хотим донести до&nbsp;сотрудников всех регионов ценность изменений
-              в&nbsp;компании. И&nbsp;лучше не&nbsp;так&nbsp;официально,
-              как&nbsp;у&nbsp;нас&nbsp;обычно.
+            <ChatClient time={"9:11"} svgType={"montblanc-case"}>
+              У&nbsp;нас есть задача — обновить дизайн бутика, создать симбиоз
+              локального искусства и&nbsp;миссии бренда Montblanc,
+              чтобы&nbsp;удивить светскую публику Петербурга.
             </ChatClient>
-            <ChatTochka time={"8:03"}>
-              Давайте возьмем популярный жанр вечерних шоу, в&nbsp;котором будет
-              много юмора, живого общения и&nbsp;интерактива!
+            <ChatTochka time={"9:18"}>
+              В&nbsp;нашем случае искусство не&nbsp;требует жертв,
+              а&nbsp;помогает решать ваши задачи!
             </ChatTochka>
           </ChatWrapper>
           <List
             list={[
-              "Газпромнефть",
-              "Гибридная конференция",
-              "Санкт-Петербург, 2021 г.",
+              "Montblanc",
+              "Маркетинговое мероприятие",
+              "Санкт&#8209;Петербург, 2021&nbsp;г.",
             ]}
           />
         </ClientBlockWrapper>
@@ -74,64 +72,63 @@ const Gazpromneft = () => {
           {[1, 2, 3, 4].map((i) => (
             <img
               key={i}
-              src={require(`assets/cases/gazpromneft/${i}.jpg`)}
-              alt="gazprom"
+              src={require(`assets/cases/montblanc/${i}.jpg`)}
+              alt="montblanc"
             />
           ))}
         </Gallery>
         <NumberBlock>
-          <Number n={100}>
-            оффлайн <br />
-            гостей
+          <Number n={2}>
+            дня ушло
+            <br />
+            на оформление
           </Number>
           <p>
-            Чтобы снизить градус официальности мероприятия, мы&nbsp;выбрали
-            формат вечернего телешоу для&nbsp;традиционного награждения
-            и&nbsp;конференции.
+            В&nbsp;кратчайшие сроки был&nbsp;проведен кастинг художников, работы
+            которых перекликались с&nbsp;идеологией бренда.
+          </p>
+        </NumberBlock>
+        <Gallery type={4}>
+          {[5, 6, 7, 8].map((i) => (
+            <img
+              key={i}
+              src={require(`assets/cases/montblanc/${i}.jpg`)}
+              alt="montblanc"
+            />
+          ))}
+        </Gallery>
+        <NumberBlock>
+          <Number n={"3D"}>картины</Number>
+          <p>
+            Клиент остановил свой выбор на&nbsp;художнике{" "}
+            <a
+              href="https://www.s-p-l-a-s-h.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Викторе Splash
+            </a>
+            , после чего был&nbsp;создан эскиз арт-объекта — 3D-картина
+            с&nbsp;эффектом оптической иллюзии.
           </p>
         </NumberBlock>
         <Gallery type={2}>
-          {[5, 6, 7].map((i) => (
+          {[9, 10, 11].map((i) => (
             <img
               key={i}
-              src={require(`assets/cases/gazpromneft/${i}.jpg`)}
-              alt="gazprom"
+              src={require(`assets/cases/montblanc/${i}.jpg`)}
+              alt="montblanc"
             />
           ))}
         </Gallery>
         <NumberBlock>
           {isMobile || <div></div>}
           <p>
-            Топ-менеджерам мы&nbsp;помогли подготовить выступления в&nbsp;стиле
-            TED — динамичные и&nbsp;вовлекающие. Выступления заранее записали
-            на&nbsp;телестудии. Участники конференции смотрели выступления
-            онлайн и&nbsp;офлайн: давали обратную связь спикерам
-            через&nbsp;приложение, задавали вопросы.
-          </p>
-        </NumberBlock>
-        <Gallery type={3}>
-          {[8, 9].map((i) => (
-            <img
-              key={i}
-              src={
-                isMobile
-                  ? require(`assets/cases/gazpromneft/${i}-mobile.jpg`)
-                  : require(`assets/cases/gazpromneft/${i}.jpg`)
-              }
-              alt="gazprom"
-            />
-          ))}
-        </Gallery>
-        <NumberBlock>
-          <Number n={500}>
-            зрителей <br />
-            эфира
-          </Number>
-          <p>
-            Нам удалось создать современный дизайн {isMobile || <br />}
-            конференции, который отразил визуальные тренды
-            и&nbsp;не&nbsp;противоречил корпоративному стилю. Кстати, теперь
-            дизайн закреплен за&nbsp;конференцией.
+            На&nbsp;торжественном открытии представители светской публики
+            узнавали о&nbsp;новинках бренда, знакомились с&nbsp;художником
+            и&nbsp;его&nbsp;произведением искусства, угощались изысканными
+            закусками и&nbsp;напитками, а&nbsp;также подписывали открытки
+            любимым с&nbsp;помощью каллиграфиста.
           </p>
         </NumberBlock>
         <LastProjects>
@@ -144,4 +141,4 @@ const Gazpromneft = () => {
   );
 };
 
-export default Gazpromneft;
+export default Montblanc;

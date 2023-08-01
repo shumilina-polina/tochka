@@ -20,6 +20,12 @@
   }
 }
 
+.mb {
+  @include mobile {
+    margin-bottom: 50px;
+  }
+}
+
 .type {
   &_1 {
     grid-template-areas: "i1 i1 i1 i2 i2 i2" "i3 i3 i4 i4 . .";
@@ -48,6 +54,30 @@
       grid-template-columns: 1fr;
       grid-template-areas: "i1" "i2";
       grid-template-rows: 54.7vw 93.75vw;
+    }
+  }
+
+  &_4 {
+    grid-template-areas: ". . . i1 i1 i1" "i2 i2 i3 i3 i4 i4";
+    grid-template-rows: 400px 253px;
+    @include laptop {
+      grid-template-rows: 29vw 19vw;
+    }
+    @include mobile {
+      grid-template-rows: auto;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: "i1 i1" "i2 i2" "i3 i4";
+    }
+  }
+}
+
+.class_vk {
+  @include mobile {
+    & > img:first-child {
+      grid-area: i2;
+    }
+    & > img:last-child {
+      grid-area: i1;
     }
   }
 }

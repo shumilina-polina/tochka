@@ -3,16 +3,22 @@ import { breakpoints } from "styles/variables";
 import { Link } from "react-router-dom";
 import SvgSelector from "components/SvgSelector";
 import Arrow from "components/Arrow";
+import { useEffect } from "react";
 
-const CaseHeader = () => (
-  <Header>
-    <Link to={"/"}>
-      <Arrow />
-      <span>На главную</span>
-    </Link>
-    <SvgSelector svg={"tochka"} />
-  </Header>
-);
+const CaseHeader = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  return (
+    <Header>
+      <Link to={"/"}>
+        <Arrow />
+        <span>На главную</span>
+      </Link>
+      <SvgSelector svg={"tochka"} />
+    </Header>
+  );
+};
 
 export default CaseHeader;
 

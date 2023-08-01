@@ -180,23 +180,27 @@ export const ProjectGazpromneft = () => (
   </Link>
 );
 
-export const ProjectHelix = () => (
-  <Link to={"/helix"}>
-    <div>
-      <img src={require("assets/cases/projects/helix.jpg")} alt="Helix" />
-    </div>
-    <div>
+export const ProjectHelix = () => {
+  const isMobile = useMediaQuery(breakpoints.mobile);
+
+  return (
+    <Link to={"/helix"}>
       <div>
-        <SvgSelector svg={"parashut"} />
-        <span>Helix</span>
+        <img src={require("assets/cases/projects/helix.jpg")} alt="Helix" />
       </div>
-      <p>
-        Прыжки с&nbsp;парашютом для&nbsp;топ-менеджеров Helix на&nbsp;выездном
-        лидерском тренинге
-      </p>
-    </div>
-  </Link>
-);
+      <div>
+        <div>
+          <SvgSelector svg={"parashut"} />
+          <span>Helix</span>
+        </div>
+        <p>
+          Прыжки {isMobile || <br />} с&nbsp;парашютом для&nbsp;топ-менеджеров
+          Helix на&nbsp;выездном лидерском тренинге
+        </p>
+      </div>
+    </Link>
+  );
+};
 
 export const ProjectSkysmartCamp = () => (
   <Link to={"/skysmartcamp"}>

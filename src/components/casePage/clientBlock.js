@@ -1,4 +1,5 @@
 import SvgSelector from "components/SvgSelector";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import styled from "styled-components";
 import { breakpoints, mixins } from "styles/variables";
 
@@ -283,15 +284,15 @@ export const List = ({ list }) => (
   <ListWr>
     <li>
       <span>Клиент</span>
-      <p>{list[0]}</p>
+      <ReactMarkdown>{list[0]}</ReactMarkdown>
     </li>
     <li>
       <span>Категория</span>
-      <p>{list[1]}</p>
+      <ReactMarkdown>{list[1]}</ReactMarkdown>
     </li>
     <li>
       <span>Локация</span>
-      <p>{list[2]}</p>
+      <ReactMarkdown>{list[2]}</ReactMarkdown>
     </li>
   </ListWr>
 );

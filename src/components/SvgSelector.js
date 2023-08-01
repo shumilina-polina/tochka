@@ -702,12 +702,7 @@ const SvgSelector = ({ style = {}, svg }) => {
       );
     case "chat-black":
       return (
-        <svg
-          width="77"
-          height="77"
-          viewBox="0 0 77 77"
-          fill="none"
-        >
+        <svg width="77" height="77" viewBox="0 0 77 77" fill="none">
           <g filter="url(#filter0_f_554_3383)">
             <circle
               cx="38.5314"
@@ -801,6 +796,318 @@ const SvgSelector = ({ style = {}, svg }) => {
             >
               <stop stop-color="#2F2EFF" />
               <stop offset="1" stop-color="#C373FA" />
+            </linearGradient>
+          </defs>
+        </svg>
+      );
+    case "vk-case":
+      return (
+        <svg width="77" height="76" viewBox="0 0 77 76" fill="none">
+          <g filter="url(#filter0_f_589_962)">
+            <circle
+              cx="38.3434"
+              cy="38.0934"
+              r="27.9059"
+              fill="url(#paint0_linear_589_962)"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_f_589_962"
+              x="0.4375"
+              y="0.1875"
+              width="75.812"
+              height="75.8125"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="BackgroundImageFix"
+                result="shape"
+              />
+              <feGaussianBlur
+                stdDeviation="5"
+                result="effect1_foregroundBlur_589_962"
+              />
+            </filter>
+            <linearGradient
+              id="paint0_linear_589_962"
+              x1="16.9798"
+              y1="22.2782"
+              x2="62.4805"
+              y2="66.0001"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#0E60FF" />
+              <stop offset="1" stop-color="#FFFDE9" />
+            </linearGradient>
+          </defs>
+        </svg>
+      );
+    case "montblanc-case":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="77"
+          height="76"
+          viewBox="0 0 77 76"
+          fill="none"
+        >
+          <g filter="url(#filter0_f_589_837)">
+            <circle
+              cx="38.3432"
+              cy="38.0934"
+              r="27.9059"
+              fill="url(#paint0_linear_589_837)"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_f_589_837"
+              x="0.437256"
+              y="0.1875"
+              width="75.8118"
+              height="75.8125"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="BackgroundImageFix"
+                result="shape"
+              />
+              <feGaussianBlur
+                stdDeviation="5"
+                result="effect1_foregroundBlur_589_837"
+              />
+            </filter>
+            <linearGradient
+              id="paint0_linear_589_837"
+              x1="16.9796"
+              y1="22.2782"
+              x2="53.3309"
+              y2="61.8606"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#FFBA58" />
+              <stop offset="1" stop-color="#FF4A5C" />
+            </linearGradient>
+          </defs>
+        </svg>
+      );
+    case "skysmartbigday-case":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="77"
+          height="76"
+          viewBox="0 0 77 76"
+          fill="none"
+        >
+          <g filter="url(#filter0_f_589_372)">
+            <circle
+              cx="38.3432"
+              cy="38.0934"
+              r="27.9059"
+              fill="url(#paint0_linear_589_372)"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_f_589_372"
+              x="0.437256"
+              y="0.1875"
+              width="75.8118"
+              height="75.8125"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="BackgroundImageFix"
+                result="shape"
+              />
+              <feGaussianBlur
+                stdDeviation="5"
+                result="effect1_foregroundBlur_589_372"
+              />
+            </filter>
+            <linearGradient
+              id="paint0_linear_589_372"
+              x1="16.9796"
+              y1="22.2782"
+              x2="53.3309"
+              y2="61.8606"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#FFBA58" />
+              <stop offset="1" stop-color="#4AFFFF" />
+            </linearGradient>
+          </defs>
+        </svg>
+      );
+    case "skysmartcamp-case":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="77"
+          height="76"
+          viewBox="0 0 77 76"
+          fill="none"
+        >
+          <g filter="url(#filter0_f_589_1288)">
+            <circle
+              cx="38.3433"
+              cy="38.0934"
+              r="27.9059"
+              fill="url(#paint0_linear_589_1288)"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_f_589_1288"
+              x="0.437378"
+              y="0.1875"
+              width="75.8118"
+              height="75.8125"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="BackgroundImageFix"
+                result="shape"
+              />
+              <feGaussianBlur
+                stdDeviation="5"
+                result="effect1_foregroundBlur_589_1288"
+              />
+            </filter>
+            <linearGradient
+              id="paint0_linear_589_1288"
+              x1="16.9797"
+              y1="22.2782"
+              x2="53.331"
+              y2="61.8606"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#FFBA58" />
+              <stop offset="1" stop-color="#4AFFFF" />
+            </linearGradient>
+          </defs>
+        </svg>
+      );
+    case "highload-case":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="77"
+          height="76"
+          viewBox="0 0 77 76"
+          fill="none"
+        >
+          <g filter="url(#filter0_f_589_980)">
+            <circle
+              cx="38.3434"
+              cy="38.0934"
+              r="27.9059"
+              fill="url(#paint0_linear_589_980)"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_f_589_980"
+              x="0.4375"
+              y="0.1875"
+              width="75.8115"
+              height="75.8125"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="BackgroundImageFix"
+                result="shape"
+              />
+              <feGaussianBlur
+                stdDeviation="5"
+                result="effect1_foregroundBlur_589_980"
+              />
+            </filter>
+            <linearGradient
+              id="paint0_linear_589_980"
+              x1="16.9798"
+              y1="22.2782"
+              x2="53.3311"
+              y2="61.8606"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#E858FF" />
+              <stop offset="1" stop-color="#FFED4A" />
+            </linearGradient>
+          </defs>
+        </svg>
+      );
+    case "helix-case":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="77"
+          height="76"
+          viewBox="0 0 77 76"
+          fill="none"
+        >
+          <g filter="url(#filter0_f_589_539)">
+            <circle
+              cx="38.3434"
+              cy="38.0934"
+              r="27.9059"
+              fill="url(#paint0_linear_589_539)"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_f_589_539"
+              x="0.4375"
+              y="0.1875"
+              width="75.8115"
+              height="75.8125"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="BackgroundImageFix"
+                result="shape"
+              />
+              <feGaussianBlur
+                stdDeviation="5"
+                result="effect1_foregroundBlur_589_539"
+              />
+            </filter>
+            <linearGradient
+              id="paint0_linear_589_539"
+              x1="16.9798"
+              y1="22.2782"
+              x2="53.3311"
+              y2="61.8606"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#E858FF" />
+              <stop offset="1" stop-color="#4AFFE9" />
             </linearGradient>
           </defs>
         </svg>

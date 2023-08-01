@@ -4,7 +4,7 @@ import { breakpoints, mixins } from "styles/variables";
 export const NumberBlock = ({ children }) => <Block>{children}</Block>;
 const Block = styled.div`
   display: grid;
-  align-items: center;
+  align-items: flex-start;
   padding: 80px 0;
   grid-template-columns: 1fr 2fr;
   @media ${breakpoints.laptop} {
@@ -17,7 +17,11 @@ const Block = styled.div`
     padding: 50px 0;
     grid-template-columns: 1fr;
   }
-
+  &:hover {
+    & > p > a {
+      text-decoration: underline;
+    }
+  }
   & > p {
     font-size: 32px;
     line-height: 42px;
