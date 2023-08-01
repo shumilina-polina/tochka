@@ -6,6 +6,7 @@ import Footer from "components/Footer/Footer";
 import Gazpromneft from "pages/Gazpromneft";
 import Vk from "pages/Vk";
 import Montblanc from "pages/Montblanc";
+import Helix from "pages/Helix";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <Route path="/montblanc" element={<Montblanc />} />
         {/* <Route path="/skysmartcamp" element={<Skysmartcamp />} /> */}
         {/* <Route path="/highload" element={<Highload />} /> */}
-        {/* <Route path="/helix" element={<Helix />} /> */}
+        <Route path="/helix" element={<Helix />} />
         <Route path="/vk" element={<Vk />} />
         {/* <Route path="/skysmartbigday" element={<Skysmartbigday />} /> */}
       </Routes>

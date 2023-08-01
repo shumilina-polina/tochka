@@ -69,6 +69,35 @@
       grid-template-areas: "i1 i1" "i2 i2" "i3 i4";
     }
   }
+
+  &_5 {
+    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-areas: "i1 i1  ." ". i2 i3";
+    grid-template-rows: 400px 253px;
+    @include laptop {
+      grid-template-rows: 29vw 19vw;
+    }
+    @include mobile {
+      grid-template-rows: auto;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: "i1 i1" "i2 i3";
+    }
+  }
+
+  &_6 {
+    grid-template-areas: "i1 i1 i2";
+    grid-template-rows: 400px;
+    grid-template-columns: repeat(3, 1fr);
+    @include laptop {
+      grid-template-rows: 29vw;
+    }
+    @include mobile {
+      grid-template-columns: 1fr;
+      grid-template-areas: "i1" "i2";
+      grid-template-rows: 54.7vw 93.75vw;
+    }
+  }
 }
 
 .class_vk {
