@@ -719,9 +719,9 @@ const SvgSelector = ({ style = {}, svg }) => {
               width="75.812"
               height="75.8125"
               filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend
                 mode="normal"
                 in="SourceGraphic"
@@ -742,7 +742,7 @@ const SvgSelector = ({ style = {}, svg }) => {
               gradientUnits="userSpaceOnUse"
             >
               <stop />
-              <stop offset="1" stop-color="#C8CFD0" />
+              <stop offset="1" stopColor="#C8CFD0" />
             </linearGradient>
           </defs>
         </svg>
@@ -772,9 +772,9 @@ const SvgSelector = ({ style = {}, svg }) => {
               width="75.812"
               height="75.8125"
               filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend
                 mode="normal"
                 in="SourceGraphic"
@@ -794,8 +794,8 @@ const SvgSelector = ({ style = {}, svg }) => {
               y2="61.8606"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#2F2EFF" />
-              <stop offset="1" stop-color="#C373FA" />
+              <stop stopColor="#2F2EFF" />
+              <stop offset="1" stopColor="#C373FA" />
             </linearGradient>
           </defs>
         </svg>
@@ -819,9 +819,9 @@ const SvgSelector = ({ style = {}, svg }) => {
               width="75.812"
               height="75.8125"
               filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend
                 mode="normal"
                 in="SourceGraphic"
@@ -841,8 +841,8 @@ const SvgSelector = ({ style = {}, svg }) => {
               y2="66.0001"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#0E60FF" />
-              <stop offset="1" stop-color="#FFFDE9" />
+              <stop stopColor="#0E60FF" />
+              <stop offset="1" stopColor="#FFFDE9" />
             </linearGradient>
           </defs>
         </svg>
@@ -872,9 +872,9 @@ const SvgSelector = ({ style = {}, svg }) => {
               width="75.8118"
               height="75.8125"
               filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend
                 mode="normal"
                 in="SourceGraphic"
@@ -894,8 +894,8 @@ const SvgSelector = ({ style = {}, svg }) => {
               y2="61.8606"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#FFBA58" />
-              <stop offset="1" stop-color="#FF4A5C" />
+              <stop stopColor="#FFBA58" />
+              <stop offset="1" stopColor="#FF4A5C" />
             </linearGradient>
           </defs>
         </svg>
@@ -925,9 +925,9 @@ const SvgSelector = ({ style = {}, svg }) => {
               width="75.8118"
               height="75.8125"
               filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend
                 mode="normal"
                 in="SourceGraphic"
@@ -947,8 +947,8 @@ const SvgSelector = ({ style = {}, svg }) => {
               y2="61.8606"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#FFBA58" />
-              <stop offset="1" stop-color="#4AFFFF" />
+              <stop stopColor="#FFBA58" />
+              <stop offset="1" stopColor="#4AFFFF" />
             </linearGradient>
           </defs>
         </svg>
@@ -978,9 +978,9 @@ const SvgSelector = ({ style = {}, svg }) => {
               width="75.8118"
               height="75.8125"
               filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend
                 mode="normal"
                 in="SourceGraphic"
@@ -1000,8 +1000,8 @@ const SvgSelector = ({ style = {}, svg }) => {
               y2="61.8606"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#FFBA58" />
-              <stop offset="1" stop-color="#4AFFFF" />
+              <stop stopColor="#FFBA58" />
+              <stop offset="1" stopColor="#4AFFFF" />
             </linearGradient>
           </defs>
         </svg>
@@ -1031,9 +1031,9 @@ const SvgSelector = ({ style = {}, svg }) => {
               width="75.8115"
               height="75.8125"
               filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend
                 mode="normal"
                 in="SourceGraphic"
@@ -1053,8 +1053,8 @@ const SvgSelector = ({ style = {}, svg }) => {
               y2="61.8606"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#E858FF" />
-              <stop offset="1" stop-color="#FFED4A" />
+              <stop stopColor="#E858FF" />
+              <stop offset="1" stopColor="#FFED4A" />
             </linearGradient>
           </defs>
         </svg>
@@ -1084,9 +1084,9 @@ const SvgSelector = ({ style = {}, svg }) => {
               width="75.8115"
               height="75.8125"
               filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feFlood floodOpacity="0" result="BackgroundImageFix" />
               <feBlend
                 mode="normal"
                 in="SourceGraphic"
@@ -1106,8 +1106,8 @@ const SvgSelector = ({ style = {}, svg }) => {
               y2="61.8606"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#E858FF" />
-              <stop offset="1" stop-color="#4AFFE9" />
+              <stop stopColor="#E858FF" />
+              <stop offset="1" stopColor="#4AFFE9" />
             </linearGradient>
           </defs>
         </svg>

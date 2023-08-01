@@ -132,8 +132,8 @@ const Montblanc = () => {
           </p>
         </NumberBlock>
         <LastProjects>
-          {projects.map((item) => (
-            <Project>{item}</Project>
+          {projects.map((item, i) => (
+            <Project key={i}>{item}</Project>
           ))}
         </LastProjects>
       </Wrapper>

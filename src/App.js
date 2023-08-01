@@ -7,6 +7,7 @@ import Gazpromneft from "pages/Gazpromneft";
 import Vk from "pages/Vk";
 import Montblanc from "pages/Montblanc";
 import Helix from "pages/Helix";
+import Highload from "pages/Highload";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <Route path="/gazpromneft" element={<Gazpromneft />} />
         <Route path="/montblanc" element={<Montblanc />} />
         {/* <Route path="/skysmartcamp" element={<Skysmartcamp />} /> */}
-        {/* <Route path="/highload" element={<Highload />} /> */}
+        <Route path="/highload" element={<Highload />} />
         <Route path="/helix" element={<Helix />} />
         <Route path="/vk" element={<Vk />} />
         {/* <Route path="/skysmartbigday" element={<Skysmartbigday />} /> */}

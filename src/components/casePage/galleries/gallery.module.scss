@@ -98,6 +98,27 @@
       grid-template-rows: 54.7vw 93.75vw;
     }
   }
+
+  &_7 {
+    grid-template-areas: ". i1 i1";
+    grid-template-rows: 600px;
+    grid-template-columns: repeat(3, 1fr);
+    @include laptop {
+      grid-template-rows: 43vw;
+    }
+    @include mobile {
+      grid-template-columns: 1fr;
+      grid-template-areas: "i1";
+      grid-template-rows: 71.88vw;
+    }
+
+    &:nth-of-type(2) {
+      grid-template-areas: "i1 i1 .";
+      @include mobile {
+        grid-template-areas: "i1";
+      }
+    }
+  }
 }
 
 .class_vk {

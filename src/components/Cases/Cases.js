@@ -81,8 +81,8 @@ const Cases = () => {
                     src="https://player.vimeo.com/video/847576525?h=b62d624b97&loop=1&autoplay=1&autopause=0&muted=1&title=0&byline=0&portrait=0"
                     frameBorder="0"
                     allow="autoplay; fullscreen; picture-in-picture"
-                    webkitAllowFullScreen
-                    mozAllowFullScreen
+                    webkitallowfullscreen="true"
+                    mozallowfullscreen="true"
                     allowFullScreen
                   ></iframe>
                 </div>
@@ -246,8 +246,8 @@ const Cases = () => {
                     src="https://player.vimeo.com/video/847575962?h=9ae564daca&loop=1&autoplay=1&autopause=0&muted=1&title=0&byline=0&portrait=0"
                     frameBorder="0"
                     allow="autoplay; fullscreen; picture-in-picture"
-                    webkitAllowFullScreen
-                    mozAllowFullScreen
+                    webkitallowfullscreen="true"
+                    mozallowfullscreen="true"
                     allowFullScreen
                   ></iframe>
                 </div>

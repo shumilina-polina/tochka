@@ -34,8 +34,8 @@ const MainScreen = () => {
               src="https://player.vimeo.com/video/847575962?h=9ae564daca&loop=1&autoplay=1&autopause=0&muted=1&title=0&byline=0&portrait=0"
               frameBorder="0"
               allow="autoplay; fullscreen; picture-in-picture"
-              webkitAllowFullScreen
-              mozAllowFullScreen
+              webkitallowfullscreen="true"
+              mozallowfullscreen="true"
               allowFullScreen
             ></iframe>
           </div>
@@ -45,8 +45,8 @@ const MainScreen = () => {
               src="https://player.vimeo.com/video/847576525?h=b62d624b97&loop=1&autoplay=1&autopause=0&muted=1&title=0&byline=0&portrait=0"
               frameBorder="0"
               allow="autoplay; fullscreen; picture-in-picture"
-              webkitAllowFullScreen
-              mozAllowFullScreen
+              webkitallowfullscreen="true"
+              mozallowfullscreen="true"
               allowFullScreen
             ></iframe>
           </div>
@@ -55,8 +55,8 @@ const MainScreen = () => {
               src="https://player.vimeo.com/video/847584255?h=dfb0bf7df3&loop=1&autoplay=1&autopause=0&muted=1&title=0&byline=0&portrait=0"
               frameBorder="0"
               allow="autoplay; fullscreen; picture-in-picture"
-              webkitAllowFullScreen
-              mozAllowFullScreen
+              webkitallowfullscreen="true"
+              mozallowfullscreen="true"
               allowFullScreen
             ></iframe>
           </div>
@@ -65,8 +65,8 @@ const MainScreen = () => {
               src="https://player.vimeo.com/video/847589403?h=1a6ebd1755&loop=1&autoplay=1&autopause=0&muted=1&title=0&byline=0&portrait=0"
               frameBorder="0"
               allow="autoplay; fullscreen; picture-in-picture"
-              webkitAllowFullScreen
-              mozAllowFullScreen
+              webkitallowfullscreen="true"
+              mozallowfullscreen="true"
               allowFullScreen
             ></iframe>
           </div>
