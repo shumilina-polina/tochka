@@ -8,7 +8,7 @@ const Block = styled.div`
   display: flex;
   align-items: flex-start;
   margin-bottom: 74px;
-  
+
   @media ${breakpoints.laptop} {
     margin-bottom: 6.3vw;
     justify-content: space-between;
@@ -230,6 +230,7 @@ const WrTochka = styled.div`
     }
   }
   & > div:last-child {
+    flex-grow: 1;
     padding: 12px 12px 16px 16px;
     border-radius: 6px 20px 20px 20px;
     background-color: #f6f5f5;
