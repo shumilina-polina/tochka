@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useScroll } from "react-spring";
 import { useMediaQuery } from "@mui/material";
 import classNames from "classnames";
+import { Dnd } from "components/Dnd/Dnd";
 
 const MainScreen = () => {
   const isMobile = useMediaQuery(breakpoints.mobile);
@@ -19,16 +20,16 @@ const MainScreen = () => {
   });
 
   return (
-    <section className={s.wr}>
+    <section className={s.wr} id="wr">
       <Wrapper>
         <div className={s.collaj}>
           <div className={s.image_wrapper}>
-            <img
-              src={require(`assets/mainscreen${isMobile ? "-mobile" : ""}.png`)}
-              alt="Tochka"
-            />
+            <img src={require(`assets/mainscreen-mobile.png`)} alt="Tochka" />
           </div>
-          <div id="video-1"></div>
+          <Dnd i={1} />
+          <Dnd i={2} />
+          <Dnd i={3} />
+          <Dnd i={4} />
           <div className={classNames(s.iframe_wrapper, s.iframe_smartfest)}>
             <iframe
               src="https://player.vimeo.com/video/847575962?h=9ae564daca&loop=1&autoplay=1&autopause=0&muted=1&title=0&byline=0&portrait=0"

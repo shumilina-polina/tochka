@@ -1,0 +1,56 @@
+@import "./variables.scss";
+
+.drag {
+  &_1 {
+    left: 2%;
+    top: 50%;
+    z-index: 9;
+    transform: rotate(-9deg);
+    & > img {
+      width: 162px;
+      height: 224px;
+      @include laptop {
+        width: 11vw;
+        height: 15vw;
+      }
+    }
+  }
+  &_2 {
+    top: 4%;
+    left: 38%;
+    & > img {
+      width: 255px;
+      height: 170px;
+      @include laptop {
+        width: 17.1vw;
+        height: 11.4vw;
+      }
+    }
+  }
+  &_3 {
+    left: 75%;
+    top: 9%;
+    transform: rotate(21deg);
+    & > img {
+      width: 222px;
+      height: 148px;
+      @include laptop {
+        width: 14.9vw;
+        height: 10vw;
+      }
+    }
+  }
+  &_4 {
+    top: 57%;
+    left: 26%;
+    transform: rotate(7deg);
+    & > img {
+      width: 477px;
+      height: 270px;
+      @include laptop {
+        width: 32vw;
+        height: 18.1vw;
+      }
+    }
+  }
+}

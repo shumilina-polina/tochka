@@ -1,0 +1,14 @@
+@import "styles/variables.scss";
+
+.dnd_element {
+  z-index: 100;
+  flex-shrink: 0;
+  position: absolute;
+  cursor: grab;
+  & > img {
+    max-width: initial;
+  }
+  @include mobile {
+    display: none;
+  }
+}

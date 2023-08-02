@@ -115,7 +115,7 @@
         width: 215px;
         height: 385px;
         bottom: 44px;
-        right: 60px;
+        right: 100px;
         z-index: 8;
         @include laptop {
           bottom: 2.94vw;
@@ -152,9 +152,13 @@
         }
       }
       & > .image_wrapper {
+        display: none;
         pointer-events: none;
         position: relative;
         z-index: 20;
+        @include mobile {
+          display: block;
+        }
       }
     }
   }
