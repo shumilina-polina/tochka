@@ -3,9 +3,7 @@
 .wr {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  animation: showImage 0.4s forwards;
   position: relative;
-  // cursor: pointer;
 
   & > img {
     position: absolute;
@@ -16,15 +14,5 @@
     right: 0;
     bottom: 0;
     pointer-events: none;
-    transition: opacity 0.3s;
-  }
-}
-
-@keyframes showImage {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }

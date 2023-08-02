@@ -8,9 +8,10 @@ import CountUp from "react-countup";
 import Arrow from "components/Arrow";
 import Parashut from "./Parashut";
 import ImageHover from "components/ImageHover/ImageHover";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Cases = () => {
+  const navigate = useNavigate();
   const isMobile = useMediaQuery(breakpoints.mobile);
 
   return (
@@ -160,18 +161,20 @@ const Cases = () => {
                 <Arrow />
               </figure>
             </Link>
-            <Link className={s.case_link} to={"/helix"}>
-              <figure className={s.right}>
-                <Parashut />
-                <p>
+            {/* <Link className={s.case_link} to={"/helix"}> */}
+            <figure className={s.right} style={{ position: "relative" }}>
+              <Parashut />
+              <section>
+                <p onClick={() => navigate("/helix")}>
                   <SvgSelector svg={"parashut"} />
                   Прыжки с&nbsp;парашютом <br />
                   для&nbsp;топ-менеджеров Helix на&nbsp;выездном <br />
                   лидерском тренинге
                 </p>
                 <Arrow />
-              </figure>
-            </Link>
+              </section>
+            </figure>
+            {/* </Link> */}
           </div>
           <div className={cn(s.item, s.item_vk)}>
             <div className={s.num}>

@@ -148,7 +148,7 @@
           margin-bottom: 24px;
         }
       }
-      & > p {
+      & p {
         @include text-small;
 
         & svg {
@@ -330,6 +330,9 @@
     flex-direction: column-reverse;
   }
   & figure {
+    & section {
+      height: 100%; //ТУТ
+    }
     & > div:first-child {
       height: 484px;
       width: 957px;
@@ -407,6 +410,7 @@
   &_wrapper {
     position: relative;
     width: fit-content;
+    z-index: 999999999;
     &:hover {
       cursor: pointer;
       & span {
@@ -459,6 +463,9 @@
   &:hover {
     button {
       transform: rotate(-90deg);
+    }
+    p {
+      text-decoration: underline;
     }
   }
   &:active,

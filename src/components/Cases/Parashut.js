@@ -1,7 +1,6 @@
 import SvgSelector from "components/SvgSelector";
 import s from "./cases.module.scss";
 import { useState } from "react";
-import { useRef } from "react";
 import { breakpoints } from "styles/variables";
 import { useMediaQuery } from "@mui/material";
 
