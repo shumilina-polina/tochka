@@ -110,14 +110,18 @@ const Skysmartbigday = () => {
             директора, Актовый зал, Диджитал класс и&nbsp;Лаборатория
             для&nbsp;детей.
             <Hyperlink src={"skysmartbigday/tincoff.jpg"}>
-              <a
-                href="https://s.tinkoff.ru/story/aVE5JQmKb0NGjPD0"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Тинькофф: как&nbsp;меньше ссориться с&nbsp;ребенком, справляться
-                со&nbsp;стрессом и&nbsp;выгодно инвестировать в&nbsp;учебу
-              </a>
+              <p>
+                <a
+                  href="https://s.tinkoff.ru/story/aVE5JQmKb0NGjPD0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Тинькофф: как&nbsp;меньше ссориться с&nbsp;ребенком,
+                  справляться
+                  {isMobile || <br />} со&nbsp;стрессом и&nbsp;выгодно
+                  инвестировать в&nbsp;учебу
+                </a>
+              </p>
             </Hyperlink>
           </p>
         </NumberBlock>
@@ -159,14 +163,17 @@ const Skysmartbigday = () => {
             с&nbsp;выбором будущей профессии, если&nbsp;все&nbsp;вокруг блогеры,
             а&nbsp;не&nbsp;врачи и&nbsp;юристы.
             <Hyperlink src={"skysmartbigday/liberty.jpg"}>
-              <a
-                href="https://libertymag.ru/activation/smartfest"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Liberty Magazine: Онлайн-школа Skysmart проведет в&nbsp;октябре
-                ежегодный фестиваль для&nbsp;родителей
-              </a>
+              <p>
+                <a
+                  href="https://libertymag.ru/activation/smartfest"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Liberty Magazine: Онлайн-школа Skysmart проведет
+                  в&nbsp;октябре
+                  {isMobile || <br />} ежегодный фестиваль для&nbsp;родителей
+                </a>
+              </p>
             </Hyperlink>
           </p>
         </NumberBlock>

@@ -22,7 +22,7 @@ const Box = styled.div`
     margin-top: 2.68vw;
   }
   @media ${breakpoints.mobile} {
-    gap: 8px;
+    gap: 10vw;
     margin-top: 20px;
     flex-direction: row-reverse;
     align-items: flex-end;
@@ -64,7 +64,7 @@ const Box = styled.div`
         letter-spacing: 0.2px;
       }
     }
-    & > a {
+    & > p {
       ${mixins.textSmall}
       letter-spacing: -0.36px;
       @media ${breakpoints.mobile} {
@@ -72,8 +72,11 @@ const Box = styled.div`
         line-height: 14px;
         letter-spacing: -0.24px;
       }
-      &:hover {
-        text-decoration: underline;
+      & > a {
+        ${mixins.hoveredText}
+        @media ${breakpoints.mobile} {
+          background-size: 100% 1px;
+        }
       }
     }
   }

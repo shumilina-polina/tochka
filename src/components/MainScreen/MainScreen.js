@@ -77,18 +77,20 @@ const MainScreen = () => {
             <div>
               <SvgSelector svg={"tochka"} />
               <li className={s.welcome}>
-                <a
-                  href={require("assets/documents/ТОЧКА Ивент КП.pdf")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Летнее <br />
-                  предложение
-                  <span>
-                    <img src={require("assets/sun.png")} alt="Sun" />
-                    pdf
-                  </span>
-                </a>
+                <p>
+                  <a
+                    href={require("assets/documents/ТОЧКА Ивент КП.pdf")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Летнее <br />
+                    предложение
+                    <span>
+                      <img src={require("assets/sun.png")} alt="Sun" />
+                      pdf
+                    </span>
+                  </a>
+                </p>
               </li>
             </div>
           )}
@@ -111,19 +113,20 @@ const MainScreen = () => {
               </li>
               {!isMobile && (
                 <li className={s.welcome}>
-                  <a
-                    href={require("assets/documents/ТОЧКА Ивент КП.pdf")}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Летнее <br />
-                    предложение
-                    <span>
-                      {/* <SvgSelector svg={"sun"}/> */}
-                      <img src={require("assets/sun.png")} alt="Sun" />
-                      pdf
-                    </span>
-                  </a>
+                  <p>
+                    <a
+                      href={require("assets/documents/ТОЧКА Ивент КП.pdf")}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Летнее <br />
+                      предложение
+                      <span>
+                        <img src={require("assets/sun.png")} alt="Sun" />
+                        pdf
+                      </span>
+                    </a>
+                  </p>
                 </li>
               )}
             </ul>

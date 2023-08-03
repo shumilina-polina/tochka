@@ -7,6 +7,7 @@
     margin-bottom: 10.98vw;
   }
   @include mobile {
+    padding-top: 0;
     margin-bottom: 80px;
   }
 
@@ -71,7 +72,9 @@
       }
       & > p {
         @include text-small;
-
+        @include mobile {
+          max-width: 70%;
+        }
         & svg {
           height: 1.1em;
           transform: translateY(20%);
@@ -105,6 +108,9 @@
       & > p {
         @include text-small;
         padding-left: 10px;
+        @include mobile {
+          max-width: 70%;
+        }
         @include mobile {
           padding-left: 0;
         }
@@ -185,6 +191,9 @@
         @include text-small;
         padding-left: 0px;
         max-width: 50%;
+        @include mobile {
+          max-width: 70%;
+        }
       }
     }
   }
@@ -288,6 +297,11 @@
 
 .item_slezy {
   align-self: flex-end;
+  & p {
+    @include mobile {
+      max-width: 80%;
+    }
+  }
   & .left > div {
     overflow: hidden;
     aspect-ratio: auto;
@@ -309,6 +323,7 @@
       height: 63.75vw;
       width: 100%;
     }
+
     & img {
       transition: transform 0.3s;
     }
@@ -330,9 +345,6 @@
     flex-direction: column-reverse;
   }
   & figure {
-    & section {
-      height: 100%; //ТУТ
-    }
     & > div:first-child {
       height: 484px;
       width: 957px;
@@ -460,18 +472,58 @@
 }
 
 .case_link {
+  & p > a {
+    @include hoveredText;
+  }
   &:hover {
     button {
       transform: rotate(-90deg);
     }
-    p {
-      text-decoration: underline;
+    p > a {
+      background-size: 100% 2px;
+      @include mobile {
+        background-size: 100% 1px;
+      }
     }
   }
   &:active,
   &:focus {
     & button > span > svg {
       transform: translateY(20%);
+    }
+  }
+}
+
+.par {
+  display: flex;
+  flex-direction: column;
+  & section {
+    flex-basis: 100%;
+    & p {
+      @include mobile {
+        max-width: 80%;
+      }
+    }
+    & p > a {
+      @include hoveredText;
+    }
+    &:hover {
+      cursor: pointer;
+      button {
+        transform: rotate(-90deg);
+      }
+      p > a {
+        background-size: 100% 2px;
+        @include mobile {
+          background-size: 100% 1px;
+        }
+      }
+    }
+    &:active,
+    &:focus {
+      & button > span > svg {
+        transform: translateY(20%);
+      }
     }
   }
 }

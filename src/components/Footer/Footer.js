@@ -16,32 +16,38 @@ const Footer = () => {
       <Wrapper>
         <div className={s.wr}>
           <div className={s.policy}>
-            <a
-              href={require("assets/documents/ПОЛИТИКА_ОБРАБОТКИ_ПЕРСОНАЛЬНЫХ_ДАННЫХ.pdf")}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Политика обработки персональных данных
-            </a>
+            <p>
+              <a
+                href={require("assets/documents/ПОЛИТИКА_ОБРАБОТКИ_ПЕРСОНАЛЬНЫХ_ДАННЫХ.pdf")}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Политика обработки персональных данных
+              </a>
+            </p>
           </div>
           <div className={s.inst}>
-            <a
-              href="https://instagram.com/tochka_eventagency?igshid=MzRlODBiNWFlZA=="
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              instagram
-            </a>
+            <p>
+              <a
+                href="https://instagram.com/tochka_eventagency?igshid=MzRlODBiNWFlZA=="
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                instagram
+              </a>
+            </p>
           </div>
 
           <div className={s.contacts}>
-            <a
-              href="tel:+79216344336"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              +7 (921) 634 43 36
-            </a>
+            <p>
+              <a
+                href="tel:+79216344336"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                +7 (921) 634 43 36
+              </a>
+            </p>
             <CopyEmail />
           </div>
 
@@ -122,13 +128,15 @@ const Footer = () => {
           </Link>
           {isMobile || (
             <div className={s.designed}>
-              <a
-                href="https://www.behance.net/pavlushin"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Задизайнили в Артели
-              </a>
+              <p>
+                <a
+                  href="https://www.behance.net/pavlushin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Задизайнили в Артели
+                </a>
+              </p>
             </div>
           )}
           <span className={s.event}>Точка Ивент © 2023</span>
@@ -137,13 +145,15 @@ const Footer = () => {
       </Wrapper>
       {isMobile && (
         <div className={s.designed}>
-          <a
-            href="https://www.behance.net/pavlushin"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Задизайнили в Артели
-          </a>
+          <p>
+            <a
+              href="https://www.behance.net/pavlushin"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Задизайнили в Артели
+            </a>
+          </p>
         </div>
       )}
     </footer>

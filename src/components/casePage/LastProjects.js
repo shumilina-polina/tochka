@@ -73,6 +73,12 @@ const ProjectBox = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    & p > a {
+      ${mixins.hoveredText}
+      @media ${breakpoints.mobile} {
+        background-size: 100% 1px;
+      }
+    }
     &:hover {
       & > div {
         & img {
@@ -82,8 +88,11 @@ const ProjectBox = styled.div`
           }
         }
       }
-      & p {
-        text-decoration: underline;
+      & p > a {
+        background-size: 100% 2px;
+        @media ${breakpoints.mobile} {
+          background-size: 100% 1px;
+        }
       }
     }
     @media ${breakpoints.mobile} {
@@ -123,12 +132,12 @@ const ProjectBox = styled.div`
     & > div {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 5px;
       @media ${breakpoints.laptop} {
-        gap: 0.67vw;
+        gap: 0.37vw;
       }
       @media ${breakpoints.mobile} {
-        gap: 6px;
+        gap: 3px;
       }
       & > svg {
         height: 22px;
@@ -173,8 +182,10 @@ export const ProjectGazpromneft = () => (
         <span>Газпромнефть</span>
       </div>
       <p>
-        Подготовили топ-менеджерам в&nbsp;Газпромнефть выступления
-        в&nbsp;стиле&nbsp;TED
+        <a>
+          Подготовили топ-менеджерам в&nbsp;Газпромнефть выступления
+          в&nbsp;стиле&nbsp;TED
+        </a>
       </p>
     </div>
   </Link>
@@ -194,8 +205,10 @@ export const ProjectHelix = () => {
           <span>Helix</span>
         </div>
         <p>
-          Прыжки {isMobile || <br />} с&nbsp;парашютом для&nbsp;топ-менеджеров
-          Helix на&nbsp;выездном лидерском тренинге
+          <a>
+            Прыжки {isMobile || <br />} с&nbsp;парашютом для&nbsp;топ-менеджеров
+            Helix на&nbsp;выездном лидерском тренинге
+          </a>
         </p>
       </div>
     </Link>
@@ -216,8 +229,10 @@ export const ProjectSkysmartCamp = () => (
         <span>Skysmart</span>
       </div>
       <p>
-        Устроили масштабный онлайн фестиваль «SMARTfest: КЭМП
-        для&nbsp;родителей»
+        <a>
+          Устроили масштабный онлайн фестиваль «SMARTfest: КЭМП
+          для&nbsp;родителей»
+        </a>
       </p>
     </div>
   </Link>
@@ -233,7 +248,9 @@ export const ProjectHighload = () => (
         <SvgSelector svg={"bar"} />
         <span>Space 307</span>
       </div>
-      <p>Подавали «Слезы разработчика» на&nbsp;конференции Highload 2022</p>
+      <p>
+        <a>Подавали «Слезы разработчика» на&nbsp;конференции Highload 2022</a>
+      </p>
     </div>
   </Link>
 );
@@ -251,8 +268,10 @@ export const ProjectMontblanc = () => (
         <span>Montblanc</span>
       </div>
       <p>
-        Оформили Montblanc к&nbsp;открытию за&nbsp;2&nbsp;дня,
-        без&nbsp;приостановки работы бутика
+        <a>
+          Оформили Montblanc к&nbsp;открытию за&nbsp;2&nbsp;дня,
+          без&nbsp;приостановки работы бутика
+        </a>
       </p>
     </div>
   </Link>
@@ -268,8 +287,10 @@ export const ProjectVk = () => (
         <span>Вконтакте</span>
       </div>
       <p>
-        Подружили новых сотрудников Вконтакте в&nbsp;шоу по&nbsp;пьесам Чехова
-        в&nbsp;атмосфере 19 века
+        <a>
+          Подружили новых сотрудников Вконтакте в&nbsp;шоу по&nbsp;пьесам Чехова
+          в&nbsp;атмосфере 19 века
+        </a>
       </p>
     </div>
   </Link>
@@ -291,8 +312,10 @@ export const ProjectSkysmartBigday = () => {
           <span>Skysmart</span>
         </div>
         <p>
-          Организовали {isMobile || <br />} онлайн фестиваль «BIG&nbsp;DAY
-          открытых дверей Skysmart»
+          <a>
+            Организовали {isMobile || <br />} онлайн фестиваль «BIG&nbsp;DAY
+            открытых дверей Skysmart»
+          </a>
         </p>
       </div>
     </Link>

@@ -47,10 +47,15 @@
     font-size: 12px;
     line-height: 12px;
   }
-  & > a {
-    display: block;
-    &:hover {
-      text-decoration: underline;
+  & p > a {
+    @include hoveredText;
+  }
+  &:hover {
+    & p > a {
+      background-size: 100% 2px;
+      @include mobile {
+        background-size: 100% 1px;
+      }
     }
   }
 }
@@ -59,9 +64,15 @@
   grid-area: inst;
   @include text-medium;
   color: #2a2929;
-  & > a {
-    &:hover {
-      text-decoration: underline;
+  & p > a {
+    @include hoveredText;
+  }
+  &:hover {
+    & p > a {
+      background-size: 100% 2px;
+      @include mobile {
+        background-size: 100% 1px;
+      }
     }
   }
 
@@ -89,10 +100,8 @@
   @include mobile {
     margin-bottom: 20px;
   }
-  & > a {
-    &:hover {
-      text-decoration: underline;
-    }
+  & > p > a {
+    @include hoveredText;
   }
   & > button {
     @include text-small;
@@ -172,7 +181,7 @@
   align-items: flex-end;
   justify-content: center;
 
-  & > a {
+  & > p > a {
     font-size: 12px;
     line-height: 12px;
     transition: color 0.3s;
@@ -180,7 +189,9 @@
     &:hover {
       color: rgba(42, 41, 41, 0.25);
       text-decoration-line: underline;
+      background-size: 100% 1px;
     }
+    @include hoveredText;
     @include laptop {
       font-size: 0.94vw;
       line-height: 0.94vw;

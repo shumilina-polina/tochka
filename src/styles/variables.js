@@ -57,4 +57,19 @@ export const mixins = {
       line-height: 20px;
     }
   `,
+  hoveredText: css`
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size 0.5s;
+    &:hover,
+    &:focus {
+      background-size: 100% 2px;
+      @media ${breakpoints.mobile} {
+        background-size: 100% 1px;
+      }
+    }
+  `,
 };

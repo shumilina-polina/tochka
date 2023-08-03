@@ -17,15 +17,17 @@ const Block = styled.div`
     padding: 50px 0;
     grid-template-columns: 1fr;
   }
-  &:hover {
-    & > p > a {
-      text-decoration: underline;
-    }
-  }
+
   & > p {
     font-size: 32px;
     line-height: 42px;
     letter-spacing: -0.64px;
+    & > a {
+      ${mixins.hoveredText}
+      @media ${breakpoints.mobile} {
+        background-size: 100% 1px;
+      }
+    }
     @media ${breakpoints.laptop} {
       font-size: 2.14vw;
       line-height: 2.8vw;
@@ -34,6 +36,14 @@ const Block = styled.div`
     @media ${breakpoints.mobile} {
       font-size: 16px;
       line-height: 20px;
+    }
+    &:hover {
+      & > a {
+        background-size: 100% 2px;
+        @media ${breakpoints.mobile} {
+          background-size: 100% 1px;
+        }
+      }
     }
   }
 `;

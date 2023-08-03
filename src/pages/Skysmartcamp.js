@@ -111,15 +111,18 @@ const Skysmartcamp = () => {
             и&nbsp;обеспечили отличную картинку и&nbsp;звук для&nbsp;спикеров,
             где&nbsp;бы&nbsp;они&nbsp;не&nbsp;находились.
             <Hyperlink src={"skysmartcamp/afisha.jpg"}>
-              <a
-                href="https://www.afisha.ru/meeting/13682/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Афиша: бесплатный онлайн-фестиваль для&nbsp;родителей
-                “Биг&nbsp;Дэй открытых дверей” об&nbsp;обучении
-                и&nbsp;воспитании ребенка в&nbsp;цифровом мире
-              </a>
+              <p>
+                <a
+                  href="https://www.afisha.ru/meeting/13682/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Афиша: бесплатный онлайн-фестиваль для&nbsp;родителей
+                  “Биг&nbsp;Дэй открытых {isMobile || <br />}дверей”
+                  об&nbsp;обучении и&nbsp;воспитании ребенка в&nbsp;цифровом
+                  мире
+                </a>
+              </p>
             </Hyperlink>
           </p>
         </NumberBlock>
@@ -140,15 +143,17 @@ const Skysmartcamp = () => {
             аудиторию с&nbsp;новыми продуктами Skysmart в&nbsp;увлекательном
             онлайн-формате.
             <Hyperlink src={"skysmartcamp/letidor.jpg"}>
-              <a
-                href="https://letidor.ru/amp/novosti/16-oktyabrya-proidet-besplatnyi-onlain-festival-dlya-roditelei-smartfest-13-10-2021.htm"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Letidor: второй год подряд онлайн-школа для&nbsp;детей
-                и&nbsp;подростков Skysmart организует фестиваль для&nbsp;детей
-                и&nbsp;родителей
-              </a>
+              <p>
+                <a
+                  href="https://letidor.ru/amp/novosti/16-oktyabrya-proidet-besplatnyi-onlain-festival-dlya-roditelei-smartfest-13-10-2021.htm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Letidor: второй год подряд онлайн-школа для&nbsp;детей
+                  и&nbsp;подростков {isMobile || <br />} Skysmart организует
+                  фестиваль для&nbsp;детей и&nbsp;родителей
+                </a>
+              </p>
             </Hyperlink>
           </p>
         </NumberBlock>
@@ -168,9 +173,9 @@ const Skysmartcamp = () => {
         <NumberBlock>
           {isMobile || <div></div>}
           <p>
-            Не&nbsp;забыли и&nbsp;про&nbsp;детей —
-            для&nbsp;них был&nbsp;организован отдельный Детский Эфир
-            с&nbsp;интерактивами и&nbsp;уроками.
+            Не&nbsp;забыли и&nbsp;про&nbsp;детей — для&nbsp;них
+            был&nbsp;организован отдельный Детский Эфир с&nbsp;интерактивами
+            и&nbsp;уроками.
           </p>
         </NumberBlock>
 
