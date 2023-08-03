@@ -39,7 +39,7 @@ const Block = styled.div`
     }
     &:hover {
       & > a {
-        background-size: 100% 2px;
+        background-size: 100% 1.5px;
         @media ${breakpoints.mobile} {
           background-size: 100% 1px;
         }

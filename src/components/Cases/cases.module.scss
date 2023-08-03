@@ -480,7 +480,7 @@
       transform: rotate(-90deg);
     }
     p > a {
-      background-size: 100% 2px;
+      background-size: 100% 1.5px;
       @include mobile {
         background-size: 100% 1px;
       }
@@ -513,7 +513,7 @@
         transform: rotate(-90deg);
       }
       p > a {
-        background-size: 100% 2px;
+        background-size: 100% 1.5px;
         @include mobile {
           background-size: 100% 1px;
         }

@@ -52,7 +52,7 @@
   }
   &:hover {
     & p > a {
-      background-size: 100% 2px;
+      background-size: 100% 1.5px;
       @include mobile {
         background-size: 100% 1px;
       }
@@ -69,7 +69,7 @@
   }
   &:hover {
     & p > a {
-      background-size: 100% 2px;
+      background-size: 100% 1.5px;
       @include mobile {
         background-size: 100% 1px;
       }
@@ -189,7 +189,7 @@
     &:hover {
       color: rgba(42, 41, 41, 0.25);
       text-decoration-line: underline;
-      background-size: 100% 1px;
+      background-size: 100% 1.5px;
     }
     @include hoveredText;
     @include laptop {

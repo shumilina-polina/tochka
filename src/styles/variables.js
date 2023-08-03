@@ -66,7 +66,7 @@ export const mixins = {
     transition: background-size 0.5s;
     &:hover,
     &:focus {
-      background-size: 100% 2px;
+      background-size: 100% 1.5px;
       @media ${breakpoints.mobile} {
         background-size: 100% 1px;
       }
