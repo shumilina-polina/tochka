@@ -10,8 +10,6 @@ body {
   overflow-x: hidden;
 }
 
-
-
 html {
   scroll-padding-top: 50px;
   scroll-behavior: smooth;
@@ -25,10 +23,10 @@ body {
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  
+
   /* Скроллбар*/
   scrollbar-width: thin;
-  scrollbar-color: #222 none;
+  scrollbar-color: #222 #fff;
 
   &::-webkit-scrollbar {
     height: 6px;
@@ -36,7 +34,7 @@ body {
   }
 
   &::-webkit-scrollbar-track {
-    background: none;
+    background: #fff;
   }
 
   &::-webkit-scrollbar-thumb {
