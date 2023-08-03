@@ -480,12 +480,13 @@
       transform: rotate(-90deg);
     }
     p > a {
-      background-size: 100% 1.5px;
+      background-size: 100% 1px;
       @include mobile {
         background-size: 100% 1px;
       }
     }
   }
+
   &:active,
   &:focus {
     & button > span > svg {
@@ -513,7 +514,7 @@
         transform: rotate(-90deg);
       }
       p > a {
-        background-size: 100% 1.5px;
+        background-size: 100% 1px;
         @include mobile {
           background-size: 100% 1px;
         }

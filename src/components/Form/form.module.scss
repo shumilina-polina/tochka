@@ -65,6 +65,7 @@
       line-height: 27px;
       letter-spacing: -0.48px;
       top: 20px;
+      overflow: visible;
       @include laptop {
         top: 1.2vw;
         font-size: 1.55vw;

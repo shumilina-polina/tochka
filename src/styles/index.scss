@@ -19,12 +19,13 @@ html {
 }
 
 body {
+  overflow-y: hidden;
   @include m5;
   @include text-medium;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-
+  
   /* Скроллбар*/
   scrollbar-width: thin;
   scrollbar-color: #222 none;

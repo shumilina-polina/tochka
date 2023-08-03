@@ -25,6 +25,21 @@ const MainScreen = () => {
         <div className={s.collaj}>
           <div className={s.image_wrapper}>
             <img src={require(`assets/mainscreen-mobile.png`)} alt="Tochka" />
+            <img
+              className={classNames(s.image_mobile, s.image_mobile_1)}
+              src={require(`assets/collaj/image_1.png`)}
+              alt="Tochka"
+            />
+            <img
+              className={classNames(s.image_mobile, s.image_mobile_2)}
+              src={require(`assets/collaj/image_2.png`)}
+              alt="Tochka"
+            />
+            <img
+              className={classNames(s.image_mobile, s.image_mobile_3)}
+              src={require(`assets/collaj/image_3.png`)}
+              alt="Tochka"
+            />
           </div>
           <Dnd i={1} />
           <Dnd i={2} />

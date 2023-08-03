@@ -13,7 +13,6 @@
     & > .collaj {
       height: 681px;
       width: 1078px;
-      // padding: 0 123px 0 43px;
       position: absolute;
       top: 102px;
       left: 43px;
@@ -32,36 +31,9 @@
         transform: translateX(-50%);
         z-index: 100;
       }
-      // &::before {
-      //   position: absolute;
-      //   content: "";
-      //   display: block;
-      //   bottom: 0;
-      //   top: 35px;
-      //   left: 54%;
-      //   transform: translateX(-50%);
-      //   width: 653px;
-      //   height: 653px;
-      //   border-radius: 100%;
-      //   background-color: #000;
-      //   @include laptop {
-      //     top: 2.34vw;
-      //     width: 43.75vw;
-      //     height: 43.75vw;
-      //     left: 50%;
-      //   }
-      //   @include mobile {
-      //     top: 18%;
-      //     width: 100%;
-      //     height: auto;
-      //     aspect-ratio: 1/1;
-      //   }
-      // }
 
       & > .iframe_wrapper {
         z-index: 1;
-        // padding: 56.25% 0 0 0;
-        // position: relative;
         border-radius: 15px;
         overflow: hidden;
         position: absolute;
@@ -159,6 +131,31 @@
         @include mobile {
           display: block;
         }
+        & > .image_mobile {
+          position: absolute;
+          border-radius: 10px;
+        }
+        .image_mobile_1 {
+          left: 33%;
+          bottom: 0;
+          width: 25%;
+          height: 27%;
+          transform: rotate(-19deg);
+        }
+        .image_mobile_2 {
+          width: 44%;
+          height: 21%;
+          bottom: 5%;
+          right: 2%;
+          transform: rotate(10deg);
+        }
+        .image_mobile_3 {
+          width: 35%;
+          height: 17%;
+          transform: rotate(-20deg);
+          left: 31%;
+          top: 4%;
+        }
       }
     }
   }
@@ -166,7 +163,7 @@
     height: 56.3vw;
   }
   @include mobile {
-    height: 180vw;
+    height: 190vw;
   }
   .main {
     padding: 20px 0 57px;
@@ -413,7 +410,7 @@
       bottom: 13px;
       left: 50%;
       transform: translateX(-50%);
-      z-index: 100;
+      z-index: 9999999999;
     }
   }
 }
