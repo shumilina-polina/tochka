@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import Error from "./pages/404";
 import Index from "./pages/Index";
@@ -12,9 +12,6 @@ import Skysmartbigday from "pages/Skysmartbigday";
 import Skysmartcamp from "pages/Skysmartcamp";
 
 function App() {
-  const { pathname } = useLocation();
-  console.log('pathname: ', pathname);
-
   return (
     <>
       <Routes>
