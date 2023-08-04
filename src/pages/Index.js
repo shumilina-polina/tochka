@@ -21,7 +21,7 @@ const Index = () => {
   const isMobile = useMediaQuery(breakpoints.mobile);
 
   return (
-    <div>
+    <div id="main-wr">
       <MainScreen />
       <Wrapper>
         <Numbers />

@@ -8,6 +8,7 @@ export const Dnd = ({ i }) => {
   useEffect(() => {
     var ball = dnd.current;
     var wr = document.getElementById("wr");
+    var mainWr = document.getElementById("main-wr");
     function getCoords(elem) {
       var box = elem.getBoundingClientRect();
       return {
@@ -21,8 +22,8 @@ export const Dnd = ({ i }) => {
       var shiftX = e.pageX - coords.left;
       var shiftY = e.pageY - coords.top;
 
-      ball.style.position = "absolute";
-      document.body.appendChild(ball);
+      // ball.style.position = "absolute";
+      mainWr.appendChild(ball);
       moveAt(e);
 
       ball.style.zIndex = 1000; // над другими элементами
@@ -48,33 +49,6 @@ export const Dnd = ({ i }) => {
       return false;
     };
   }, []);
-
-  // const handleMouseDown = (e) => {
-  //   const coords = getCoords(dnd.current);
-  //   console.log("e.pageX: ", e.pageX);
-  //   var shiftX = e.pageX - coords.left;
-  //   var shiftY = e.pageY - coords.top;
-
-  //   // e.target.style.position = "absolute";
-  //   // document.body.appendChild(e.target);
-  //   moveAt(e);
-
-  //   dnd.current.style.zIndex = 1000; // над другими элементами
-
-  //   function moveAt(e) {
-  //     dnd.current.style.left = e.pageX - shiftX + "px";
-  //     dnd.current.style.top = e.pageY - shiftY + "px";
-  //   }
-
-  //   document.onmousemove = function (e) {
-  //     moveAt(e);
-  //   };
-
-  //   dnd.current.onmouseup = function () {
-  //     document.onmousemove = null;
-  //     dnd.current.onmouseup = null;
-  //   };
-  // };
 
   return (
     <div
