@@ -43,7 +43,7 @@ const Vk = () => {
         <MainImage src={"vk/main.jpg"} srcMobile={"vk/main-mobile.jpg"} />
         <ClientBlockWrapper>
           <LabelClient>
-            Подружили новых <br /> сотрудников Вконтакте в&nbsp;шоу
+            Подружили новых <br /> сотрудников ВКонтакте в&nbsp;шоу
             по&nbsp;пьесам Чехова <br /> в&nbsp;атмосфере 19&nbsp;века
           </LabelClient>
           <ChatWrapper>
@@ -62,7 +62,7 @@ const Vk = () => {
           </ChatWrapper>
           <List
             list={[
-              "Вконтакте",
+              "ВКонтакте",
               "Ролевая игра и&nbsp;интерактивный спектакль",
               "Ленинградская область, 2022&nbsp;г.",
             ]}

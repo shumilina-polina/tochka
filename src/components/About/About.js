@@ -25,7 +25,7 @@ const About = () => {
         <li>
           <h2>Клиенты</h2>
           <ReactMarkdown>
-            Вконтакте, Газпромнефть, Skysmart, Montblanc, Space307, Helix...
+            ВКонтакте, Газпромнефть, Skysmart, Montblanc, Space307, Helix...
           </ReactMarkdown>
         </li>
       </ul>
