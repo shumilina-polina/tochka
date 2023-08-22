@@ -138,7 +138,7 @@ const Skysmartbigday = () => {
           <Number n={38}>экспертов</Number>
           <p>
             В&nbsp;числе которых Оскар&nbsp;Кучера, Ася&nbsp;Казанцева,
-            Алёна&nbsp;Владимирская, Антон&nbsp;Камолов и&nbsp;другие.
+            Алёна&nbsp;Владимирская, Антон&nbsp;Комолов и&nbsp;другие.
           </p>
         </NumberBlock>
         <Gallery type={9}>
