@@ -33,7 +33,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                instagram
+                инста
               </a>
             </p>
           </div>
