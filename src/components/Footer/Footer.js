@@ -54,7 +54,7 @@ const Footer = () => {
           <span className={s.ip}>
             ИП Рыбина <br />
             Екатерина
-            <br /> Александровна
+            <br /> Анатольевна
           </span>
           <Form />
           <div className={s.authors}>
