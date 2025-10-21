@@ -94,14 +94,14 @@ const MainScreen = () => {
               <li className={s.welcome}>
                 <p>
                   <a
-                    href={require("assets/documents/ТОЧКА Ивент КП.pdf")}
+                    href={require("assets/documents/Точка, зимнее предложение.pdf")}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Летнее <br />
+                    Зимнее <br />
                     предложение
                     <span>
-                      <img src={require("assets/sun.png")} alt="Sun" />
+                      <img src={require("assets/winter.png")} alt="Winter" />
                       pdf
                     </span>
                   </a>
@@ -130,14 +130,14 @@ const MainScreen = () => {
                 <li className={s.welcome}>
                   <p>
                     <a
-                      href={require("assets/documents/ТОЧКА Ивент КП.pdf")}
+                      href={require("assets/documents/Точка, зимнее предложение.pdf")}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Летнее <br />
+                      Зимнее <br />
                       предложение
                       <span>
-                        <img src={require("assets/sun.png")} alt="Sun" />
+                        <img src={require("assets/winter.png")} alt="Winter" />
                         pdf
                       </span>
                     </a>
@@ -167,7 +167,7 @@ const MainScreen = () => {
                   ? { opacity: "0", pointerEvents: "none" }
                   : { opacity: "1" }
               }
-              href="#project"
+              href="#contacts"
             >
               <button>
                 <SvgSelector svg={"arrow"} />

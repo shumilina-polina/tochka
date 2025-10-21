@@ -8,11 +8,25 @@ import {
   Radio,
   RadioGroup,
 } from "@mui/material";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useState } from "react";
 import cn from "classnames";
+import { useLocation } from "react-router-dom";
 
 const Form = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [location]);
+
   const radio = useRef(null);
   const budget = useRef(null);
   const [sended, setSended] = useState(false);
@@ -62,7 +76,7 @@ const Form = () => {
     >
       <div className={s.wr}>
         <h3>Обсудить проект</h3>
-        <form className={s.form} id="contactForm" onSubmit={sendEmail}>
+        <form className={s.form} id="contacts" onSubmit={sendEmail}>
           <FormControl className={s.form_control}>
             <InputLabel htmlFor="fio-input">Ваше имя</InputLabel>
             <Input

@@ -26,17 +26,7 @@ const Footer = () => {
               </a>
             </p>
           </div>
-          <div className={s.inst}>
-            <p>
-              <a
-                href="https://instagram.com/tochka_eventagency?igshid=MzRlODBiNWFlZA=="
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                инста
-              </a>
-            </p>
-          </div>
+          <div className={s.inst}></div>
 
           <div className={s.contacts}>
             <p>
