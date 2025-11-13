@@ -1,7 +1,5 @@
 import Wrapper from "components/Wrapper";
 import s from "./index.module.scss";
-import { useMediaQuery } from "@mui/material";
-import { breakpoints } from "styles/variables";
 import Aos from "aos";
 import { useEffect } from "react";
 import "aos/dist/aos.css";
@@ -12,54 +10,88 @@ import Cases from "components/Cases/Cases";
 import Steps from "components/Steps/Steps";
 import About from "components/About/About";
 import MainScreen from "components/MainScreen/MainScreen";
+import { useFetch } from "api/useFetch";
+import QueryString from "qs";
+import { ADMIN_URL } from "api/api";
+
+const query = QueryString.stringify(
+  {
+    populate: {
+      about: {
+        populate: "*",
+      },
+      textWithAuthor: {
+        populate: {
+          author: { populate: { photo: { populate: "*" } } },
+        },
+      },
+      numberBlocks: {
+        populate: "*",
+      },
+      titleWithDescription: {
+        populate: "*",
+      },
+      headerTitle: {
+        populate: "*",
+      },
+      formats: {
+        populate: "*",
+      },
+      steps: {
+        populate: "*",
+      },
+    },
+  },
+  {
+    encodeValuesOnly: true,
+  }
+);
 
 const Index = () => {
+  const { data, isLoading } = useFetch(`homepage?` + query);
+
   useEffect(() => {
     Aos.init();
   }, []);
 
-  const isMobile = useMediaQuery(breakpoints.mobile);
-
   return (
     <div id="main-wr">
-      <MainScreen />
+      <MainScreen data={data?.data} isLoading={isLoading} />
       <Wrapper>
-        <Numbers />
-        <About />
-        <Cases />
-        <h2 className={s.tech}>
-          {isMobile ? (
-            <>
-              <span data-aos="fade-left">Подбираем </span>
-              <span data-aos="fade-left">проверенных </span>
-              <span data-aos="fade-left">подрядчиков, </span>
-              <span data-aos="fade-left">используем </span>
-              <span data-aos="fade-left">современные </span>
-              <span data-aos="fade-left">технологии —</span>
-              <span data-aos="fade-left">внимание к&nbsp;деталям </span>
-              <span data-aos="fade-left">на&nbsp;каждом этапе.</span>
-            </>
-          ) : (
-            <>
-              <span data-aos="fade-left">Подбираем проверенных</span>
-              <span data-aos="fade-left">подрядчиков, используем</span>
-              <span data-aos="fade-left">современные технологии —</span>
-              <span data-aos="fade-left">внимание к&nbsp;деталям</span>
-              <span data-aos="fade-left">на&nbsp;каждом этапе.</span>
-            </>
-          )}
-        </h2>
-        <div className={s.author_wrapper_masha}>
-          <Author>
-            <div>
-              <img src={require("assets/author-masha.jpg")} alt="Author" />
-            </div>
-            <div>
-              <h3>Маша Фишер</h3>
-              <p>co-founder, режиссёр</p>
-            </div>
-          </Author>
-        </div>
+        <Numbers data={data?.data?.numberBlocks} isLoading={isLoading} />
+        <About data={data?.data?.titleWithDescription} isLoading={isLoading} />
+        <Cases data={data?.data} isLoading={isLoading} />
+        {data?.data?.textWithAuthor[1] && (
+          <h2 className={s.tech}>
+            {data.data.textWithAuthor[1].text
+              .split("\n")
+              .map((line, index, array) => (
+                <span key={index} data-aos="fade-left">
+                  {line.replace(/ /g, "\u00A0")}
+                  {index < array.length - 1 && "\u00A0"}
+                </span>
+              ))}
+          </h2>
+        )}
+        {data?.data?.textWithAuthor[1]?.author && (
+          <div className={s.author_wrapper_masha}>
+            <Author>
+              <div>
+                <img
+                  src={
+                    ADMIN_URL + data.data.textWithAuthor[1].author.photo?.url
+                  }
+                  alt={data.data.textWithAuthor[1].author.name}
+                />
+              </div>
+              <div>
+                <h3>{data.data.textWithAuthor[1].author.name}</h3>
+                <p>{data.data.textWithAuthor[1].author.text}</p>
+              </div>
+            </Author>
+          </div>
+        )}
+
         <Steps />
         <Formats />
       </Wrapper>

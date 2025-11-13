@@ -7,8 +7,10 @@ import { useScroll } from "react-spring";
 import { useMediaQuery } from "@mui/material";
 import classNames from "classnames";
 import { Dnd } from "components/Dnd/Dnd";
+import { Link } from "react-router-dom";
+import { SkeletText } from "components/Skelet/SkeletText";
 
-const MainScreen = () => {
+const MainScreen = ({ data, isLoading }) => {
   const isMobile = useMediaQuery(breakpoints.mobile);
 
   const [scrollVal, setScrollVal] = useState(0);
@@ -87,21 +89,23 @@ const MainScreen = () => {
             ></iframe>
           </div>
         </div>
+
         <div className={s.main}>
-          {isMobile && (
+          {data && isMobile && (
             <div>
               <SvgSelector svg={"tochka"} />
               <li className={s.welcome}>
                 <p>
-                  <a
-                    href={require("assets/documents/Точка, зимнее предложение.pdf")}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Зимнее <br />
+                  <a href={data.link} target="_blank" rel="noopener noreferrer">
+                    {data.isSummer ? "Летнее" : "Зимнее"} <br />
                     предложение
                     <span>
-                      <img src={require("assets/winter.png")} alt="Winter" />
+                      <img
+                        src={require(`assets/${
+                          data.isSummer ? "sun" : "winter"
+                        }.png`)}
+                        alt="Winter"
+                      />
                       pdf
                     </span>
                   </a>
@@ -111,39 +115,45 @@ const MainScreen = () => {
           )}
           <nav>
             <ul>
-              <li>
-                Делаем ивенты <br />
-                под ключ
-              </li>
-              <li>
-                Применяем
-                <br /> современные <br />
-                технологии
-              </li>
-              <li>
-                Объединяем
-                <br /> дерзкие идеи
-                <br /> и лучших <br />
-                специалистов
-              </li>
-              {!isMobile && (
+              {isLoading
+                ? Array.from(Array(4)).map((el, i) => <SkeletText key={i} />)
+                : data?.headerTitle?.map((el) => (
+                    <li
+                      dangerouslySetInnerHTML={{
+                        __html: el.text.replace(/\n/g, "<br>"),
+                      }}
+                      key={el.id}
+                    />
+                  ))}
+              {data && !isMobile && (
                 <li className={s.welcome}>
                   <p>
                     <a
-                      href={require("assets/documents/Точка, зимнее предложение.pdf")}
+                      href={data.link}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Зимнее <br />
+                      {data.isSummer ? "Летнее" : "Зимнее"} <br />
                       предложение
                       <span>
-                        <img src={require("assets/winter.png")} alt="Winter" />
+                        <img
+                          src={require(`assets/${
+                            data.isSummer ? "sun" : "winter"
+                          }.png`)}
+                          alt="Winter"
+                        />
                         pdf
                       </span>
                     </a>
                   </p>
                 </li>
               )}
+              <li>
+                <Link to={"/cases"}>
+                  Все наши <br /> кейсы
+                  {/* TODO mobile */}
+                </Link>
+              </li>
             </ul>
           </nav>
           <div>

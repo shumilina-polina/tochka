@@ -1,33 +1,27 @@
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import s from "./about.module.scss";
+import { SkeletText } from "components/Skelet/SkeletText";
 
-const About = () => {
+const About = ({ data, isLoading }) => {
   return (
     <section className={s.about}>
       <ul>
-        <li>
-          <h2>Эбаут</h2>
-          <ReactMarkdown>
-            Создаём офлайн и&nbsp;онлайн мероприятия: от&nbsp;масштабных
-            маркетинговых событий до&nbsp;локальных незабываемых тимбилдингов.
-            Подбираем проверенных подрядчиков под&nbsp;каждый ивент,
-            чтобы&nbsp;креативная концепция реализовалась на&nbsp;100%.
-          </ReactMarkdown>
-        </li>
-
-        <li>
-          <h2>Форматы</h2>
-          <ReactMarkdown>
-            Конференции, маркетинговые события, корпоративные мероприятия,
-            онлайн.
-          </ReactMarkdown>
-        </li>
-        <li>
-          <h2>Клиенты</h2>
-          <ReactMarkdown>
-            ВКонтакте, Газпромнефть, Skysmart, Montblanc, Space307, Helix...
-          </ReactMarkdown>
-        </li>
+        {isLoading
+          ? Array.from(Array(4)).map((el, i) => (
+              <li key={i}>
+                <h2 style={{ padding: 0 }}>
+                  <SkeletText />
+                </h2>
+                <p>
+                  <SkeletText />
+                </p>
+              </li>
+            ))
+          : data?.map((el) => (
+              <li>
+                <h2>{el.title}</h2>
+                <p style={{ whiteSpace: "pre-line" }}>{el.description}</p>
+              </li>
+            ))}
       </ul>
     </section>
   );

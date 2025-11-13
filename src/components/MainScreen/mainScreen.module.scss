@@ -14,12 +14,12 @@
       height: 681px;
       width: 1078px;
       position: absolute;
-      top: 102px;
+      top: 130px;
       left: 43px;
       @include laptop {
+        top: 9.29vw;
         height: 45.6vw;
         width: 74.2vw;
-        top: 6.8vw;
         left: 45%;
         transform: translateX(-50%);
       }
@@ -194,18 +194,14 @@
       }
     }
     & nav > ul {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr) auto;
       align-items: flex-start;
       justify-content: space-between;
       font-size: 24px;
       line-height: 27px;
       letter-spacing: -0.48px;
-      & > li:nth-child(3) {
-        transform: translateX(20%);
-        @include mobile {
-          transform: none;
-        }
-      }
+      gap: 28px;
       @include laptop {
         font-size: 1.61vw;
         line-height: 1.81vw;

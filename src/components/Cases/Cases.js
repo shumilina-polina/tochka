@@ -9,8 +9,9 @@ import Arrow from "components/Arrow";
 import Parashut from "./Parashut";
 import ImageHover from "components/ImageHover/ImageHover";
 import { Link, useNavigate } from "react-router-dom";
+import { ADMIN_URL, API_URL } from "api/api";
 
-const Cases = () => {
+const Cases = ({ data, isLoading }) => {
   const navigate = useNavigate();
   const isMobile = useMediaQuery(breakpoints.mobile);
 
@@ -50,7 +51,7 @@ const Cases = () => {
                   <SvgSelector svg={"case2"} />
                   <a>
                     Оформили Montblanc <br />
-                    коткрытию за 2 дня, <br />
+                    к открытию за 2 дня, <br />
                     без приостановки <br />
                     работы бутика
                   </a>
@@ -116,41 +117,34 @@ const Cases = () => {
         </div>
       </section>
       <section className={s.projects}>
-        <h2 className={s.title_projects}>
-          {isMobile ? (
-            <>
-              <span data-aos="fade-right">Делаем проекты</span>{" "}
-              <span data-aos="fade-right">под&nbsp;ключ:</span>{" "}
-              <span data-aos="fade-right">берём на&nbsp;себя идею,</span>{" "}
-              <span data-aos="fade-right">организацию,</span>{" "}
-              <span data-aos="fade-right">менеджмент</span>{" "}
-              <span data-aos="fade-right">команды, техническое </span>
-              <span data-aos="fade-right">оснащение</span>
-              <span data-aos="fade-right">и&nbsp;не&nbsp;только.</span>
-            </>
-          ) : (
-            <>
-              <span data-aos="fade-right">Делаем проекты под&nbsp;ключ:</span>{" "}
-              <span data-aos="fade-right">берём на&nbsp;себя идею,</span>{" "}
-              <span data-aos="fade-right">организацию, менеджмент</span>{" "}
-              <span data-aos="fade-right">команды, техническое </span>
-              <span data-aos="fade-right">
-                оснащение и&nbsp;не&nbsp;только.
-              </span>
-            </>
-          )}
-        </h2>
-        <div className={s.author_wrapper}>
-          <Author>
-            <div>
-              <img src={require("assets/author-olga.jpg")} alt="Author" />
-            </div>
-            <div>
-              <h3>Ольга Вольчек</h3>
-              <p>co-founder, аккаунт-директор</p>
-            </div>
-          </Author>
-        </div>
+        {data?.textWithAuthor[0] && (
+          <h2 className={s.title_projects}>
+            {data?.textWithAuthor[0].text
+              .split("\n")
+              .map((line, index, array) => (
+                <span key={index} data-aos="fade-right">
+                  {line.replace(/ /g, "\u00A0")}
+                  {index < array.length - 1 && "\u00A0"}
+                </span>
+              ))}
+          </h2>
+        )}
+        {data?.textWithAuthor[0]?.author && (
+          <div className={s.author_wrapper}>
+            <Author>
+              <div>
+                <img
+                  src={ADMIN_URL + data.textWithAuthor[0].author.photo?.url}
+                  alt={data.textWithAuthor[0].author.name}
+                />
+              </div>
+              <div>
+                <h3>{data.textWithAuthor[0].author.name}</h3>
+                <p>{data.textWithAuthor[0].author.text}</p>
+              </div>
+            </Author>
+          </div>
+        )}
         <div className={s.cases_wrapper}>
           <div className={cn(s.item, s.item_slezy)}>
             <Link className={s.case_link} to={"/highload"}>
