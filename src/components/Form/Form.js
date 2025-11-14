@@ -141,6 +141,18 @@ const Form = () => {
               ))}
             </RadioGroup>
           </FormControl>
+          {/* TODO */}
+          {/* <div className={s.policy}>
+          <p>
+            <a
+              href={require("assets/documents/ПОЛИТИКА_ОБРАБОТКИ_ПЕРСОНАЛЬНЫХ_ДАННЫХ.pdf")}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Политика обработки персональных данных
+            </a>
+          </p>
+        </div> */}
           <input
             style={{ display: "none" }}
             ref={budget}

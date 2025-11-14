@@ -17,9 +17,6 @@ import { ADMIN_URL } from "api/api";
 const query = QueryString.stringify(
   {
     populate: {
-      about: {
-        populate: "*",
-      },
       textWithAuthor: {
         populate: {
           author: { populate: { photo: { populate: "*" } } },
@@ -60,7 +57,7 @@ const Index = () => {
       <Wrapper>
         <Numbers data={data?.data?.numberBlocks} isLoading={isLoading} />
         <About data={data?.data?.titleWithDescription} isLoading={isLoading} />
-        <Cases data={data?.data} isLoading={isLoading} />
+        <Cases data={data?.data} />
         {data?.data?.textWithAuthor[1] && (
           <h2 className={s.tech}>
             {data.data.textWithAuthor[1].text
@@ -86,14 +83,16 @@ const Index = () => {
               </div>
               <div>
                 <h3>{data.data.textWithAuthor[1].author.name}</h3>
-                <p>{data.data.textWithAuthor[1].author.text}</p>
+                <p style={{ whiteSpace: "pre-line" }}>
+                  {data.data.textWithAuthor[1].author.text}
+                </p>
               </div>
             </Author>
           </div>
         )}
 
-        <Steps />
-        <Formats />
+        <Steps data={data?.data?.steps} />
+        <Formats data={data?.data?.formats} />
       </Wrapper>
     </div>
   );

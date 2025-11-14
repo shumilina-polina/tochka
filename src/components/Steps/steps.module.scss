@@ -81,7 +81,7 @@
             line-height: 10px;
           }
         }
-        @for $i from 1 to 6 {
+        @for $i from 1 to 11 {
           &:nth-child(#{$i}) {
             &::before {
               content: "(#{$i})";

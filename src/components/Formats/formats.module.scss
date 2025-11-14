@@ -57,27 +57,29 @@
     }
   }
   & svg {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 39px;
     @include laptop {
-      width: 3.28vw;
-      height: 3.28vw;
+      width: 4vw;
+      height: 4vw;
+      margin-bottom: 3.05vw;
     }
     @include mobile {
       width: 23px;
       height: 23px;
+      margin-bottom: 28px;
     }
   }
 
   & p {
     @include text-medium;
-    margin-bottom: 39px;
     letter-spacing: -1.08px;
     @include laptop {
       letter-spacing: -0.08vw;
-      margin-bottom: 3.05vw;
     }
     @include mobile {
       letter-spacing: -0.4px;
-      margin-bottom: 28px;
     }
   }
 }

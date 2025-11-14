@@ -1,6 +1,5 @@
 @import "styles/variables.scss";
 .form {
-  grid-area: form;
   animation: showSended 0.4s forwards;
 
   @include mobile {
@@ -9,14 +8,13 @@
 }
 .wr {
   display: flex;
-
   flex-direction: column;
   align-items: center;
-  padding: 45px 30px 36px;
+  padding: 36px;
   background-color: #fff;
   border-radius: 63px;
   @include laptop {
-    padding: 3.5vw 2.34vw 2.81vw;
+    padding: 2.57vw;
     border-radius: 4.9vw;
   }
   @include mobile {
@@ -73,8 +71,8 @@
         letter-spacing: -0.038vw;
       }
       @include mobile {
-        font-size: 16px;
-        line-height: 20px;
+        font-size: 14px;
+        line-height: 125%;
         letter-spacing: normal;
       }
     }
@@ -104,7 +102,7 @@
           letter-spacing: -0.038vw;
         }
         @include mobile {
-          font-size: 16px;
+          font-size: 14px;
           line-height: 20px;
           letter-spacing: normal;
         }
@@ -143,8 +141,7 @@
           gap: 0.31vw;
         }
         @include mobile {
-          gap: 8px;
-          padding-bottom: 1px;
+          gap: 0.94vw;
           flex-wrap: wrap;
         }
 
@@ -171,9 +168,10 @@
               width: 100%;
             }
             @include mobile {
-              padding: 4px 8px;
+              font-size: 3.75vw;
+              padding: 1.25vw 3.13vw;
+              border-radius: 9.06vw;
               width: 100%;
-              border-radius: 29px;
             }
             &:hover {
               color: #fff;
@@ -189,19 +187,32 @@
 }
 
 button[type="submit"] {
-  padding: 27px 0;
-  width: 100%;
-  @include button;
   @include text-small;
   border-radius: 85px;
   border: 0.75px solid #222;
+  padding: 27px 0;
+  width: 100%;
+  color: #fff;
+  background-color: #222;
+  transition: color 0.3s, background-color 0.3s;
+  & path {
+    transition: fill 0.3s;
+  }
+  &:hover {
+    color: #222;
+    background-color: #fff;
+    & path {
+      fill: #222;
+    }
+  }
   @include laptop {
     padding: 2.1vw 0;
     border-radius: 6.64vw;
   }
   @include mobile {
-    padding: 14.5px 0;
-    border-radius: 44px;
+    padding: 17.5px 0;
+    font-size: 14px;
+    border-radius: 49px;
   }
 }
 

@@ -9,9 +9,9 @@ import Arrow from "components/Arrow";
 import Parashut from "./Parashut";
 import ImageHover from "components/ImageHover/ImageHover";
 import { Link, useNavigate } from "react-router-dom";
-import { ADMIN_URL, API_URL } from "api/api";
+import { ADMIN_URL } from "api/api";
 
-const Cases = ({ data, isLoading }) => {
+const Cases = ({ data }) => {
   const navigate = useNavigate();
   const isMobile = useMediaQuery(breakpoints.mobile);
 
@@ -140,7 +140,9 @@ const Cases = ({ data, isLoading }) => {
               </div>
               <div>
                 <h3>{data.textWithAuthor[0].author.name}</h3>
-                <p>{data.textWithAuthor[0].author.text}</p>
+                <p style={{ whiteSpace: "pre-line" }}>
+                  {data.textWithAuthor[0].author.text}
+                </p>
               </div>
             </Author>
           </div>

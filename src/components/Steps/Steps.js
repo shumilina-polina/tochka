@@ -1,69 +1,25 @@
 import s from "./steps.module.scss";
 
-const Steps = () => {
+const Steps = ({ data }) => {
   return (
     <section className={s.steps}>
-      <div className={s.concept} data-aos="fade-up" data-aos-delay="10">
-        <h3>Концепция</h3>
-        <ul>
-          <li>
-            Создаем креативную идею, <br />
-            которая цепляет
-          </li>
-          <li>Ищем подходящую площадку</li>
-          <li>Продумываем программу и&nbsp;наполнение</li>
-          <li>
-            Подбираем лучших подрядчиков
-            <br /> для&nbsp;реализации креативной
-            <br />
-            концепции
-          </li>
-          <li>
-            Ищем экспертов и&nbsp;артистов, <br />
-            которые точно понравятся
-            <br />
-            участникам
-          </li>
-        </ul>
-      </div>
-      <div className={s.concept} data-aos="fade-up" data-aos-delay="70">
-        <h3>Подготовка</h3>
-        <ul>
-          <li>
-            Продумываем дизайн <br />и визуальное оформление <br />
-            проекта
-          </li>
-          <li>
-            Готовим спикеров
-            <br />
-            к&nbsp;выступлениям
-          </li>
-          <li>
-            Ставим шоу-программу <br />
-            с&nbsp;режиссером события
-          </li>
-          <li>
-            Берем на себя <br />
-            все технические вопросы
-          </li>
-        </ul>
-      </div>
-      <div className={s.concept} data-aos="fade-up" data-aos-delay="140">
-        <h3>Реализация</h3>
-        <ul>
-          <li>
-            Снимаем и монтируем <br />
-            видеоконтент
-          </li>
-          <li>
-            Управляем монтажом <br />и оснащением площадки
-          </li>
-          <li>
-            Работаем, как&nbsp;команда, <br />
-            во&nbsp;время самого мероприятия
-          </li>
-        </ul>
-      </div>
+      {data?.map((el, i) => (
+        <div
+          key={el.id}
+          className={s.concept}
+          data-aos="fade-up"
+          data-aos-delay={70 * i + 10}
+        >
+          <h3>{el.title}</h3>
+          <ul>
+            {el.text?.map((el) => (
+              <li key={el.id} style={{ whiteSpace: "pre-line" }}>
+                {el.text}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </section>
   );
 };
