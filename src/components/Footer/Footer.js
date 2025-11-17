@@ -9,6 +9,7 @@ import QueryString from "qs";
 import { ADMIN_URL } from "api/api";
 
 import ArtelLogo from "assets/artel.svg";
+import { MoreAboutEvents } from "./MoreAboutEvents";
 
 const query = QueryString.stringify(
   {
@@ -32,8 +33,7 @@ const Footer = () => {
       <Wrapper>
         <div className={s.wr}>
           <Form />
-          <div></div>
-          {/* <MoreAboutEvents /> */}
+          {footerData && <MoreAboutEvents data={footerData.data.aboutEvents} />}
         </div>
         <div className={s.authors}>
           {authors?.data?.map((el) => (

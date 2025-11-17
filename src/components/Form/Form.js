@@ -1,6 +1,7 @@
 import emailjs from "@emailjs/browser";
 import s from "./form.module.scss";
 import {
+  Checkbox,
   FormControl,
   FormControlLabel,
   Input,
@@ -8,6 +9,8 @@ import {
   Radio,
   RadioGroup,
 } from "@mui/material";
+import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import { useEffect, useRef } from "react";
 import { useState } from "react";
 import cn from "classnames";
@@ -15,6 +18,12 @@ import { useLocation } from "react-router-dom";
 
 const Form = () => {
   const location = useLocation();
+
+  const [checked, setChecked] = useState(false);
+
+  const handleChange = (event) => {
+    setChecked(event.target.checked);
+  };
 
   useEffect(() => {
     if (location.hash) {
@@ -29,7 +38,7 @@ const Form = () => {
 
   const radio = useRef(null);
   const budget = useRef(null);
-  const [sended, setSended] = useState(false);
+  const [sended, setSended] = useState(true);
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -37,23 +46,24 @@ const Form = () => {
       if (elem.children[0].classList.contains("Mui-checked"))
         budget.current.value = elem.children[1].innerText;
     });
-
-    emailjs
-      .sendForm(
-        "service_ahvtike",
-        "template_378i28t",
-        e.target,
-        "9HeTZAH8WW_l6M9xo"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.message);
-        }
-      );
-    e.target.reset();
+    if (checked) {
+      emailjs
+        .sendForm(
+          "service_ahvtike",
+          "template_378i28t",
+          e.target,
+          "9HeTZAH8WW_l6M9xo"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.message);
+          }
+        );
+      e.target.reset();
+    }
   };
 
   return sended ? (
@@ -72,12 +82,13 @@ const Form = () => {
         setSended(true);
         setTimeout(() => setSended(false), 7000);
       }}
-      className={s.form}
+      className={s.wr}
     >
-      <div className={s.wr}>
-        <h3>Обсудить проект</h3>
+      <h3>Обсудить проект</h3>
+
+      <div className={s.wr_flex}>
         <form className={s.form} id="contacts" onSubmit={sendEmail}>
-          <FormControl className={s.form_control}>
+          <FormControl>
             <InputLabel htmlFor="fio-input">Ваше имя</InputLabel>
             <Input
               inputProps={{
@@ -141,18 +152,7 @@ const Form = () => {
               ))}
             </RadioGroup>
           </FormControl>
-          {/* TODO */}
-          {/* <div className={s.policy}>
-          <p>
-            <a
-              href={require("assets/documents/ПОЛИТИКА_ОБРАБОТКИ_ПЕРСОНАЛЬНЫХ_ДАННЫХ.pdf")}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Политика обработки персональных данных
-            </a>
-          </p>
-        </div> */}
+
           <input
             style={{ display: "none" }}
             ref={budget}
@@ -160,6 +160,36 @@ const Form = () => {
             name="budget"
           />
         </form>
+        <div className={s.policy}>
+          <FormControlLabel
+            label={
+              <p className={s.policy_text}>
+                Даю согласие на обработку персональных данных
+                <br /> и принимаю условия{" "}
+                <a
+                  href={require("assets/documents/ПОЛИТИКА_ОБРАБОТКИ_ПЕРСОНАЛЬНЫХ_ДАННЫХ.pdf")}
+                >
+                  Политики конфиденциальности
+                </a>
+              </p>
+            }
+            control={
+              <Checkbox
+                sx={{
+                  "& .MuiSvgIcon-root": { fontSize: 28 },
+                  borderRadius: "100%",
+                }}
+                disableFocusRipple
+                disableTouchRipple
+                disableRipple
+                icon={<RadioButtonUncheckedIcon sx={{ color: "#222" }} />}
+                checkedIcon={<CheckCircleOutlineIcon sx={{ color: "#222" }} />}
+                checked={checked}
+                onChange={handleChange}
+              />
+            }
+          />
+        </div>
         <button className="button" form="contactForm" type="submit">
           Отправить
         </button>

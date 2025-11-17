@@ -190,3 +190,153 @@
     width: 100%;
   }
 }
+
+// ----- events -----
+
+.events {
+  &_wrapper {
+    padding: 36px 0;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 736px;
+
+    @include laptop {
+      height: 52.57vw;
+      padding: 2.57vw 0;
+    }
+    @include mobile {
+      padding: 0;
+      height: 427px;
+    }
+    &__flex {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+      @include laptop {
+        gap: 1.71vw;
+      }
+      @include mobile {
+        gap: 24px;
+      }
+    }
+  }
+  &_title {
+    font-weight: 400;
+    line-height: 125%;
+    letter-spacing: -0.03em;
+    color: #222;
+    font-size: 36px;
+    margin-bottom: 60px;
+    @include laptop {
+      font-size: 2.57vw;
+      margin-bottom: 4.29vw;
+    }
+    @include mobile {
+      font-size: 20px;
+      margin-bottom: 28px;
+      max-width: 70%;
+    }
+  }
+  &_button {
+    font-size: 18px;
+    line-height: 132%;
+    color: #000;
+    border: 0.75px solid #000;
+    border-radius: 85px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, color 0.3s;
+    &:hover {
+      color: #fff;
+      background-color: #000;
+    }
+    @include laptop {
+      font-size: 1.29vw;
+      border-radius: 6.07vw;
+      height: 5.71vw;
+    }
+    @include mobile {
+      font-size: 14px;
+      border-radius: 64px;
+      height: 52px;
+    }
+  }
+  &_list {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    @include laptop {
+      gap: 2.57vw;
+    }
+    @include mobile {
+      gap: 16px;
+    }
+  }
+  &_item {
+    & > a {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      @include laptop {
+        gap: 1.14vw;
+      }
+      @include mobile {
+        gap: 16px;
+      }
+      & p {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+    }
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+    @include laptop {
+      padding-bottom: 1.43vw;
+    }
+    @include mobile {
+      padding-bottom: 12px;
+    }
+    &__arrow {
+      flex-shrink: 0;
+      transition: transform 0.3s;
+      transform-origin: center center;
+      width: 28px;
+      height: 28px;
+      @include laptop {
+        width: 2vw;
+        height: 2vw;
+      }
+      @include mobile {
+        width: 21px;
+        height: 21px;
+      }
+      & > svg {
+        display: block;
+      }
+    }
+    & p {
+      font-size: 18px;
+      line-height: 132%;
+      color: #222;
+      @include laptop {
+        font-size: 1.29vw;
+      }
+      @include mobile {
+        font-size: 13px;
+      }
+    }
+    &:hover {
+      .events_item__arrow {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

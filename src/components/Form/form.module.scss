@@ -7,17 +7,19 @@
   }
 }
 .wr {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-rows: auto 1fr;
   padding: 36px;
   background-color: #fff;
   border-radius: 63px;
+  height: 736px;
   @include laptop {
+    height: 52.57vw;
     padding: 2.57vw;
     border-radius: 4.9vw;
   }
   @include mobile {
+    height: 427px;
     padding: 21.5px 14px 15px;
     border-radius: 32px;
   }
@@ -39,20 +41,21 @@
       letter-spacing: -0.4px;
     }
   }
+
+  &_flex {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
 
 .form {
   width: 100%;
-  margin-bottom: 54px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  @include laptop {
-    margin-bottom: 4.22vw;
-  }
-  @include mobile {
-    margin-bottom: 29.5px;
-  }
+
   & > div {
     width: 100%;
 
@@ -193,7 +196,7 @@ button[type="submit"] {
   padding: 27px 0;
   width: 100%;
   color: #fff;
-  background-color: #222;
+  background-color: #000;
   transition: color 0.3s, background-color 0.3s;
   & path {
     transition: fill 0.3s;
@@ -217,11 +220,9 @@ button[type="submit"] {
 }
 
 .form_sended {
-  height: 700px;
-  @include laptop {
-    height: auto;
-  }
   & > .wr {
+    display: flex;
+    flex-direction: column;
     height: 100%;
     text-align: center;
     padding-top: 252px !important;
@@ -239,6 +240,8 @@ button[type="submit"] {
       gap: 40vw;
     }
     & > h2 {
+      width: 100%;
+      display: block;
       @include m6;
       font-size: 72px;
       line-height: 75px;
@@ -261,5 +264,17 @@ button[type="submit"] {
   }
   to {
     opacity: 1;
+  }
+}
+
+.policy {
+  &_text {
+    font-size: 12px;
+    line-height: 125%;
+    color: #222;
+    & > a {
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+    }
   }
 }
