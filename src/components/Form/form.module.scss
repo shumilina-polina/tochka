@@ -15,11 +15,12 @@
   height: 736px;
   @include laptop {
     height: 52.57vw;
+    height: 52.57vw;
     padding: 2.57vw;
     border-radius: 4.9vw;
   }
   @include mobile {
-    height: 427px;
+    height: auto;
     padding: 21.5px 14px 15px;
     border-radius: 32px;
   }
@@ -55,6 +56,10 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
+  @include mobile {
+    margin-bottom: 11px;
+  }
 
   & > div {
     width: 100%;
@@ -208,6 +213,10 @@ button[type="submit"] {
       fill: #222;
     }
   }
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
   @include laptop {
     padding: 2.1vw 0;
     border-radius: 6.64vw;
@@ -268,13 +277,37 @@ button[type="submit"] {
 }
 
 .policy {
+  @include mobile {
+    margin-bottom: 11px;
+  }
   &_text {
     font-size: 12px;
     line-height: 125%;
     color: #222;
+    @include laptop {
+      font-size: 0.86vw;
+    }
+    @include mobile {
+      font-size: 8px;
+    }
     & > a {
       text-decoration: underline;
       text-decoration-skip-ink: none;
+    }
+  }
+}
+
+.checkbox {
+  & svg {
+    width: 28px;
+    height: 28px;
+    @include laptop {
+      width: 2vw;
+      height: 2vw;
+    }
+    @include mobile {
+      width: 20px;
+      height: 20px;
     }
   }
 }

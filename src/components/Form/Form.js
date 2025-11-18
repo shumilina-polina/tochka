@@ -9,12 +9,11 @@ import {
   Radio,
   RadioGroup,
 } from "@mui/material";
-import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked";
-import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import { useEffect, useRef } from "react";
 import { useState } from "react";
 import cn from "classnames";
 import { useLocation } from "react-router-dom";
+import SvgSelector from "components/SvgSelector";
 
 const Form = () => {
   const location = useLocation();
@@ -38,10 +37,11 @@ const Form = () => {
 
   const radio = useRef(null);
   const budget = useRef(null);
-  const [sended, setSended] = useState(true);
+  const [sended, setSended] = useState(false);
   const sendEmail = (e) => {
     e.preventDefault();
 
+    console.log("radio.current.children: ", radio.current.children);
     Array.from(radio.current.children).map((elem) => {
       if (elem.children[0].classList.contains("Mui-checked"))
         budget.current.value = elem.children[1].innerText;
@@ -62,6 +62,8 @@ const Form = () => {
             console.log(error.message);
           }
         );
+      setSended(true);
+      setTimeout(() => setSended(false), 7000);
       e.target.reset();
     }
   };
@@ -77,13 +79,7 @@ const Form = () => {
       </div>
     </div>
   ) : (
-    <div
-      onSubmit={() => {
-        setSended(true);
-        setTimeout(() => setSended(false), 7000);
-      }}
-      className={s.wr}
-    >
+    <div className={s.wr}>
       <h3>Обсудить проект</h3>
 
       <div className={s.wr_flex}>
@@ -175,22 +171,24 @@ const Form = () => {
             }
             control={
               <Checkbox
-                sx={{
-                  "& .MuiSvgIcon-root": { fontSize: 28 },
-                  borderRadius: "100%",
-                }}
+                className={s.checkbox}
                 disableFocusRipple
                 disableTouchRipple
                 disableRipple
-                icon={<RadioButtonUncheckedIcon sx={{ color: "#222" }} />}
-                checkedIcon={<CheckCircleOutlineIcon sx={{ color: "#222" }} />}
+                icon={<SvgSelector svg="unchecked" />}
+                checkedIcon={<SvgSelector svg="checked" />}
                 checked={checked}
                 onChange={handleChange}
               />
             }
           />
         </div>
-        <button className="button" form="contactForm" type="submit">
+        <button
+          disabled={!checked}
+          className="button"
+          form="contacts"
+          type="submit"
+        >
           Отправить
         </button>
       </div>

@@ -8,12 +8,12 @@
 
 .wr {
   display: grid;
-  padding: 44px 0 33px;
+  padding: 64px 0 33px;
   gap: 107px;
   grid-template-columns: 1fr 1.15fr;
 
   @include laptop {
-    padding: 3.14vw 0 2.36vw;
+    padding: 4.57vw 0 2.36vw;
     gap: 7.64vw;
   }
   @include mobile {
@@ -106,36 +106,41 @@
 }
 
 .authors {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 125px 119px 46px 0;
+  margin-bottom: 72px;
   @include laptop {
-    padding: 9.77vw 9.3vw 3.6vw 0;
+    margin-bottom: 5.14vw;
   }
   @include mobile {
-    padding: 0;
+    margin-bottom: 44px;
+  }
+  & > ul {
     display: flex;
-    flex-wrap: wrap;
-    row-gap: 30px;
-    max-width: 75%;
     align-items: center;
-    justify-content: space-between;
-    margin: 0 auto 70px;
-    @media (max-width: 360px) {
-      max-width: 100%;
+    justify-content: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+    @include laptop {
+      gap: 2.86vw;
     }
-
-    & > div {
-      min-width: 77px;
-      &:nth-child(1) {
-        // margin: 0 10%;
-        margin-left: 15%;
-      }
-      &:nth-child(2) {
-        // margin: 0 10%;
-        margin-right: 15%;
-      }
+    @include mobile {
+      gap: 12px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  &_title {
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 32px;
+    line-height: 132%;
+    color: #222;
+    @include laptop {
+      font-size: 1.29vw;
+      margin-bottom: 2.29vw;
+    }
+    @include mobile {
+      margin-bottom: 20px;
+      font-size: 20px;
     }
   }
 }
@@ -206,7 +211,7 @@
     }
     @include mobile {
       padding: 0;
-      height: 427px;
+      height: auto;
     }
     &__flex {
       height: 100%;

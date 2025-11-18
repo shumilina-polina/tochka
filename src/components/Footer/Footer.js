@@ -10,6 +10,7 @@ import { ADMIN_URL } from "api/api";
 
 import ArtelLogo from "assets/artel.svg";
 import { MoreAboutEvents } from "./MoreAboutEvents";
+import { formatPhoneNumber } from "./formatPhoneNumber";
 
 const query = QueryString.stringify(
   {
@@ -36,17 +37,20 @@ const Footer = () => {
           {footerData && <MoreAboutEvents data={footerData.data.aboutEvents} />}
         </div>
         <div className={s.authors}>
-          {authors?.data?.map((el) => (
-            <Author key={el.id} footer>
-              <div>
-                <img src={ADMIN_URL + el.photo?.url} alt={el.name} />
-              </div>
-              <div>
-                <h3>{el.name}</h3>
-                <p style={{ whiteSpace: "pre-line" }}>{el.text}</p>
-              </div>
-            </Author>
-          ))}
+          <h3 className={s.authors_title}>Команда</h3>
+          <ul>
+            {authors?.data?.map((el) => (
+              <Author key={el.id} footer>
+                <div>
+                  <img src={ADMIN_URL + el.photo?.url} alt={el.name} />
+                </div>
+                <div>
+                  <h3>{el.name}</h3>
+                  <p style={{ whiteSpace: "pre-line" }}>{el.text}</p>
+                </div>
+              </Author>
+            ))}
+          </ul>
         </div>
         <div className={s.footer_bottom}>
           <div className={s.footer_bottom__contacts}>
@@ -58,28 +62,29 @@ const Footer = () => {
               <SvgSelector svg={"tochka"} />
             </Link>
             <ul className={s.footer_bottom__list}>
-              {Array.from(Array(2)).map((el, i) => (
-                <li key={i} className={s.item}>
-                  ИП Рыбина <br />
-                  ЕкатеринаАнатольевна
-                </li>
-              ))}
+              <li className={s.item} style={{ whiteSpace: "pre-line" }}>
+                {footerData?.data?.ip}
+              </li>
+              <li className={s.item} style={{ whiteSpace: "pre-line" }}>
+                {footerData?.data?.details}
+              </li>
               <li className={s.item}>
-                <a
-                  href={footerData?.data?.phone}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  allala
-                  {/* {footerData?.data?.phone} //TODO */}
-                </a>
+                {footerData?.data?.phone && (
+                  <a
+                    href={`tel:${footerData.data.phone}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {formatPhoneNumber(footerData.data.phone)}
+                  </a>
+                )}
                 <br />
                 <a
-                  href={`mailto:test`}
+                  href={`mailto:${footerData?.data?.email}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  allala
+                  {footerData?.data?.email}
                 </a>
               </li>
             </ul>

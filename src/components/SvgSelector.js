@@ -1,5 +1,41 @@
 const SvgSelector = ({ style = {}, svg }) => {
   switch (svg) {
+    case "checked":
+      return (
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <g clip-path="url(#clip0_93_633)">
+            <rect
+              x="0.291667"
+              y="0.291667"
+              width="27.4167"
+              height="27.4167"
+              rx="13.7083"
+              stroke="black"
+              stroke-width="0.583334"
+            />
+            <circle cx="14" cy="14" r="11" fill="black" />
+          </g>
+          <defs>
+            <clipPath id="clip0_93_633">
+              <rect width="28" height="28" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+      );
+    case "unchecked":
+      return (
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <rect
+            x="0.291667"
+            y="0.291667"
+            width="27.4167"
+            height="27.4167"
+            rx="13.7083"
+            stroke="black"
+            stroke-width="0.583334"
+          />
+        </svg>
+      );
     case "arrow":
       return (
         <svg width="13" height="19" viewBox="0 0 13 19" fill="none">
@@ -13,12 +49,7 @@ const SvgSelector = ({ style = {}, svg }) => {
       );
     case "arrow_events":
       return (
-        <svg
-          width="28"
-          height="28"
-          viewBox="0 0 28 28"
-          fill="none"
-        >
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
           <circle
             cx="14"
             cy="14"
