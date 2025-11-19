@@ -148,11 +148,8 @@ const MainScreen = ({ data, isLoading }) => {
                   </p>
                 </li>
               )}
-              <li>
-                <Link to={"/cases"}>
-                  Все наши <br /> кейсы
-                  {/* TODO mobile */}
-                </Link>
+              <li className={s.all}>
+                <Link to={"/cases"}>Все наши кейсы</Link>
               </li>
             </ul>
           </nav>

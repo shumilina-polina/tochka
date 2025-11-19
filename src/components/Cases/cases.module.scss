@@ -35,14 +35,16 @@
     & img {
       border-radius: 15px;
     }
-    & .left > div {
-      aspect-ratio: 16/10;
-      height: 470px;
-      @include laptop {
-        height: 35.26vw;
-      }
-      @include mobile {
-        height: auto;
+    & .left {
+      & > div {
+        aspect-ratio: 16/10;
+        height: 470px;
+        @include laptop {
+          height: 35.26vw;
+        }
+        @include mobile {
+          height: auto;
+        }
       }
     }
     & .right > div {
@@ -462,7 +464,8 @@
   @include mobile {
     overflow: visible;
   }
-  & iframe {
+  & iframe,
+  & video {
     position: absolute;
     top: 0;
     left: 0;

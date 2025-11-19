@@ -1,8 +1,9 @@
 import { useState } from "react";
 import s from "./imageHover.module.scss";
 import { Fragment } from "react";
+import { ADMIN_URL } from "api/api";
 
-const ImageHover = ({ folder }) => {
+const ImageHover = ({ data }) => {
   const [BoxNumber, setBoxNumber] = useState(0);
   return (
     <div
@@ -22,16 +23,17 @@ const ImageHover = ({ folder }) => {
         }
       }}
     >
-      {[0, 1, 2, 3, 4].map((i) => (
-        <Fragment key={i}>
-          <div data-id={i} onMouseOver={() => setBoxNumber(i)}></div>
-          <img
-            src={require(`assets/${folder}/${i}.jpg`)}
-            alt="Event"
-            style={{ opacity: BoxNumber === i ? 1 : 0 }}
-          />
-        </Fragment>
-      ))}
+      {data &&
+        data.slice(0, 4).map((photo, i) => (
+          <Fragment key={photo.id}>
+            <div data-id={i} onMouseOver={() => setBoxNumber(i)}></div>
+            <img
+              src={ADMIN_URL + photo.url}
+              alt={photo.alternativeText}
+              style={{ opacity: BoxNumber === i ? 1 : 0 }}
+            />
+          </Fragment>
+        ))}
     </div>
   );
 };

@@ -43,6 +43,7 @@
   & h3 {
     font-size: 24px;
     line-height: 27px;
+    font-weight: 400;
     letter-spacing: -0.48px;
     margin-bottom: 24px;
     @include laptop {
@@ -59,11 +60,11 @@
   & svg {
     width: 56px;
     height: 56px;
-    margin-bottom: 39px;
+    margin-bottom: 20px;
     @include laptop {
+      margin-bottom: 1.43vw;
       width: 4vw;
       height: 4vw;
-      margin-bottom: 3.05vw;
     }
     @include mobile {
       width: 23px;

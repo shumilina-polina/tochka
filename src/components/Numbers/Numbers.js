@@ -1,20 +1,7 @@
 import { SkeletNumberBlock } from "components/Skelet/SkeletNumberBlock";
 import s from "./numbers.module.scss";
 import CountUp from "react-countup";
-
-const extractNumberAndText = (str) => {
-  const numberMatch = str.match(/(\d[\d\s]*\d+|\d+)/);
-  if (!numberMatch) return { number: null, text: str };
-
-  const number = {
-    display: numberMatch[0],
-    value: parseInt(numberMatch[0].replace(/\s/g, "")),
-  };
-
-  const text = str.slice(numberMatch[0].length);
-
-  return { number, text };
-};
+import { extractNumberAndText } from "utils/extractNumberAndText";
 
 const Numbers = ({ data, isLoading }) => {
   return (

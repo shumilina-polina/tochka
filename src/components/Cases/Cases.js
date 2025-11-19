@@ -10,6 +10,9 @@ import Parashut from "./Parashut";
 import ImageHover from "components/ImageHover/ImageHover";
 import { Link, useNavigate } from "react-router-dom";
 import { ADMIN_URL } from "api/api";
+import Circle from "components/Circle";
+import { extractNumberAndText } from "utils/extractNumberAndText";
+import { Video } from "components/Video/Video";
 
 const Cases = ({ data }) => {
   const navigate = useNavigate();
@@ -20,7 +23,92 @@ const Cases = ({ data }) => {
       <section className={s.cases}>
         <h1 className={s.title_main}>Кейсы</h1>
         <div className={s.cases_wrapper}>
-          <div className={cn(s.item, s.item_ted)}>
+          <div className={s.item}>
+            {data?.case[0] && (
+              <Link className={s.case_link} to={data?.case[0].url}>
+                <figure className={s.left}>
+                  {data.case[0].photos && (
+                    <ImageHover data={data.case[0].photos} />
+                  )}
+                  <p style={{ whiteSpace: "pre-line" }}>
+                    <Circle color={data?.case[0].circle?.color} />
+                    <a>{data?.case[0].description}</a>
+                  </p>
+                  <Arrow />
+                </figure>
+              </Link>
+            )}
+            {data?.case[1] && (
+              <Link className={s.case_link} to={data?.case[1].url}>
+                <figure className={s.right}>
+                  {data.case[1].photos && (
+                    <ImageHover data={data.case[1].photos} />
+                  )}
+                  <p style={{ whiteSpace: "pre-line" }}>
+                    <Circle color={data?.case[1].circle?.color} />
+                    <a>{data?.case[1].description}</a>
+                  </p>
+                  <Arrow />
+                </figure>
+              </Link>
+            )}
+          </div>
+          {data?.case[2] && (
+            <div className={cn(s.item, s.item_skysmart)}>
+              {(function () {
+                const { number, text } = extractNumberAndText(
+                  data.case[2].number?.title
+                );
+                return (
+                  data.case[2].number && (
+                    <div className={s.num}>
+                      <h2>
+                        <CountUp
+                          separator="&nbsp;"
+                          enableScrollSpy
+                          scrollSpyOnce
+                          start={
+                            number.value > 5 ? number.value - 5 : number.value
+                          }
+                          end={number.value}
+                          duration={1.2}
+                        >
+                          {({ countUpRef }) => <span ref={countUpRef} />}
+                        </CountUp>
+                        {text}
+                      </h2>
+                      <p style={{ whiteSpace: "pre-line" }}>
+                        {data.case[2].number.description}
+                      </p>
+                    </div>
+                  )
+                );
+              })()}
+              <Link className={s.case_link} to={data.case[2].url}>
+                <figure className={s.right}>
+                  <div className={s.iframe_fest}>
+                    {data.case[2].video && <Video data={data.case[2]} />}
+                  </div>
+                  <div>
+                    {[
+                      data.case[2].description,
+                      data.case[2].secondDescription,
+                    ].map(
+                      (el, i) =>
+                        el && (
+                          <p key={el.id}>
+                            <Circle color={data.case[2].circle?.color} />
+                            <a style={{ whiteSpace: "pre-line" }}>{el}</a>
+                          </p>
+                        )
+                    )}
+                  </div>
+                  <Arrow />
+                </figure>
+              </Link>
+            </div>
+          )}
+          {/* <div className={s.item}>
             <Link className={s.case_link} to={"/gazpromneft"}>
               <figure className={s.left}>
                 {isMobile ? (
@@ -113,7 +201,7 @@ const Cases = ({ data }) => {
                 <Arrow />
               </figure>
             </Link>
-          </div>
+          </div> */}
         </div>
       </section>
       <section className={s.projects}>

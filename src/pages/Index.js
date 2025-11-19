@@ -22,6 +22,14 @@ const query = QueryString.stringify(
           author: { populate: { photo: { populate: "*" } } },
         },
       },
+      case: {
+        populate: {
+          video: { populate: { video: { populate: "*" } } },
+          photos: { populate: "*" },
+          number: { populate: "*" },
+          circle: { populate: "*" },
+        },
+      },
       numberBlocks: {
         populate: "*",
       },
@@ -57,7 +65,7 @@ const Index = () => {
       <Wrapper>
         <Numbers data={data?.data?.numberBlocks} isLoading={isLoading} />
         <About data={data?.data?.titleWithDescription} isLoading={isLoading} />
-        <Cases data={data?.data} />
+        {data?.data && <Cases data={data.data} />}
         {data?.data?.textWithAuthor[1] && (
           <h2 className={s.tech}>
             {data.data.textWithAuthor[1].text
@@ -90,7 +98,6 @@ const Index = () => {
             </Author>
           </div>
         )}
-
         <Steps data={data?.data?.steps} />
         <Formats data={data?.data?.formats} />
       </Wrapper>
