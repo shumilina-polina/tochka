@@ -1,6 +1,5 @@
 import cn from "classnames";
 import s from "./cases.module.scss";
-import SvgSelector from "components/SvgSelector";
 import { breakpoints } from "styles/variables";
 import { useMediaQuery } from "@mui/material";
 import Author from "components/Author/Author";
@@ -87,7 +86,7 @@ const Cases = ({ data }) => {
               <Link className={s.case_link} to={data.case[2].url}>
                 <figure className={s.right}>
                   <div className={s.iframe_fest}>
-                    {data.case[2].video && <Video data={data.case[2]} />}
+                    {data.case[2].isPhoto || <Video data={data.case[2]} />}
                   </div>
                   <div>
                     {[
@@ -108,100 +107,6 @@ const Cases = ({ data }) => {
               </Link>
             </div>
           )}
-          {/* <div className={s.item}>
-            <Link className={s.case_link} to={"/gazpromneft"}>
-              <figure className={s.left}>
-                {isMobile ? (
-                  <ImageHover folder={"ted-mobile"} />
-                ) : (
-                  <ImageHover folder={"ted"} />
-                )}
-                <p>
-                  <SvgSelector svg={"case1"} />
-                  <a>
-                    Помогли Топ-менеджерам <br />
-                    в Газпромнефть подготовить <br />
-                    выступления в стиле TED
-                  </a>
-                </p>
-                <Arrow href={"https://example.com/"} />
-              </figure>
-            </Link>
-            <Link className={s.case_link} to={"/montblanc"}>
-              <figure className={s.right}>
-                {isMobile ? (
-                  <ImageHover folder={"montblanc-mobile"} />
-                ) : (
-                  <ImageHover folder={"montblanc"} />
-                )}
-
-                <p>
-                  <SvgSelector svg={"case2"} />
-                  <a>
-                    Оформили Montblanc <br />
-                    к открытию за 2 дня, <br />
-                    без приостановки <br />
-                    работы бутика
-                  </a>
-                </p>
-                <Arrow />
-              </figure>
-            </Link>
-          </div>
-          <div className={cn(s.item, s.item_skysmart)}>
-            <div className={s.num}>
-              <h2>
-                <CountUp
-                  separator="&nbsp;"
-                  enableScrollSpy
-                  scrollSpyOnce
-                  start={14990}
-                  end={15000}
-                  duration={1.2}
-                >
-                  {({ countUpRef }) => <span ref={countUpRef} />}
-                </CountUp>
-                +
-              </h2>
-              <p>
-                онлайн просмотров <br />
-                за сутки фестиваля
-              </p>
-            </div>
-            <Link className={s.case_link} to={"/skysmartcamp"}>
-              <figure className={s.right}>
-                <div className={s.iframe_fest}>
-                  <iframe
-                    src="https://player.vimeo.com/video/847576525?h=b62d624b97&loop=1&autoplay=1&autopause=0&muted=1&title=0&byline=0&portrait=0"
-                    frameBorder="0"
-                    allow="autoplay; fullscreen; picture-in-picture"
-                    webkitallowfullscreen="true"
-                    mozallowfullscreen="true"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-                <div>
-                  <p>
-                    <SvgSelector svg={"case3"} />
-                    <a>
-                      Организовали и провели вместе <br />
-                      со Skysmart онлайн-фестиваль для родителей
-                      <br /> на тему образования и воспитания
-                    </a>
-                  </p>
-                  <p>
-                    <SvgSelector svg={"case3"} />
-                    <a>
-                      18 экспертов, среди которых <br />
-                      Людмила Петрановская, Ирена
-                      <br /> Понарошку, Саша Зверева и другие
-                    </a>
-                  </p>
-                </div>
-                <Arrow />
-              </figure>
-            </Link>
-          </div> */}
         </div>
       </section>
       <section className={s.projects}>
@@ -211,8 +116,8 @@ const Cases = ({ data }) => {
               .split("\n")
               .map((line, index, array) => (
                 <span key={index} data-aos="fade-right">
-                  {line.replace(/ /g, "\u00A0")}
-                  {index < array.length - 1 && "\u00A0"}
+                  {line}
+                  {index < array.length - 1 && " "}
                 </span>
               ))}
           </h2>
@@ -237,149 +142,162 @@ const Cases = ({ data }) => {
         )}
         <div className={s.cases_wrapper}>
           <div className={cn(s.item, s.item_slezy)}>
-            <Link className={s.case_link} to={"/highload"}>
-              <figure className={s.left}>
-                <div>
-                  <img src={require("assets/bar.png")} alt="Bar" />
-                </div>
-                <p>
-                  <SvgSelector svg={"bar"} />
-                  <a>
-                    Подавали «Слезы разработчика» в&nbsp;созданном нами{" "}
-                    {isMobile || <br />}
-                    баре-стенде {isMobile && <br />}для&nbsp;презентации
-                    HR-бренда IT-компании {isMobile || <br />}
-                    SPACE307 на&nbsp;конференции Highload 2022.
-                  </a>
-                </p>
-                <Arrow />
+            {data?.case[3] && (
+              <Link className={s.case_link} to={data?.case[3].url}>
+                <figure className={s.left}>
+                  <div>
+                    {data.case[3].isPhoto && (
+                      <img
+                        src={ADMIN_URL + data.case[3].photos[0].url}
+                        alt={data.case[3].photos[0].alternativeText}
+                      />
+                    )}
+                  </div>
+                  <p style={{ whiteSpace: "pre-line" }}>
+                    <Circle color={data?.case[3].circle?.color} />
+                    <a>{data?.case[3].description}</a>
+                  </p>
+                  <Arrow />
+                </figure>
+              </Link>
+            )}
+            {data?.case[4] && (
+              <figure
+                className={cn(s.right, s.par)}
+                style={{ position: "relative" }}
+              >
+                {data.case[4].isPhoto ? (
+                  <img
+                    src={ADMIN_URL + data.case[4].photos[0]?.url}
+                    alt={data.case[4].photos[0]?.alternativeText}
+                  />
+                ) : (
+                  data.case[4].video?.isVimeo || (
+                    <Parashut data={data.case[4].video.video} />
+                  )
+                )}
+                <section>
+                  <p
+                    style={{ whiteSpace: "pre-line" }}
+                    onClick={() => navigate(data?.case[4].url)}
+                  >
+                    <Circle color={data?.case[4].circle?.color} />
+                    <a>{data?.case[4].description}</a>
+                  </p>
+                  <Arrow />
+                </section>
               </figure>
-            </Link>
-            {/* <Link className={s.case_link} to={"/helix"}> */}
-            <figure
-              className={cn(s.right, s.par)}
-              style={{ position: "relative" }}
-            >
-              <Parashut />
-              <section>
-                <p onClick={() => navigate("/helix")}>
-                  <SvgSelector svg={"parashut"} />
-                  <a>
-                    Прыжки с&nbsp;парашютом <br />
-                    для&nbsp;топ-менеджеров {isMobile && <br />} Helix
-                    на&nbsp;выездном <br />
-                    лидерском тренинге
-                  </a>
-                </p>
-                <Arrow />
-              </section>
-            </figure>
-            {/* </Link> */}
+            )}
           </div>
           <div className={cn(s.item, s.item_vk)}>
-            <div className={s.num}>
-              <h2>
-                <CountUp
-                  separator="&nbsp;"
-                  enableScrollSpy
-                  scrollSpyOnce
-                  start={45}
-                  end={50}
-                  duration={1.2}
-                >
-                  {({ countUpRef }) => <span ref={countUpRef} />}
-                </CountUp>
-              </h2>
-              <p>
-                сотрудников сблизил
-                <br /> тимбилдинг
-              </p>
-            </div>
-            <Link className={s.case_link} to={"/vk"}>
+            {data?.case[5] &&
+              (function () {
+                const { number, text } = extractNumberAndText(
+                  data.case[5].number?.title
+                );
+                return (
+                  data.case[5].number && (
+                    <div className={s.num}>
+                      <h2>
+                        <CountUp
+                          separator="&nbsp;"
+                          enableScrollSpy
+                          scrollSpyOnce
+                          start={
+                            number.value > 5 ? number.value - 5 : number.value
+                          }
+                          end={number.value}
+                          duration={1.2}
+                        >
+                          {({ countUpRef }) => <span ref={countUpRef} />}
+                        </CountUp>
+                        {text}
+                      </h2>
+                      <p style={{ whiteSpace: "pre-line" }}>
+                        {data.case[5].number.description}
+                      </p>
+                    </div>
+                  )
+                );
+              })()}
+            <Link className={s.case_link} to={data.case[5].url}>
               <figure className={s.right}>
-                {isMobile ? (
-                  <ImageHover folder={"usadba-mobile"} />
-                ) : (
-                  <ImageHover folder={"usadba"} />
+                {data.case[5].isPhoto && (
+                  <ImageHover data={data.case[5].photos} />
                 )}
                 <div>
-                  <p>
-                    <SvgSelector svg={"case4"} />
-                    <a>
-                      Подружили новых сотрудников
-                      <br /> с командой ВКонтакте в иммерсивном шоу
-                      <br />
-                      по пьесам Чехова в атмосфере 19 века
-                    </a>
-                  </p>
-                  <p>
-                    <SvgSelector svg={"case4"} />
-                    <a>
-                      12 актеров на протяжении <br />6 часов помогали в создании{" "}
-                      <br />
-                      ролевой игры
-                    </a>
-                  </p>
+                  {[
+                    data.case[5].description,
+                    data.case[5].secondDescription,
+                  ].map(
+                    (el, i) =>
+                      el && (
+                        <p key={el.id}>
+                          <Circle color={data.case[5].circle?.color} />
+                          <a style={{ whiteSpace: "pre-line" }}>{el}</a>
+                        </p>
+                      )
+                  )}
                 </div>
                 <Arrow />
               </figure>
             </Link>
           </div>
-          <div className={cn(s.item, s.item_smartfest)}>
-            <div className={s.num}>
-              <h2>
-                <CountUp
-                  separator="&nbsp;"
-                  enableScrollSpy
-                  scrollSpyOnce
-                  start={34990}
-                  end={35000}
-                  duration={1.2}
-                >
-                  {({ countUpRef }) => <span ref={countUpRef} />}
-                </CountUp>
-                +
-              </h2>
-              <p>
-                онлайн просмотров <br /> за двое суток
-                <br />
-                фестиваля
-              </p>
+          {data?.case[6] && (
+            <div className={cn(s.item, s.item_smartfest)}>
+              {(function () {
+                const { number, text } = extractNumberAndText(
+                  data.case[6].number?.title
+                );
+                return (
+                  data.case[6].number && (
+                    <div className={s.num}>
+                      <h2>
+                        <CountUp
+                          separator="&nbsp;"
+                          enableScrollSpy
+                          scrollSpyOnce
+                          start={
+                            number.value > 5 ? number.value - 5 : number.value
+                          }
+                          end={number.value}
+                          duration={1.2}
+                        >
+                          {({ countUpRef }) => <span ref={countUpRef} />}
+                        </CountUp>
+                        {text}
+                      </h2>
+                      <p style={{ whiteSpace: "pre-line" }}>
+                        {data.case[6].number.description}
+                      </p>
+                    </div>
+                  )
+                );
+              })()}
+              <Link className={s.case_link} to={data.case[2].url}>
+                <figure className={s.right}>
+                  <div className={s.iframe_fest}>
+                    {data.case[6].isPhoto || <Video data={data.case[6]} />}
+                  </div>
+                  <div>
+                    {[
+                      data.case[6].description,
+                      data.case[6].secondDescription,
+                    ].map(
+                      (el, i) =>
+                        el && (
+                          <p key={el.id}>
+                            <Circle color={data.case[6].circle?.color} />
+                            <a style={{ whiteSpace: "pre-line" }}>{el}</a>
+                          </p>
+                        )
+                    )}
+                  </div>
+                  <Arrow />
+                </figure>
+              </Link>
             </div>
-            <Link className={s.case_link} to={"/skysmartbigday"}>
-              <figure className={s.right}>
-                <div className={s.iframe_fest}>
-                  <iframe
-                    src="https://player.vimeo.com/video/847575962?h=9ae564daca&loop=1&autoplay=1&autopause=0&muted=1&title=0&byline=0&portrait=0"
-                    frameBorder="0"
-                    allow="autoplay; fullscreen; picture-in-picture"
-                    webkitallowfullscreen="true"
-                    mozallowfullscreen="true"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-                <div>
-                  <p>
-                    <SvgSelector svg={"case3"} />
-                    <a>
-                      Организовали и&nbsp;провели вместе <br />
-                      со&nbsp;Skysmart первый в&nbsp;России масштабный <br />
-                      онлайн фестиваль для&nbsp;родителей
-                    </a>
-                  </p>
-                  <p>
-                    <SvgSelector svg={"case3"} />
-                    <a>
-                      38 экспертов, в&nbsp;числе которых: <br />
-                      Оскар Кучера, Ася Казанцева, <br />
-                      Алёна Владимирская, Антон Комолов
-                    </a>
-                  </p>
-                </div>
-                <Arrow />
-              </figure>
-            </Link>
-          </div>
+          )}
         </div>
       </section>
     </>

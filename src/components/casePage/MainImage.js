@@ -1,11 +1,8 @@
-import { useMediaQuery } from "@mui/material";
 import styled from "styled-components";
 import { breakpoints } from "styles/variables";
 
-export const MainImage = ({ src, srcMobile }) => {
-  const isMobile = useMediaQuery(breakpoints.mobile);
-
-  return <Img src={require(`assets/cases/${isMobile ? srcMobile : src}`)} />;
+export const MainImage = ({ src }) => {
+  return <Img src={src} />;
 };
 
 const Img = styled.img`

@@ -79,6 +79,7 @@
         }
         & svg {
           height: 1.1em;
+          width: 1.1em;
           transform: translateY(20%);
           margin-right: 0.1em;
         }
@@ -161,6 +162,7 @@
 
         & svg {
           height: 1.1em;
+          width: 1.1em;
           transform: translateY(20%);
           margin-right: 0.1em;
         }
@@ -288,6 +290,7 @@
         @include text-small;
 
         & svg {
+          width: 1.1em;
           height: 1.1em;
           transform: translateY(20%);
           margin-right: 0.1em;
@@ -310,16 +313,10 @@
     border-radius: 15px;
     height: 472px;
     width: 648px;
-    padding: 37px 48px 34px 68px;
-    background: radial-gradient(
-      36.94% 27.75% at 65.26% 76.83%,
-      #ffd0d3 0%,
-      #eb89eb 100%
-    );
+
     @include laptop {
       height: 35.26vw;
       width: 48.68vw;
-      padding: 10% 15% 10% 20%;
     }
     @include mobile {
       height: 63.75vw;
@@ -380,6 +377,7 @@
         @include text-small;
 
         & svg {
+          width: 1.1em;
           height: 1.1em;
           transform: translateY(20%);
           margin-right: 0.1em;

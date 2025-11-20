@@ -39,7 +39,7 @@ const Footer = () => {
         <div className={s.authors}>
           <h3 className={s.authors_title}>Команда</h3>
           <ul>
-            {authors?.data?.map((el) => (
+            {authors?.data.map((el) => (
               <Author key={el.id} footer>
                 <div>
                   <img src={ADMIN_URL + el.photo?.url} alt={el.name} />

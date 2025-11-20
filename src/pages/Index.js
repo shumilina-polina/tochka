@@ -66,14 +66,14 @@ const Index = () => {
         <Numbers data={data?.data?.numberBlocks} isLoading={isLoading} />
         <About data={data?.data?.titleWithDescription} isLoading={isLoading} />
         {data?.data && <Cases data={data.data} />}
-        {data?.data?.textWithAuthor[1] && (
+        {data?.data.textWithAuthor[0] && (
           <h2 className={s.tech}>
-            {data.data.textWithAuthor[1].text
+            {data?.data.textWithAuthor[1].text
               .split("\n")
               .map((line, index, array) => (
                 <span key={index} data-aos="fade-left">
-                  {line.replace(/ /g, "\u00A0")}
-                  {index < array.length - 1 && "\u00A0"}
+                  {line}
+                  {index < array.length - 1 && " "}
                 </span>
               ))}
           </h2>
