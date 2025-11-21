@@ -1,20 +1,18 @@
+import Circle from "components/Circle";
 import SvgSelector from "components/SvgSelector";
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import styled from "styled-components";
 import { breakpoints, mixins } from "styles/variables";
 
 export const ClientBlockWrapper = ({ children }) => <Block>{children}</Block>;
 const Block = styled.div`
+  grid-area: chat;
   display: flex;
   align-items: flex-start;
-  margin-bottom: 74px;
-
   @media ${breakpoints.laptop} {
-    margin-bottom: 6.3vw;
     justify-content: space-between;
   }
   @media ${breakpoints.mobile} {
-    margin-bottom: 50px;
+    padding: 12px 0;
     flex-direction: column;
     gap: 30px;
   }
@@ -23,24 +21,15 @@ const Block = styled.div`
 export const LabelClient = ({ children }) => <Text>{children}</Text>;
 const Text = styled.p`
   font-size: 38px;
-  line-height: 46px;
-  letter-spacing: -1.14px;
-  margin-right: 34px;
+  grid-area: desc;
+  line-height: 121%;
+  letter-spacing: -0.03em;
 
   @media ${breakpoints.laptop} {
-    font-size: 2.5vw;
-    line-height: 3.1vw;
-    letter-spacing: -0.076vw;
-    margin-right: 5vw;
-    max-width: 25%;
+    font-size: 2.71vw;
   }
   @media ${breakpoints.mobile} {
-    margin-right: 0;
-    font-size: 24px;
-    line-height: 30px;
-    letter-spacing: -0.72px;
-    margin-bottom: 20px;
-    max-width: 100%;
+    font-size: 20px;
   }
 `;
 
@@ -48,25 +37,13 @@ export const ChatWrapper = ({ children }) => <WrChat>{children}</WrChat>;
 const WrChat = styled.div`
   display: flex;
   flex-direction: column;
-  margin-right: 139px;
-  flex-basis: 100%;
-  max-width: 512px;
-
-  @media ${breakpoints.laptop} {
-    margin-right: 9.3vw;
-    max-width: 34.3vw;
-  }
-  @media ${breakpoints.mobile} {
-    margin-right: 0;
-    max-width: 100%;
-  }
 `;
 
-export const ChatClient = ({ children, time, svgType }) => (
+export const ChatClient = ({ children, time, color }) => (
   <Wr>
     <div>
       <span>K</span>
-      <SvgSelector svg={svgType} />
+      <Circle color={color} />
     </div>
     <div>
       <header>
@@ -172,6 +149,12 @@ const Wr = styled.div`
       }
     }
   }
+
+  & svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
 `;
 
 export const ChatTochka = ({ children, time }) => (
@@ -185,7 +168,7 @@ export const ChatTochka = ({ children, time }) => (
         <span>Точка</span>
         <span>{time}</span>
       </header>
-      <p>{children}</p>
+      <p style={{ whiteSpace: "pre-line" }}>{children}</p>
     </div>
   </WrTochka>
 );
@@ -285,20 +268,20 @@ export const List = ({ list }) => (
   <ListWr>
     <li>
       <span>Клиент</span>
-      <ReactMarkdown>{list[0]}</ReactMarkdown>
+      <p>{list[0]}</p>
     </li>
     <li>
       <span>Категория</span>
-      <ReactMarkdown>{list[1]}</ReactMarkdown>
+      <p>{list[1]}</p>
     </li>
     <li>
       <span>Локация</span>
-      <ReactMarkdown>{list[2]}</ReactMarkdown>
+      <p>{list[2]}</p>
     </li>
   </ListWr>
 );
 const ListWr = styled.ul`
-  width: 189px;
+  grid-area: details;
   text-align: left;
   font-size: 18px;
   line-height: 24px;
@@ -310,11 +293,9 @@ const ListWr = styled.ul`
   ${mixins.textSmall}
 
   @media ${breakpoints.laptop} {
-    width: 12.66vw;
     gap: 1.6vw;
   }
   @media ${breakpoints.mobile} {
-    width: 100%;
     gap: 12px;
     font-size: 14px;
     line-height: 18px;
@@ -322,5 +303,9 @@ const ListWr = styled.ul`
   & span {
     color: #aaa;
     margin-bottom: 2px;
+  }
+  & p {
+    word-break: break-word;
+    white-space: pre-line;
   }
 `;

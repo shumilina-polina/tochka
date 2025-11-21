@@ -6,17 +6,17 @@ export const MainImage = ({ src }) => {
 };
 
 const Img = styled.img`
-  height: 500px;
-  width: 100%;
-  border-radius: 20px;
-  margin-bottom: 50px;
-
+  display: block;
+  aspect-ratio: 16 / 9;
+  grid-area: image;
+  flex-shrink: 0;
+  overflow: hidden;
+  background-color: #f0f0f0;
+  border-radius: 17px;
   @media ${breakpoints.laptop} {
-    height: 33.5vw;
-    margin-bottom: 3.35vw;
+    border-radius: 1.21vw;
   }
   @media ${breakpoints.mobile} {
-    height: 93.75vw;
-    margin-bottom: 20px;
+    border-radius: 12px;
   }
 `;

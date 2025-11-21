@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="*" element={<Error />} />
-        <Route path="/case/:caseSlug" element={<CasePage />} />
+        <Route path="/cases/:caseSlug" element={<CasePage />} />
         {/* <Route path="/gazpromneft" element={<Gazpromneft />} />
         <Route path="/montblanc" element={<Montblanc />} />
         <Route path="/skysmartcamp" element={<Skysmartcamp />} />

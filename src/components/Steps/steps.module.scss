@@ -26,6 +26,8 @@
       }
     }
     & > h3 {
+      word-break: break-word;
+
       @include m6;
       padding-left: 22px;
       margin-bottom: 36px;
@@ -59,6 +61,7 @@
     }
     & > ul {
       & > li {
+        word-break: break-word;
         padding-left: 22px;
         font-size: 24px;
         line-height: 27px;

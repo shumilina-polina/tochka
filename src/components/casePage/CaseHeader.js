@@ -11,11 +11,11 @@ const CaseHeader = () => {
   }, []);
   return (
     <Header>
-      <Link to={"/"}>
-        <Arrow />
-        <span>На главную</span>
-      </Link>
       <SvgSelector svg={"tochka"} />
+      <Link to={"/"}>
+        <span>На главную</span>
+        <Arrow />
+      </Link>
     </Header>
   );
 };

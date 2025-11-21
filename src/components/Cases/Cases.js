@@ -1,7 +1,5 @@
 import cn from "classnames";
 import s from "./cases.module.scss";
-import { breakpoints } from "styles/variables";
-import { useMediaQuery } from "@mui/material";
 import Author from "components/Author/Author";
 import CountUp from "react-countup";
 import Arrow from "components/Arrow";
@@ -15,7 +13,6 @@ import { Video } from "components/Video/Video";
 
 const Cases = ({ data }) => {
   const navigate = useNavigate();
-  const isMobile = useMediaQuery(breakpoints.mobile);
 
   return (
     <>
@@ -24,7 +21,7 @@ const Cases = ({ data }) => {
         <div className={s.cases_wrapper}>
           <div className={s.item}>
             {data?.case[0] && (
-              <Link className={s.case_link} to={data?.case[0].url}>
+              <Link className={s.case_link} to={"cases/" + data?.case[0].url}>
                 <figure className={s.left}>
                   {data.case[0].photos && (
                     <ImageHover data={data.case[0].photos} />
@@ -38,7 +35,7 @@ const Cases = ({ data }) => {
               </Link>
             )}
             {data?.case[1] && (
-              <Link className={s.case_link} to={data?.case[1].url}>
+              <Link className={s.case_link} to={"cases/" + data?.case[1].url}>
                 <figure className={s.right}>
                   {data.case[1].photos && (
                     <ImageHover data={data.case[1].photos} />
@@ -83,7 +80,7 @@ const Cases = ({ data }) => {
                   )
                 );
               })()}
-              <Link className={s.case_link} to={data.case[2].url}>
+              <Link className={s.case_link} to={"cases/" + data.case[2].url}>
                 <figure className={s.right}>
                   <div className={s.iframe_fest}>
                     {data.case[2].isPhoto || <Video data={data.case[2]} />}
@@ -143,7 +140,7 @@ const Cases = ({ data }) => {
         <div className={s.cases_wrapper}>
           <div className={cn(s.item, s.item_slezy)}>
             {data?.case[3] && (
-              <Link className={s.case_link} to={data?.case[3].url}>
+              <Link className={s.case_link} to={"cases/" + data?.case[3].url}>
                 <figure className={s.left}>
                   <div>
                     {data.case[3].isPhoto && (
@@ -220,7 +217,7 @@ const Cases = ({ data }) => {
                   )
                 );
               })()}
-            <Link className={s.case_link} to={data.case[5].url}>
+            <Link className={s.case_link} to={"cases/" + data.case[5].url}>
               <figure className={s.right}>
                 {data.case[5].isPhoto && (
                   <ImageHover data={data.case[5].photos} />
@@ -274,7 +271,7 @@ const Cases = ({ data }) => {
                   )
                 );
               })()}
-              <Link className={s.case_link} to={data.case[2].url}>
+              <Link className={s.case_link} to={"cases/" + data.case[2].url}>
                 <figure className={s.right}>
                   <div className={s.iframe_fest}>
                     {data.case[6].isPhoto || <Video data={data.case[6]} />}

@@ -6,7 +6,6 @@ import { useMediaQuery } from "@mui/material";
 import { ADMIN_URL } from "api/api";
 
 const Parashut = ({ data }) => {
-  console.log('data: ', data);
   const [played, setPlayed] = useState(false);
   const [iconVisible, setIconVisible] = useState(false);
   const isMobile = useMediaQuery(breakpoints.mobile);

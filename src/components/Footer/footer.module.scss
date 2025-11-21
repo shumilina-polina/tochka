@@ -97,6 +97,7 @@
   font-size: 12px;
   line-height: 125%;
   color: #2a2929;
+  word-break: break-word;
   @include laptop {
     font-size: 0.86vw;
   }
@@ -145,6 +146,7 @@
   }
 }
 .logo {
+  flex-shrink: 0;
   width: 90px;
   height: 20px;
   transition: opacity 0.3s;
@@ -173,6 +175,7 @@
   display: block;
   height: 24px;
   width: 100px;
+  flex-shrink: 0;
   @include laptop {
     width: 7.14vw;
     height: 1.71vw;
@@ -245,6 +248,7 @@
     }
   }
   &_button {
+    padding: 1em;
     font-size: 18px;
     line-height: 132%;
     color: #000;
