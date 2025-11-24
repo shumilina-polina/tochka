@@ -13,7 +13,7 @@ const Numbers = ({ data, isLoading }) => {
               const { number, text } = extractNumberAndText(el.title);
               return (
                 <li key={el.id} className={s.num}>
-                  <h2>
+                  <h2 style={{ whiteSpace: "pre-line" }}>
                     <CountUp
                       separator="&nbsp;"
                       enableScrollSpy

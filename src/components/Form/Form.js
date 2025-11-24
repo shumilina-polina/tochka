@@ -41,7 +41,6 @@ const Form = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    console.log("radio.current.children: ", radio.current.children);
     Array.from(radio.current.children).map((elem) => {
       if (elem.children[0].classList.contains("Mui-checked"))
         budget.current.value = elem.children[1].innerText;

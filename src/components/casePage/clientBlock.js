@@ -50,7 +50,7 @@ export const ChatClient = ({ children, time, color }) => (
         <span>Клиент</span>
         <span>{time}</span>
       </header>
-      <p>{children}</p>
+      <p style={{ whiteSpace: "pre-line" }}>{children}</p>
     </div>
   </Wr>
 );
@@ -116,10 +116,13 @@ const Wr = styled.div`
       align-items: center;
       justify-content: space-between;
       margin-bottom: 6px;
+      gap: 4px;
       @media ${breakpoints.laptop} {
+        gap: 0.29vw;
         margin-bottom: 0.4vw;
       }
       @media ${breakpoints.mobile} {
+        gap: 4px;
         margin-bottom: 6px;
       }
       & > span {
@@ -143,6 +146,7 @@ const Wr = styled.div`
       }
     }
     & > p {
+      word-break: break-word;
       ${mixins.textSmall}
       @media ${breakpoints.mobile} {
         font-size: 14px;

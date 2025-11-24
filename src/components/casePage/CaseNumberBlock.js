@@ -69,7 +69,7 @@ export const CaseNumberBlock = ({ data }) => {
   const { number, text } = extractNumberAndText(data.title);
   return (
     <Box>
-      <h2>
+      <h2 style={{ whiteSpace: "pre-line" }}>
         <CountUp
           separator="&nbsp;"
           enableScrollSpy

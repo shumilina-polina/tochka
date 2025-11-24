@@ -7,6 +7,7 @@ import { useFetch } from "api/useFetch";
 import Gallery from "components/casePage/galleries/Gallery";
 import { CasePageBox } from "components/casePage/CasePageBox";
 import { CaseNumberBlock } from "components/casePage/CaseNumberBlock";
+import { LastProjects } from "components/casePage/LastProjects";
 
 const getCaseQuery = (slug) => {
   const query = QueryString.stringify(
@@ -63,8 +64,6 @@ const CasePage = () => {
   const preview = caseData?.preview;
   const photos = preview?.photos || [];
 
-  const relatedProjects = photos[0]?.related || [];
-
   return (
     <section>
       <Wrapper>
@@ -84,21 +83,7 @@ const CasePage = () => {
           );
         })}
 
-        {/* Связанные проекты */}
-        {/* {relatedProjects.length > 0 && (
-          <LastProjects>
-            {relatedProjects.map((project, i) => (
-              <Project key={i} url={ADMIN_URL + project.url}>
-                <Box sx={{ p: 2 }}>
-                  <h3>{project.description}</h3>
-                  {project.secondDescription && (
-                    <p>{project.secondDescription}</p>
-                  )}
-                </Box>
-              </Project>
-            ))}
-          </LastProjects>
-        )} */}
+        <LastProjects />
       </Wrapper>
     </section>
   );

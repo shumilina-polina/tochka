@@ -21,7 +21,7 @@ const Cases = ({ data }) => {
         <div className={s.cases_wrapper}>
           <div className={s.item}>
             {data?.case[0] && (
-              <Link className={s.case_link} to={"cases/" + data?.case[0].url}>
+              <Link className={s.case_link} to={"/cases/" + data?.case[0].url}>
                 <figure className={s.left}>
                   {data.case[0].photos && (
                     <ImageHover data={data.case[0].photos} />
@@ -35,7 +35,7 @@ const Cases = ({ data }) => {
               </Link>
             )}
             {data?.case[1] && (
-              <Link className={s.case_link} to={"cases/" + data?.case[1].url}>
+              <Link className={s.case_link} to={"/cases/" + data?.case[1].url}>
                 <figure className={s.right}>
                   {data.case[1].photos && (
                     <ImageHover data={data.case[1].photos} />
@@ -58,7 +58,7 @@ const Cases = ({ data }) => {
                 return (
                   data.case[2].number && (
                     <div className={s.num}>
-                      <h2>
+                      <h2 style={{ whiteSpace: "pre-line" }}>
                         <CountUp
                           separator="&nbsp;"
                           enableScrollSpy
@@ -80,7 +80,7 @@ const Cases = ({ data }) => {
                   )
                 );
               })()}
-              <Link className={s.case_link} to={"cases/" + data.case[2].url}>
+              <Link className={s.case_link} to={"/cases/" + data.case[2].url}>
                 <figure className={s.right}>
                   <div className={s.iframe_fest}>
                     {data.case[2].isPhoto || <Video data={data.case[2]} />}
@@ -140,7 +140,7 @@ const Cases = ({ data }) => {
         <div className={s.cases_wrapper}>
           <div className={cn(s.item, s.item_slezy)}>
             {data?.case[3] && (
-              <Link className={s.case_link} to={"cases/" + data?.case[3].url}>
+              <Link className={s.case_link} to={"/cases/" + data?.case[3].url}>
                 <figure className={s.left}>
                   <div>
                     {data.case[3].isPhoto && (
@@ -195,7 +195,7 @@ const Cases = ({ data }) => {
                 return (
                   data.case[5].number && (
                     <div className={s.num}>
-                      <h2>
+                      <h2 style={{ whiteSpace: "pre-line" }}>
                         <CountUp
                           separator="&nbsp;"
                           enableScrollSpy
@@ -217,7 +217,7 @@ const Cases = ({ data }) => {
                   )
                 );
               })()}
-            <Link className={s.case_link} to={"cases/" + data.case[5].url}>
+            <Link className={s.case_link} to={"/cases/" + data.case[5].url}>
               <figure className={s.right}>
                 {data.case[5].isPhoto && (
                   <ImageHover data={data.case[5].photos} />
@@ -249,7 +249,7 @@ const Cases = ({ data }) => {
                 return (
                   data.case[6].number && (
                     <div className={s.num}>
-                      <h2>
+                      <h2 style={{ whiteSpace: "pre-line" }}>
                         <CountUp
                           separator="&nbsp;"
                           enableScrollSpy
@@ -271,7 +271,7 @@ const Cases = ({ data }) => {
                   )
                 );
               })()}
-              <Link className={s.case_link} to={"cases/" + data.case[2].url}>
+              <Link className={s.case_link} to={"/cases/" + data.case[2].url}>
                 <figure className={s.right}>
                   <div className={s.iframe_fest}>
                     {data.case[6].isPhoto || <Video data={data.case[6]} />}

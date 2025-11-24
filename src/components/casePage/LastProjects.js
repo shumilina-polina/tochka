@@ -1,323 +1,205 @@
-import { useMediaQuery } from "@mui/material";
-import SvgSelector from "components/SvgSelector";
-import { Link } from "react-router-dom";
+import { ADMIN_URL } from "api/api";
+import { useFetch } from "api/useFetch";
+import Circle from "components/Circle";
+import QueryString from "qs";
+import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { breakpoints, mixins } from "styles/variables";
 
-export const LastProjects = ({ children }) => (
-  <Block>
-    <span>
-      Последние <br /> проекты
-    </span>
-    <div>{children}</div>
-  </Block>
-);
+const getLastCasesQuery = (currentSlug) => {
+  const query = QueryString.stringify(
+    {
+      // sort: ["createdAt:desc"],
+      sort: { createdAt: "desc" },
+      pagination: { limit: 5 },
+      filters: {
+        preview: {
+          url: { $ne: currentSlug }, // исключаю текущий кейс
+        },
+      },
+      populate: {
+        preview: {
+          populate: { photos: { populate: "*" }, circle: { populate: "*" } },
+        },
+      },
+    },
+    { encodeValuesOnly: true }
+  );
 
-const Block = styled.section`
-  display: grid;
-  align-items: start;
-  padding: 100px 0;
-  grid-template-columns: 1fr 2fr;
+  return `cases?${query}`;
+};
+
+export const LastProjects = () => {
+  const { caseSlug } = useParams();
+  const { data } = useFetch(getLastCasesQuery(caseSlug));
+
+  const lastProjects = data?.data || [];
+  return (
+    lastProjects.length > 0 && (
+      <Wrapper>
+        <h2>Последние проекты</h2>
+        <List>
+          {lastProjects.map((el) => (
+            <ProjectItem to={"/cases/" + el.preview?.url} key={el.id}>
+              {el.preview?.photos?.[0] && (
+                <ImageWrapper>
+                  <img
+                    alt={el.preview?.photos[0].alternativeText}
+                    src={ADMIN_URL + el.preview?.photos[0].url}
+                  />
+                </ImageWrapper>
+              )}
+              <Box>
+                <Title>
+                  {el.preview?.circle?.color && (
+                    <Circle color={el.preview?.circle.color} />
+                  )}
+                  {el.client}
+                </Title>
+                <Description style={{ whiteSpace: "pre-line" }}>
+                  <a>{el.preview?.description}</a>
+                </Description>
+              </Box>
+            </ProjectItem>
+          ))}
+        </List>
+      </Wrapper>
+    )
+  );
+};
+
+const Box = styled.div`
+  padding: 0 12px;
   @media ${breakpoints.laptop} {
-    padding: 6.7vw 0;
+    padding: 0 0.86vw;
   }
   @media ${breakpoints.mobile} {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    padding: 0 0 50px;
-  }
-  & > span {
-    padding-top: 16px;
-    font-size: 38px;
-    line-height: 46px;
-    letter-spacing: -1.14px;
-    @media ${breakpoints.laptop} {
-      padding-top: 1.07vw;
-      font-size: 2.5vw;
-      line-height: 3.1vw;
-      letter-spacing: -0.076vw;
-    }
-    @media ${breakpoints.mobile} {
-      padding-top: 0;
-      font-size: 36px;
-      font-weight: 600;
-      line-height: 36px;
-      letter-spacing: -1.08px;
-    }
-  }
-  & > div {
-    padding-right: 160px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 352px);
-    gap: 43px 60px;
-    @media ${breakpoints.laptop} {
-      grid-template-rows: repeat(2, auto);
-      gap: 2.88vw 4.02vw;
-      padding-right: 10.45vw;
-    }
-    @media ${breakpoints.mobile} {
-      grid-template-columns: 1fr;
-      gap: 30px;
-      padding-right: 0;
-      grid-template-rows: auto;
-    }
+    padding: 0;
   }
 `;
 
-export const Project = ({ children }) => <ProjectBox>{children}</ProjectBox>;
-
-const ProjectBox = styled.div`
-  & > a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    & p > a {
-      ${mixins.hoveredText}
-      @media ${breakpoints.mobile} {
-        background-size: 100% 1px;
-      }
-    }
-    &:hover {
-      & > div {
-        & img {
-          transform: scale(1.1);
-          @media ${breakpoints.mobile} {
-            transform: none;
-          }
-        }
-      }
-      & p > a {
-        background-size: 100% 1px;
-        @media ${breakpoints.mobile} {
-          background-size: 100% 1px;
-        }
-      }
-    }
-    @media ${breakpoints.mobile} {
-      align-items: flex-start;
-      flex-direction: row;
-    }
-  }
-
-  & > a > div:first-child {
-    aspect-ratio: 1/1;
-    overflow: hidden;
-    max-width: 100%;
-    border-radius: 100%;
-    @media ${breakpoints.mobile} {
-      width: 108px;
-      height: 108px;
-      flex-shrink: 0;
-    }
-    & > img {
-      transition: transform 0.3s;
-      height: auto;
-    }
-  }
-
-  & > a > div:last-child {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    @media ${breakpoints.laptop} {
-      gap: 0.67vw;
-    }
-    @media ${breakpoints.mobile} {
-      justify-content: flex-start;
-      gap: 6px;
-    }
-    & > div {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      @media ${breakpoints.laptop} {
-        gap: 0.37vw;
-      }
-      @media ${breakpoints.mobile} {
-        gap: 3px;
-      }
-      & > svg {
-        height: 22px;
-        width: 22px;
-        @media ${breakpoints.mobile} {
-          height: 17px;
-          width: 17px;
-        }
-      }
-
-      & > span {
-        ${mixins.textSmall}
-        @media ${breakpoints.mobile} {
-          font-size: 14px;
-          line-height: 18px;
-        }
-      }
-    }
-    & > p {
-      ${mixins.textSmall}
-      @media ${breakpoints.mobile} {
-        font-size: 14px;
-        line-height: 18px;
-      }
-    }
-  }
-
+const Wrapper = styled.div`
+  padding: 72px 0 102px;
   @media ${breakpoints.laptop} {
+    padding: 5.14vw 0 7.29vw;
+  }
+  @media ${breakpoints.mobile} {
+    padding: 56px 0;
+  }
+  & > h2 {
+    font-weight: 400;
+    font-size: 38px;
+    line-height: 121%;
+    letter-spacing: -0.03em;
+    color: #222;
+    margin-bottom: 56px;
+    @media ${breakpoints.laptop} {
+      margin-bottom: 4vw;
+      font-size: 2.71vw;
+    }
+    @media ${breakpoints.mobile} {
+      margin-bottom: 56px;
+      max-width: 70%;
+      font-size: 28px;
+      line-height: 110%;
+    }
   }
 `;
-export const ProjectGazpromneft = () => (
-  <Link to={"/gazpromneft"}>
-    <div>
-      <img
-        src={require("assets/cases/projects/gazpromneft.jpg")}
-        alt="Gazpromneft"
-      />
-    </div>
-    <div>
-      <div>
-        <SvgSelector svg={"case1"} />
-        <span>Газпромнефть</span>
-      </div>
-      <p>
-        <a>
-          Подготовили топ-менеджерам в&nbsp;Газпромнефть выступления
-          в&nbsp;стиле&nbsp;TED
-        </a>
-      </p>
-    </div>
-  </Link>
-);
+const List = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 40px;
+  @media ${breakpoints.laptop} {
+    gap: 2.86vw;
+  }
+  @media ${breakpoints.mobile} {
+    gap: 40px;
+    grid-template-columns: 1fr;
+  }
+`;
+const Description = styled.p`
+  font-size: 18px;
+  word-break: break-word;
+  line-height: 133%;
+  color: #222;
+  @media ${breakpoints.laptop} {
+    font-size: 1.29vw;
+  }
+  @media ${breakpoints.mobile} {
+    font-size: 14px;
+    line-height: 120%;
+  }
+  & > a {
+    ${mixins.hoveredText}
+    @media ${breakpoints.mobile} {
+      background-size: 100% 1px;
+    }
+  }
+`;
+const ProjectItem = styled(Link)`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
 
-export const ProjectHelix = () => {
-  const isMobile = useMediaQuery(breakpoints.mobile);
-
-  return (
-    <Link to={"/helix"}>
-      <div>
-        <img src={require("assets/cases/projects/helix.jpg")} alt="Helix" />
-      </div>
-      <div>
-        <div>
-          <SvgSelector svg={"parashut"} />
-          <span>Helix</span>
-        </div>
-        <p>
-          <a>
-            Прыжки {isMobile || <br />} с&nbsp;парашютом для&nbsp;топ-менеджеров
-            Helix на&nbsp;выездном лидерском тренинге
-          </a>
-        </p>
-      </div>
-    </Link>
-  );
-};
-
-export const ProjectSkysmartCamp = () => (
-  <Link to={"/skysmartcamp"}>
-    <div>
-      <img
-        src={require("assets/cases/projects/skysmartcamp.jpg")}
-        alt="SkysmartCamp"
-      />
-    </div>
-    <div>
-      <div>
-        <SvgSelector svg={"case3"} />
-        <span>Skysmart</span>
-      </div>
-      <p>
-        <a>
-          Устроили масштабный онлайн фестиваль «SMARTfest: КЭМП
-          для&nbsp;родителей»
-        </a>
-      </p>
-    </div>
-  </Link>
-);
-
-export const ProjectHighload = () => (
-  <Link to={"/highload"}>
-    <div>
-      <img src={require("assets/cases/projects/highload.jpg")} alt="highload" />
-    </div>
-    <div>
-      <div>
-        <SvgSelector svg={"bar"} />
-        <span>Space 307</span>
-      </div>
-      <p>
-        <a>Подавали «Слезы разработчика» на&nbsp;конференции Highload 2022</a>
-      </p>
-    </div>
-  </Link>
-);
-export const ProjectMontblanc = () => (
-  <Link to={"/montblanc"}>
-    <div>
-      <img
-        src={require("assets/cases/projects/montblanc.jpg")}
-        alt="Montblanc"
-      />
-    </div>
-    <div>
-      <div>
-        <SvgSelector svg={"case2"} />
-        <span>Montblanc</span>
-      </div>
-      <p>
-        <a>
-          Оформили Montblanc к&nbsp;открытию за&nbsp;2&nbsp;дня,
-          без&nbsp;приостановки работы бутика
-        </a>
-      </p>
-    </div>
-  </Link>
-);
-export const ProjectVk = () => (
-  <Link to={"/vk"}>
-    <div>
-      <img src={require("assets/cases/projects/vk.jpg")} alt="vk" />
-    </div>
-    <div>
-      <div>
-        <SvgSelector svg={"case4"} />
-        <span>ВКонтакте</span>
-      </div>
-      <p>
-        <a>
-          Подружили новых сотрудников ВКонтакте в&nbsp;шоу по&nbsp;пьесам Чехова
-          в&nbsp;атмосфере 19 века
-        </a>
-      </p>
-    </div>
-  </Link>
-);
-export const ProjectSkysmartBigday = () => {
-  const isMobile = useMediaQuery(breakpoints.mobile);
-
-  return (
-    <Link to={"/skysmartbigday"}>
-      <div>
-        <img
-          src={require("assets/cases/projects/skysmartbigday.jpg")}
-          alt="skysmartBigday"
-        />
-      </div>
-      <div>
-        <div>
-          <SvgSelector svg={"case3"} />
-          <span>Skysmart</span>
-        </div>
-        <p>
-          <a>
-            Организовали {isMobile || <br />} онлайн фестиваль «BIG&nbsp;DAY
-            открытых дверей Skysmart»
-          </a>
-        </p>
-      </div>
-    </Link>
-  );
-};
+  &:hover {
+    & img {
+      transform: scale(1.1);
+      @media ${breakpoints.mobile} {
+        transform: none;
+      }
+    }
+    & ${Description} > a {
+      background-size: 100% 1px;
+      @media ${breakpoints.mobile} {
+        background-size: 100% 1px;
+      }
+    }
+  }
+  @media ${breakpoints.mobile} {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row-reverse;
+  }
+`;
+const Title = styled.h3`
+  & > svg {
+    flex-shrink: 0;
+  }
+  word-break: break-word;
+  display: flex;
+  gap: 10px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 133%;
+  color: #222;
+  margin-bottom: 12px;
+  @media ${breakpoints.laptop} {
+    gap: 0.71vw;
+    font-size: 1.29vw;
+    margin-bottom: 0.86vw;
+  }
+  @media ${breakpoints.mobile} {
+    font-size: 14px;
+    gap: 4px;
+    margin-bottom: 9.5px;
+  }
+`;
+const ImageWrapper = styled.div`
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  max-width: 100%;
+  border-radius: 100%;
+  margin: 0 40px 20px 0;
+  @media ${breakpoints.laptop} {
+    margin: 0 2.86vw 1.43vw 0;
+  }
+  @media ${breakpoints.mobile} {
+    margin: 0;
+    max-width: 100px;
+    flex-shrink: 0;
+  }
+  & > img {
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+`;
