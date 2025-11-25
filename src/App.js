@@ -4,6 +4,7 @@ import Error from "./pages/404";
 import Index from "./pages/Index";
 import Footer from "components/Footer/Footer";
 import CasePage from "pages/CasePage";
+import AllCasesPage from "pages/AllCasesPage";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="*" element={<Error />} />
+        <Route path="/cases" element={<AllCasesPage />} />
         <Route path="/cases/:caseSlug" element={<CasePage />} />
         {/* <Route path="/gazpromneft" element={<Gazpromneft />} />
         <Route path="/montblanc" element={<Montblanc />} />

@@ -1,4 +1,5 @@
 import Circle from "components/Circle";
+import { SkeletText } from "components/Skelet/SkeletText";
 import SvgSelector from "components/SvgSelector";
 import styled from "styled-components";
 import { breakpoints, mixins } from "styles/variables";
@@ -268,19 +269,19 @@ const WrTochka = styled.div`
   }
 `;
 
-export const List = ({ list }) => (
+export const List = ({ list, isLoading }) => (
   <ListWr>
     <li>
       <span>Клиент</span>
-      <p>{list[0]}</p>
+      <p>{isLoading ? <SkeletText /> : list && list[0]}</p>
     </li>
     <li>
       <span>Категория</span>
-      <p>{list[1]}</p>
+      <p>{isLoading ? <SkeletText /> : list && list[1]}</p>
     </li>
     <li>
       <span>Локация</span>
-      <p>{list[2]}</p>
+      <p>{isLoading ? <SkeletText /> : list && list[2]}</p>
     </li>
   </ListWr>
 );

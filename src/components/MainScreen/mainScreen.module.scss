@@ -398,7 +398,7 @@
     }
     @include mobile {
       height: 53px;
-      width: 90%;
+      width: 87%;
       border-radius: 27px;
       background: #222;
       color: #fff;
@@ -416,4 +416,12 @@
 
 .all {
   max-width: 70%;
+  & > a {
+    @include hoveredText;
+  }
+  &:hover {
+    & > a {
+      background-size: 100% 1px;
+    }
+  }
 }

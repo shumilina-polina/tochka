@@ -79,7 +79,7 @@
         @include text-small;
 
         @include mobile {
-          max-width: 90%;
+          max-width: 87%;
         }
         & svg {
           height: 1.1em;
@@ -310,7 +310,7 @@
   align-self: flex-end;
   & p {
     @include mobile {
-      max-width: 90%;
+      max-width: 87%;
     }
   }
   & .left > div {
@@ -484,7 +484,7 @@
 .case_link {
   & p {
     @include mobile {
-      max-width: 90%;
+      max-width: 87%;
     }
     & > a {
       @include hoveredText;
@@ -496,9 +496,7 @@
     }
     p > a {
       background-size: 100% 1px;
-      @include mobile {
-        background-size: 100% 1px;
-      }
+    
     }
   }
 
@@ -517,7 +515,7 @@
     flex-basis: 100%;
     & p {
       @include mobile {
-        max-width: 90%;
+        max-width: 87%;
       }
     }
     & p > a {

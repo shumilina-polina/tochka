@@ -1,3 +1,4 @@
+import { Skeleton } from "@mui/material";
 import {
   ChatClient,
   ChatTochka,
@@ -8,6 +9,7 @@ import {
 } from "./clientBlock";
 import { MainImage } from "./MainImage";
 import { ADMIN_URL } from "api/api";
+import { SkeletText } from "components/Skelet/SkeletText";
 import styled from "styled-components";
 import { breakpoints } from "styles/variables";
 
@@ -31,35 +33,80 @@ const GridLayout = styled.div`
   }
 `;
 
-export const CasePageBox = ({ caseData, photos, preview }) => {
+export const CasePageBox = ({ caseData, photos, preview, isLoading }) => {
   return (
     <GridLayout>
-      {caseData ? (
-        <List list={[caseData.client, caseData.category, caseData.location]} />
-      ) : (
-        <span></span>
-      )}
-      {photos.length > 0 ? (
+      <List
+        list={
+          caseData
+            ? [caseData.client, caseData.category, caseData.location]
+            : []
+        }
+        isLoading={isLoading}
+      />
+
+      {isLoading ? (
+        <Skeleton
+          sx={{
+            borderRadius: "3%",
+            height: "auto",
+            aspectRatio: "16 / 9",
+            gridArea: "image",
+            width: "100%",
+          }}
+          animation="wave"
+          variant="rectangular"
+        />
+      ) : photos?.length > 0 ? (
         <MainImage src={getPhotoUrl(photos[0])} />
       ) : (
         <span></span>
       )}
 
-      {preview?.description ? (
-        <LabelClient>{preview.description}</LabelClient>
-      ) : (
-        <span></span>
-      )}
+      <LabelClient>
+        {isLoading
+          ? Array.from(Array(5)).map((el, i) => (
+              <SkeletText
+                sx={{ mb: 1, maxWidth: `calc(${(5 - i) * 20}%)` }}
+                key={i}
+              />
+            ))
+          : preview?.description}
+      </LabelClient>
+
       {caseData && (
         <ClientBlockWrapper>
           <ChatWrapper>
-            {caseData.clientText && (
-              <ChatClient time={"8:01"} color={preview.circle?.color}>
-                {caseData.clientText}
+            {isLoading ? (
+              <ChatClient time={"8:01"}>
+                <div style={{ width: "20vw" }}>
+                  <SkeletText sx={{ mb: 1 }} />
+                </div>
+                <div style={{ width: "30%" }}>
+                  <SkeletText />
+                </div>
               </ChatClient>
+            ) : (
+              caseData.clientText && (
+                <ChatClient time={"8:01"} color={preview.circle?.color}>
+                  {caseData.clientText}
+                </ChatClient>
+              )
             )}
-            {caseData.tochkaText && (
-              <ChatTochka time={"8:03"}>{caseData.tochkaText}</ChatTochka>
+            {isLoading ? (
+              <ChatTochka time={"8:03"}>
+                <SkeletText sx={{ mb: 1 }} />
+                <div style={{ width: "20%" }}>
+                  <SkeletText sx={{ mb: 1 }} />
+                </div>
+                <div style={{ width: "50%" }}>
+                  <SkeletText />
+                </div>
+              </ChatTochka>
+            ) : (
+              caseData.tochkaText && (
+                <ChatTochka time={"8:03"}>{caseData.tochkaText}</ChatTochka>
+              )
             )}
           </ChatWrapper>
         </ClientBlockWrapper>

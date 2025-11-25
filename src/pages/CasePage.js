@@ -8,6 +8,7 @@ import Gallery from "components/casePage/galleries/Gallery";
 import { CasePageBox } from "components/casePage/CasePageBox";
 import { CaseNumberBlock } from "components/casePage/CaseNumberBlock";
 import { LastProjects } from "components/casePage/LastProjects";
+import Error from "./404";
 
 const getCaseQuery = (slug) => {
   const query = QueryString.stringify(
@@ -40,27 +41,12 @@ const getCaseQuery = (slug) => {
 const CasePage = () => {
   const { caseSlug } = useParams();
 
-  const { data, isLoading } = useFetch(getCaseQuery(caseSlug));
+  const { data, isLoading, isError } = useFetch(getCaseQuery(caseSlug));
 
-  if (isLoading) return <div>Загрузка...</div>;
-
-  if (!data?.data || data.data.length === 0) {
-    return (
-      <Wrapper>
-        <Box
-          sx={{
-            height: "50vh",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          Кейс не найден
-        </Box>
-      </Wrapper>
-    );
+  if (isError || (data?.data && data.data.length === 0)) {
+    return <Error />;
   }
-  const caseData = data.data[0];
+  const caseData = data?.data[0];
   const preview = caseData?.preview;
   const photos = preview?.photos || [];
 
@@ -69,7 +55,12 @@ const CasePage = () => {
       <Wrapper>
         <CaseHeader />
 
-        <CasePageBox caseData={caseData} preview={preview} photos={photos} />
+        <CasePageBox
+          isLoading={isLoading}
+          caseData={caseData}
+          preview={preview}
+          photos={photos}
+        />
         {caseData?.photosWithNumber?.map((el) => {
           return (
             <Box key={el.id}>
