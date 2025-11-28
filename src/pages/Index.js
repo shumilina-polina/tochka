@@ -66,7 +66,7 @@ const Index = () => {
         <Numbers data={data?.data?.numberBlocks} isLoading={isLoading} />
         <About data={data?.data?.titleWithDescription} isLoading={isLoading} />
         {data?.data && <Cases data={data.data} />}
-        {data?.data.textWithAuthor[0] && (
+        {data?.data.textWithAuthor[1] && (
           <h2 className={s.tech}>
             {data?.data.textWithAuthor[1].text
               .split("\n")

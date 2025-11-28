@@ -1,4 +1,5 @@
 export const extractNumberAndText = (str) => {
+  if (!str) return { number: { display: "0", value: "0" }, text: "" };
   const numberMatch = str.match(/(\d[\d\s]*\d+|\d+)/);
   if (!numberMatch) return { number: null, text: str };
 
