@@ -55,7 +55,7 @@ export const LastProjects = () => {
                   )}
                   {el.client}
                 </Title>
-                <Description style={{ whiteSpace: "pre-line" }}>
+                <Description>
                   <a>{el.preview?.description}</a>
                 </Description>
               </Box>
@@ -122,12 +122,14 @@ const Description = styled.p`
   word-break: break-word;
   line-height: 133%;
   color: #222;
+  white-space: "pre-line";
   @media ${breakpoints.laptop} {
     font-size: 1.29vw;
   }
   @media ${breakpoints.mobile} {
     font-size: 14px;
     line-height: 120%;
+    white-space: "normal";
   }
   & > a {
     ${mixins.hoveredText}
