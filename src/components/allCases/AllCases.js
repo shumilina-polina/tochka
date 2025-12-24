@@ -11,6 +11,7 @@ import { breakpoints, mixins } from "styles/variables";
 const getCaseQuery = () => {
   const query = QueryString.stringify(
     {
+      sort: { createdAt: "desc" },
       populate: {
         preview: {
           populate: {
@@ -38,7 +39,7 @@ export const AllCases = () => {
         {isLoading
           ? Array.from(Array(6)).map((el, i) => <CaseSkelet key={i} />)
           : data?.data.map((el) => (
-              <LinkItem key={el.id} to={ADMIN_URL + el.url}>
+              <LinkItem key={el.id} to={"/cases/" + el.preview?.url}>
                 <CaseTitle>
                   {el.preview?.circle?.color && (
                     <Circle color={el.preview?.circle.color} />

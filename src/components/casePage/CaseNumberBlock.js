@@ -69,19 +69,23 @@ export const CaseNumberBlock = ({ data }) => {
   const { number, text } = extractNumberAndText(data.title);
   return (
     <Box>
-      <h2 style={{ whiteSpace: "pre-line" }}>
-        <CountUp
-          separator="&nbsp;"
-          enableScrollSpy
-          scrollSpyOnce
-          start={number.value > 5 ? number.value - 5 : number.value}
-          end={number.value}
-          duration={1.2}
-        >
-          {({ countUpRef }) => <span ref={countUpRef} />}
-        </CountUp>
-        {text}
-      </h2>
+      {data.title ? (
+        <h2 style={{ whiteSpace: "pre-line" }}>
+          <CountUp
+            separator="&nbsp;"
+            enableScrollSpy
+            scrollSpyOnce
+            start={number.value > 5 ? number.value - 5 : number.value}
+            end={number.value}
+            duration={1.2}
+          >
+            {({ countUpRef }) => <span ref={countUpRef} />}
+          </CountUp>
+          {text}
+        </h2>
+      ) : (
+        <h2></h2>
+      )}
       <p style={{ whiteSpace: "pre-line" }}>{data.description}</p>
     </Box>
   );

@@ -9,9 +9,8 @@ import { breakpoints, mixins } from "styles/variables";
 const getLastCasesQuery = (currentSlug) => {
   const query = QueryString.stringify(
     {
-      // sort: ["createdAt:desc"],
       sort: { createdAt: "desc" },
-      pagination: { limit: 5 },
+      pagination: { limit: 100 },
       filters: {
         preview: {
           url: { $ne: currentSlug }, // исключаю текущий кейс
@@ -75,6 +74,7 @@ const Box = styled.div`
   }
   @media ${breakpoints.mobile} {
     padding: 0;
+    width: 100%;
   }
 `;
 
@@ -159,6 +159,7 @@ const ProjectItem = styled(Link)`
     display: flex;
     align-items: flex-start;
     flex-direction: row-reverse;
+    width: 100%;
   }
 `;
 const Title = styled.h3`

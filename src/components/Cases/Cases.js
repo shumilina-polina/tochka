@@ -229,7 +229,7 @@ const Cases = ({ data }) => {
                   ].map(
                     (el, i) =>
                       el && (
-                        <p key={el.id}>
+                        <p key={i}>
                           <Circle color={data.case[5].circle?.color} />
                           <a style={{ whiteSpace: "pre-line" }}>{el}</a>
                         </p>

@@ -26,7 +26,7 @@ const query = QueryString.stringify(
 );
 
 const Footer = () => {
-  const { data: authors } = useFetch(`authors?populate=*`);
+  const { data: authors } = useFetch(`authors?sort=createdAt:asc&populate=*`);
   const { data: footerData } = useFetch(`footer?` + query);
 
   return (

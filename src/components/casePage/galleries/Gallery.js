@@ -1,3 +1,4 @@
+import { useMediaQuery } from "@mui/material";
 import { ADMIN_URL } from "api/api";
 import styled from "styled-components";
 import { breakpoints } from "styles/variables";
@@ -47,10 +48,14 @@ const GridLayout3 = styled(GridLayout)`
 `;
 
 const GridLayout4Row1 = styled(GridLayout)`
+  grid-template-columns: 1fr 1fr;
   @media ${breakpoints.mobile} {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
   }
+`;
+const GridLayout4Row1Alone = styled(GridLayout)`
+  grid-template-columns: 1fr;
 `;
 
 const GridLayout4Row2 = styled(GridLayout)`
@@ -92,6 +97,8 @@ const PhotoWrapperSpan2 = styled(PhotoWrapper)`
 `;
 
 const Gallery = ({ photos }) => {
+  const isMobile = useMediaQuery(breakpoints.mobile);
+
   const photoCount = photos.length;
 
   if (photoCount === 1) {
@@ -146,34 +153,71 @@ const Gallery = ({ photos }) => {
   if (photoCount === 4) {
     return (
       <GalleryContainer>
-        <GridLayout4Row1>
-          <PhotoWrapper>
-            <PhotoImage
-              src={ADMIN_URL + photos[0].url}
-              alt={photos[0].alternativeText}
-            />
-          </PhotoWrapper>
-          <PhotoWrapper>
-            <PhotoImage
-              src={ADMIN_URL + photos[1].url}
-              alt={photos[1].alternativeText}
-            />
-          </PhotoWrapper>
-        </GridLayout4Row1>
-        <GridLayout4Row2>
-          <PhotoWrapper>
-            <PhotoImage
-              src={ADMIN_URL + photos[2].url}
-              alt={photos[2].alternativeText}
-            />
-          </PhotoWrapper>
-          <PhotoWrapper>
-            <PhotoImage
-              src={ADMIN_URL + photos[3].url}
-              alt={photos[3].alternativeText}
-            />
-          </PhotoWrapper>
-        </GridLayout4Row2>
+        {isMobile ? (
+          <>
+            <GridLayout4Row1Alone>
+              <PhotoWrapper>
+                <PhotoImage
+                  src={ADMIN_URL + photos[0].url}
+                  alt={photos[0].alternativeText}
+                />
+              </PhotoWrapper>
+            </GridLayout4Row1Alone>
+            <GridLayout4Row2>
+              <PhotoWrapper>
+                <PhotoImage
+                  src={ADMIN_URL + photos[1].url}
+                  alt={photos[1].alternativeText}
+                />
+              </PhotoWrapper>
+              <PhotoWrapper>
+                <PhotoImage
+                  src={ADMIN_URL + photos[2].url}
+                  alt={photos[2].alternativeText}
+                />
+              </PhotoWrapper>
+            </GridLayout4Row2>
+            <GridLayout4Row1Alone>
+              <PhotoWrapper>
+                <PhotoImage
+                  src={ADMIN_URL + photos[3].url}
+                  alt={photos[3].alternativeText}
+                />
+              </PhotoWrapper>
+            </GridLayout4Row1Alone>
+          </>
+        ) : (
+          <>
+            <GridLayout4Row1>
+              <PhotoWrapper>
+                <PhotoImage
+                  src={ADMIN_URL + photos[0].url}
+                  alt={photos[0].alternativeText}
+                />
+              </PhotoWrapper>
+              <PhotoWrapper>
+                <PhotoImage
+                  src={ADMIN_URL + photos[1].url}
+                  alt={photos[1].alternativeText}
+                />
+              </PhotoWrapper>
+            </GridLayout4Row1>
+            <GridLayout4Row2>
+              <PhotoWrapper>
+                <PhotoImage
+                  src={ADMIN_URL + photos[2].url}
+                  alt={photos[2].alternativeText}
+                />
+              </PhotoWrapper>
+              <PhotoWrapper>
+                <PhotoImage
+                  src={ADMIN_URL + photos[3].url}
+                  alt={photos[3].alternativeText}
+                />
+              </PhotoWrapper>
+            </GridLayout4Row2>
+          </>
+        )}
       </GalleryContainer>
     );
   }

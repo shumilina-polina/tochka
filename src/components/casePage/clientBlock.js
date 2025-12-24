@@ -25,6 +25,7 @@ const Text = styled.p`
   grid-area: desc;
   line-height: 121%;
   letter-spacing: -0.03em;
+  white-space: pre-line;
 
   @media ${breakpoints.laptop} {
     font-size: 2.71vw;

@@ -173,15 +173,16 @@
 }
 .artel {
   display: block;
+  flex-shrink: 0;
   height: 24px;
-  width: 100px;
+  width: 112px;
   flex-shrink: 0;
   @include laptop {
-    width: 7.14vw;
+    width: 8vw;
     height: 1.71vw;
   }
   @include mobile {
-    width: 100px;
+    width: 112px;
     height: 24px;
   }
   transition: opacity 0.3s;
