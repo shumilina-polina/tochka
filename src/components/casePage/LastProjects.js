@@ -198,6 +198,7 @@ const ImageWrapper = styled.div`
     margin: 0;
     max-width: 100px;
     flex-shrink: 0;
+    display: none;
   }
   & > img {
     object-fit: cover;
