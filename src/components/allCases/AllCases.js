@@ -107,7 +107,6 @@ const Img = styled.img`
   @media ${breakpoints.mobile} {
     margin-bottom: 20px;
     border-radius: 12px;
-    display: none;
   }
 `;
 
