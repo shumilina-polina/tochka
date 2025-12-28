@@ -10,7 +10,7 @@ const getLastCasesQuery = (currentSlug) => {
   const query = QueryString.stringify(
     {
       sort: { createdAt: "desc" },
-      pagination: { limit: 100 },
+      pagination: { limit: 5 },
       filters: {
         preview: {
           url: { $ne: currentSlug }, // исключаю текущий кейс
