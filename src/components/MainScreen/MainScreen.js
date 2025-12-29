@@ -96,7 +96,23 @@ const MainScreen = ({ data, isLoading }) => {
               <SvgSelector svg={"tochka"} />
               <li className={s.welcome}>
                 <p>
-                  <a href={data.link} target="_blank" rel="noopener noreferrer">
+                  <a
+                    onClick={() => {
+                      if (window.ym)
+                        window.ym(106057763, "reachGoal", "link_click");
+                      if (window.gtag) {
+                        window.gtag("event", "link_click", {
+                          event_category: "engagement",
+                          event_label: data.isSummer
+                            ? "summer_offer"
+                            : "winter_offer",
+                        });
+                      }
+                    }}
+                    href={data.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     {data.isSummer ? "Летнее" : "Зимнее"} <br />
                     предложение
                     <span>
@@ -129,6 +145,18 @@ const MainScreen = ({ data, isLoading }) => {
                 <li className={s.welcome}>
                   <p>
                     <a
+                      onClick={() => {
+                        if (window.ym)
+                          window.ym(106057763, "reachGoal", "link_click");
+                        if (window.gtag) {
+                          window.gtag("event", "link_click", {
+                            event_category: "engagement",
+                            event_label: data.isSummer
+                              ? "summer_offer"
+                              : "winter_offer",
+                          });
+                        }
+                      }}
                       href={data.link}
                       target="_blank"
                       rel="noopener noreferrer"

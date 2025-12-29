@@ -61,6 +61,13 @@ const Form = () => {
             console.log(error.message);
           }
         );
+      if (window.gtag) {
+        window.gtag("event", "form_submit", {
+          event_category: "engagement",
+          event_label: "contact_form",
+        });
+      }
+      if (window.ym) window.ym(106057763, "reachGoal", "500701430");
       setSended(true);
       setTimeout(() => setSended(false), 7000);
       e.target.reset();
