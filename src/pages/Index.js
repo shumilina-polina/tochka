@@ -13,6 +13,7 @@ import MainScreen from "components/MainScreen/MainScreen";
 import { useFetch } from "api/useFetch";
 import QueryString from "qs";
 import { ADMIN_URL } from "api/api";
+import { useLocation } from "react-router-dom";
 
 const query = QueryString.stringify(
   {
@@ -53,7 +54,20 @@ const query = QueryString.stringify(
 );
 
 const Index = () => {
-  const { data, isLoading } = useFetch(`homepage?` + query);
+  const { data, isLoading, isError } = useFetch(`homepage?` + query);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash && !isLoading && !isError) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [location, isLoading]);
 
   useEffect(() => {
     Aos.init();

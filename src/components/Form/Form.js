@@ -9,31 +9,17 @@ import {
   Radio,
   RadioGroup,
 } from "@mui/material";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useState } from "react";
 import cn from "classnames";
-import { useLocation } from "react-router-dom";
 import SvgSelector from "components/SvgSelector";
 
 const Form = () => {
-  const location = useLocation();
-
   const [checked, setChecked] = useState(false);
 
   const handleChange = (event) => {
     setChecked(event.target.checked);
   };
-
-  useEffect(() => {
-    if (location.hash) {
-      const element = document.querySelector(location.hash);
-      if (element) {
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: "smooth" });
-        }, 100);
-      }
-    }
-  }, [location]);
 
   const radio = useRef(null);
   const budget = useRef(null);
