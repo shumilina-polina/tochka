@@ -173,11 +173,8 @@ const Cases = ({ data }) => {
                     <Parashut data={data.case[4].video.video} />
                   )
                 )}
-                <section>
-                  <p
-                    style={{ whiteSpace: "pre-line" }}
-                    onClick={() => navigate(data?.case[4].url)}
-                  >
+                <section onClick={() => navigate("cases/" + data?.case[4].url)}>
+                  <p style={{ whiteSpace: "pre-line" }}>
                     <Circle color={data?.case[4].circle?.color} />
                     <a>{data?.case[4].description}</a>
                   </p>
